@@ -10,8 +10,8 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
-  - Kingfisher (~> 5.0)
-  - Moya (~> 13.0)
+  - Kingfisher
+  - Moya
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -26,6 +26,6 @@ SPEC CHECKSUMS:
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
 
-PODFILE CHECKSUM: 759a4267811a7e71fc4c94b91f50c97fd2622898
+PODFILE CHECKSUM: 7a296a242d848eadd8654196a8b665e9c3fc9829
 
 COCOAPODS: 1.7.1
