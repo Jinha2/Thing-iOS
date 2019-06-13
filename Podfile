@@ -8,5 +8,6 @@ target 'thing' do
   pod 'Alamofire'
   pod 'Moya'
   pod 'Kingfisher'
-
+  pod 'GoogleSignIn'
+  pod 'Firebase/Analytics'
 end
