@@ -1,9 +1,4 @@
-##############
-# rules
-##############
 whitelist_rules:
-
-# autocorrect
 - closing_brace
 - closure_end_indentation
 - closure_spacing
@@ -40,8 +35,6 @@ whitelist_rules:
 - unused_closure_parameter
 - vertical_whitespace
 - void_return
-
-# opt-in
 - fatal_error_message
 - modifier_order
 - multiline_parameters
@@ -49,13 +42,10 @@ whitelist_rules:
 - overridden_super_call
 - override_in_extension
 - private_action
-#  - private_outlet
 - prohibited_super_call
 - unavailable_function
 - vertical_parameter_alignment_on_call
 - yoda_condition
-
-# others
 - block_based_kvo
 - class_delegate_protocol
 - closure_parameter_position
@@ -84,15 +74,7 @@ whitelist_rules:
 - vertical_parameter_alignment
 - weak_delegate
 
-##############
-# directories
-##############
 excluded:
-- Carthage
-- External
 - Pods
-##############
-# config
-##############
 cyclomatic_complexity:
     ignores_case_statements: true
