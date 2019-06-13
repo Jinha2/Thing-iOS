@@ -53,10 +53,10 @@
             </objects>
             <point key="canvasLocation" x="-20" y="136"/>
         </scene>
-        <!--View Controller-->
+        <!--Register Account View Controller-->
         <scene sceneID="4sK-aP-WMV">
             <objects>
-                <viewController id="5RI-gy-uXj" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterAccountViewController" id="5RI-gy-uXj" customClass="RegisterAccountViewController" customModule="thing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cZW-Cp-tYD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

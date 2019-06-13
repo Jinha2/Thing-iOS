@@ -11,3 +11,9 @@ target 'thing' do
   pod 'GoogleSignIn'
   pod 'Firebase/Analytics'
 end
+
+target 'thingTests' do
+  use_frameworks!
+
+  pod 'Firebase/Analytics'
+end
