@@ -19,11 +19,19 @@ class RegisterAccountViewController: UIViewController {
 
     @IBAction private func nextButtonAction(_ sender: Any) {
         guard let email = emailTextField.text, let password = passwordTextField.text else { return }
-        FirebaseLayer.createUser(email: email, password: password)
+        FirebaseLayer.createUser(email: email, password: password, completion: { [weak self] result in
+            guard let updateProfileViewController = self?.storyboard?.instantiateViewController(withIdentifier: "UpdateProfileViewController") else { return }
+            self?.navigationController?.pushViewController(updateProfileViewController, animated: true)
+            Log(result)
+        })
     }
 }
 
 extension RegisterAccountViewController {
+    func isValidPassword(password: String) -> Bool {
+        return password.count >= 6
+    }
+
     func isValidEmail(enteredEmail: String) -> Bool {
         let emailFormat = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailFormat)

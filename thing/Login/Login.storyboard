@@ -96,7 +96,6 @@
                                 <state key="normal" title="다음"/>
                                 <connections>
                                     <action selector="nextButtonAction:" destination="5RI-gy-uXj" eventType="touchUpInside" id="1W2-Nx-JEF"/>
-                                    <segue destination="3Tc-8b-7y9" kind="show" id="8RJ-aN-xy5"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -117,7 +116,7 @@
         <!--Update Profile View Controller-->
         <scene sceneID="Jct-Qp-vYo">
             <objects>
-                <viewController id="3Tc-8b-7y9" customClass="UpdateProfileViewController" customModule="thing" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UpdateProfileViewController" id="3Tc-8b-7y9" customClass="UpdateProfileViewController" customModule="thing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LFs-CJ-Bw6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

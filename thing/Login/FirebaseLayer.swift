@@ -18,7 +18,7 @@ struct FirebaseLayer {
     static func getUid() {
         Auth.auth().currentUser?.getIDTokenForcingRefresh(true, completion: { result, error in
             if error != nil {
-                Log(error?.localizedDescription)
+                presentErrorAlert(error: error)
                 return
             }
 
@@ -26,14 +26,14 @@ struct FirebaseLayer {
         })
     }
 
-    static func createUser(email: String, password: String) {
+    static func createUser(email: String, password: String, completion: @escaping ((AuthDataResult?) -> Void) ) {
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
             if error != nil {
-                Log(error?.localizedDescription)
+                presentErrorAlert(error: error)
                 return
             }
 
-            Log(result)
+            completion(result)
         }
     }
 
@@ -41,7 +41,7 @@ struct FirebaseLayer {
         let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
         changeRequest?.displayName = displayName
         changeRequest?.commitChanges { error in
-            Log(error?.localizedDescription)
+            presentErrorAlert(error: error)
         }
     }
 
@@ -49,8 +49,8 @@ struct FirebaseLayer {
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
-        } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
+        } catch let error {
+            presentErrorAlert(error: error)
         }
     }
 }
