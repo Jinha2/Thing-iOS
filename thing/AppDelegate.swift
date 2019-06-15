@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         //GA를 위해서 사용
-//        FirebaseApp.configure()
+        FirebaseApp.configure()
 
         return true
     }
