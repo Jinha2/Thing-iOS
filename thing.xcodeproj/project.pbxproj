@@ -15,6 +15,8 @@
 		303D039922AE829900ABCE0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 303D039722AE829900ABCE0F /* LaunchScreen.storyboard */; };
 		7FCF33813C297A9F9AAE7EC3 /* Pods_thingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B523A42BEEF8A1FC6C7CC116 /* Pods_thingTests.framework */; };
 		EF7CA2FA22B54AF10063FC6C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF7CA2F922B54AF10063FC6C /* GoogleService-Info.plist */; };
+		EF7CA2FC22B569A00063FC6C /* UpdateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7CA2FB22B569A00063FC6C /* UpdateProfileViewController.swift */; };
+		EF7CA2FE22B572B80063FC6C /* FirebaseLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7CA2FD22B572B80063FC6C /* FirebaseLayer.swift */; };
 		EFEF0DFB22B2C5D5001B28AC /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFEF0DFA22B2C5D5001B28AC /* Login.storyboard */; };
 		EFEF0DFD22B2C736001B28AC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEF0DFC22B2C736001B28AC /* LoginViewController.swift */; };
 		EFEF0E0022B2CD17001B28AC /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEF0DFF22B2CD17001B28AC /* Log.swift */; };
@@ -50,6 +52,8 @@
 		CF6F9A87DC4D8A14EB5DF79D /* Pods-thingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-thingTests.debug.xcconfig"; path = "Target Support Files/Pods-thingTests/Pods-thingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E0426C9AA21F845960A8D3CE /* Pods-thing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-thing.release.xcconfig"; path = "Target Support Files/Pods-thing/Pods-thing.release.xcconfig"; sourceTree = "<group>"; };
 		EF7CA2F922B54AF10063FC6C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EF7CA2FB22B569A00063FC6C /* UpdateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileViewController.swift; sourceTree = "<group>"; };
+		EF7CA2FD22B572B80063FC6C /* FirebaseLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLayer.swift; sourceTree = "<group>"; };
 		EFEF0DFA22B2C5D5001B28AC /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		EFEF0DFC22B2C736001B28AC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EFEF0DFF22B2CD17001B28AC /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
@@ -138,6 +142,8 @@
 				EFEF0DFA22B2C5D5001B28AC /* Login.storyboard */,
 				EFEF0DFC22B2C736001B28AC /* LoginViewController.swift */,
 				EFEF0E1422B2D26F001B28AC /* RegisterAccountViewController.swift */,
+				EF7CA2FB22B569A00063FC6C /* UpdateProfileViewController.swift */,
+				EF7CA2FD22B572B80063FC6C /* FirebaseLayer.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -430,6 +436,8 @@
 				303D039122AE829800ABCE0F /* ViewController.swift in Sources */,
 				EFEF0E0022B2CD17001B28AC /* Log.swift in Sources */,
 				EFEF0E0222B2CEC5001B28AC /* UIView+Extension.swift in Sources */,
+				EF7CA2FE22B572B80063FC6C /* FirebaseLayer.swift in Sources */,
+				EF7CA2FC22B569A00063FC6C /* UpdateProfileViewController.swift in Sources */,
 				303D038F22AE829800ABCE0F /* AppDelegate.swift in Sources */,
 				EFEF0E1522B2D26F001B28AC /* RegisterAccountViewController.swift in Sources */,
 			);
@@ -596,6 +604,7 @@
 			baseConfigurationReference = 04C0ADC4DB45F01C3C980FF2 /* Pods-thing.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = thing/Info.plist;
@@ -618,6 +627,7 @@
 			baseConfigurationReference = E0426C9AA21F845960A8D3CE /* Pods-thing.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = thing/Info.plist;

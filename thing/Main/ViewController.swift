@@ -9,7 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -17,11 +16,22 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        showLoginView()
+        checkLogin()
+    }
+
+    @IBAction private func signOut(_ sender: Any) {
+        FirebaseLayer.signOut()
+        checkLogin()
     }
 }
 
 extension ViewController {
+    func checkLogin() {
+        if !FirebaseLayer.isUserSignedIn() {
+            showLoginView()
+        }
+    }
+
     func showLoginView() {
         let storyboard = UIStoryboard(name: "Login", bundle: nil)
         let loginViewContoller = storyboard.instantiateViewController(withIdentifier: "LoginViewController")

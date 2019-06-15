@@ -9,8 +9,17 @@
 import UIKit
 
 class RegisterAccountViewController: UIViewController {
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var confirmTextField: UITextField!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+
+    @IBAction private func nextButtonAction(_ sender: Any) {
+        guard let email = emailTextField.text, let password = passwordTextField.text else { return }
+        FirebaseLayer.createUser(email: email, password: password)
     }
 }
 

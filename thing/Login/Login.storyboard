@@ -44,10 +44,18 @@
                                     <segue destination="sEV-ys-x56" kind="presentation" id="YfB-pS-K0U"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GUK-4E-8Vp" customClass="GIDSignInButton">
+                                <rect key="frame" x="87" y="589" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="FEQ-aK-rG3"/>
                     </view>
+                    <connections>
+                        <outlet property="googleSignInButton" destination="GUK-4E-8Vp" id="nWC-NL-mUY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pqg-lu-yI6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -87,6 +95,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="다음"/>
                                 <connections>
+                                    <action selector="nextButtonAction:" destination="5RI-gy-uXj" eventType="touchUpInside" id="1W2-Nx-JEF"/>
                                     <segue destination="3Tc-8b-7y9" kind="show" id="8RJ-aN-xy5"/>
                                 </connections>
                             </button>
@@ -95,15 +104,20 @@
                         <viewLayoutGuide key="safeArea" id="ZrM-2u-8Dn"/>
                     </view>
                     <navigationItem key="navigationItem" id="Umu-6p-Oae"/>
+                    <connections>
+                        <outlet property="confirmTextField" destination="DZP-Bp-uvQ" id="mAH-Do-RpH"/>
+                        <outlet property="emailTextField" destination="KEb-kM-kOF" id="jtD-4j-akl"/>
+                        <outlet property="passwordTextField" destination="WFx-Mb-Nvt" id="IdO-lC-d3o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FEj-1O-gQW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1657.9710144927537" y="135.9375"/>
         </scene>
-        <!--View Controller-->
+        <!--Update Profile View Controller-->
         <scene sceneID="Jct-Qp-vYo">
             <objects>
-                <viewController id="3Tc-8b-7y9" sceneMemberID="viewController">
+                <viewController id="3Tc-8b-7y9" customClass="UpdateProfileViewController" customModule="thing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LFs-CJ-Bw6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -141,11 +155,18 @@
                                 <rect key="frame" x="192" y="665" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="완료"/>
+                                <connections>
+                                    <action selector="completeButtonAction:" destination="3Tc-8b-7y9" eventType="touchUpInside" id="yAh-5p-IsV"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="NSB-Hz-WfL"/>
                     </view>
+                    <connections>
+                        <outlet property="ageTextField" destination="Swr-9I-x3R" id="Oxx-mC-rEo"/>
+                        <outlet property="displayNameTextField" destination="3HR-tt-Btq" id="A16-nC-X6L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Kb-fl-3vg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

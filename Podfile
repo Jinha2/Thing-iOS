@@ -7,8 +7,11 @@ target 'thing' do
   pod 'Alamofire'
   pod 'Moya'
   pod 'Kingfisher'
-  pod 'GoogleSignIn'
+  # GA
   pod 'Firebase/Analytics'
+  # Login
+  pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
 end
 
 target 'thingTests' do

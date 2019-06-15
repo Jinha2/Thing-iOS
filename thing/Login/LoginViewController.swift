@@ -7,9 +7,26 @@
 //
 
 import UIKit
+import GoogleSignIn
 
 class LoginViewController: UIViewController {
+    @IBOutlet weak var googleSignInButton: GIDSignInButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        setUpGoogleLogin()
+    }
+}
+
+extension LoginViewController {
+    func setUpGoogleLogin() {
+        GIDSignIn.sharedInstance().uiDelegate = self
+    }
+}
+
+extension LoginViewController: GIDSignInUIDelegate {
+    func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) {
+        Log(signIn)
     }
 }
