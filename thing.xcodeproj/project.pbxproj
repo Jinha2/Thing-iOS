@@ -19,12 +19,14 @@
 		EF7CA2FE22B572B80063FC6C /* FirebaseLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7CA2FD22B572B80063FC6C /* FirebaseLayer.swift */; };
 		EFEF0DFB22B2C5D5001B28AC /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFEF0DFA22B2C5D5001B28AC /* Login.storyboard */; };
 		EFEF0DFD22B2C736001B28AC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEF0DFC22B2C736001B28AC /* LoginViewController.swift */; };
-		EFEF0E0022B2CD17001B28AC /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEF0DFF22B2CD17001B28AC /* Log.swift */; };
+		EFEF0E0022B2CD17001B28AC /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEF0DFF22B2CD17001B28AC /* Common.swift */; };
 		EFEF0E0222B2CEC5001B28AC /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEF0E0122B2CEC5001B28AC /* UIView+Extension.swift */; };
 		EFEF0E1522B2D26F001B28AC /* RegisterAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEF0E1422B2D26F001B28AC /* RegisterAccountViewController.swift */; };
 		EFEF0E1D22B2D2AB001B28AC /* thingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEF0E1C22B2D2AB001B28AC /* thingTests.swift */; };
 		EFEF0E2422B2D335001B28AC /* RegisterAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEF0E1422B2D26F001B28AC /* RegisterAccountViewController.swift */; };
 		EFEF0E2622B2D4BB001B28AC /* RegisterAccountTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEF0E2522B2D4BB001B28AC /* RegisterAccountTest.swift */; };
+		EFF60BD322B62A2D009288AF /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF60BD222B62A2D009288AF /* UIViewController+Extension.swift */; };
+		EFF60BD522B63B53009288AF /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF60BD422B63B53009288AF /* Enums.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,13 +58,15 @@
 		EF7CA2FD22B572B80063FC6C /* FirebaseLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLayer.swift; sourceTree = "<group>"; };
 		EFEF0DFA22B2C5D5001B28AC /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		EFEF0DFC22B2C736001B28AC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		EFEF0DFF22B2CD17001B28AC /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		EFEF0DFF22B2CD17001B28AC /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		EFEF0E0122B2CEC5001B28AC /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		EFEF0E1422B2D26F001B28AC /* RegisterAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAccountViewController.swift; sourceTree = "<group>"; };
 		EFEF0E1A22B2D2AA001B28AC /* thingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = thingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFEF0E1C22B2D2AB001B28AC /* thingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thingTests.swift; sourceTree = "<group>"; };
 		EFEF0E1E22B2D2AB001B28AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFEF0E2522B2D4BB001B28AC /* RegisterAccountTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAccountTest.swift; sourceTree = "<group>"; };
+		EFF60BD222B62A2D009288AF /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		EFF60BD422B63B53009288AF /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,7 +177,9 @@
 			isa = PBXGroup;
 			children = (
 				EFEF0E0122B2CEC5001B28AC /* UIView+Extension.swift */,
-				EFEF0DFF22B2CD17001B28AC /* Log.swift */,
+				EFF60BD222B62A2D009288AF /* UIViewController+Extension.swift */,
+				EFEF0DFF22B2CD17001B28AC /* Common.swift */,
+				EFF60BD422B63B53009288AF /* Enums.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -432,9 +438,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFF60BD322B62A2D009288AF /* UIViewController+Extension.swift in Sources */,
 				EFEF0DFD22B2C736001B28AC /* LoginViewController.swift in Sources */,
+				EFF60BD522B63B53009288AF /* Enums.swift in Sources */,
 				303D039122AE829800ABCE0F /* ViewController.swift in Sources */,
-				EFEF0E0022B2CD17001B28AC /* Log.swift in Sources */,
+				EFEF0E0022B2CD17001B28AC /* Common.swift in Sources */,
 				EFEF0E0222B2CEC5001B28AC /* UIView+Extension.swift in Sources */,
 				EF7CA2FE22B572B80063FC6C /* FirebaseLayer.swift in Sources */,
 				EF7CA2FC22B569A00063FC6C /* UpdateProfileViewController.swift in Sources */,

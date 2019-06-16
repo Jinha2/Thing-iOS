@@ -81,6 +81,9 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - NVActivityIndicatorView (4.7.0):
+    - NVActivityIndicatorView/Presenter (= 4.7.0)
+  - NVActivityIndicatorView/Presenter (4.7.0)
   - Result (4.1.0)
 
 DEPENDENCIES:
@@ -90,6 +93,7 @@ DEPENDENCIES:
   - GoogleSignIn
   - Kingfisher
   - Moya
+  - NVActivityIndicatorView
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -108,6 +112,7 @@ SPEC REPOS:
     - Kingfisher
     - Moya
     - nanopb
+    - NVActivityIndicatorView
     - Result
 
 SPEC CHECKSUMS:
@@ -126,8 +131,9 @@ SPEC CHECKSUMS:
   Kingfisher: 6fe5e67a90fd335e49b0f5c075ff55ac5ebedd94
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  NVActivityIndicatorView: b19ddab2576f805cbe0fb2306cba3476e09a1dea
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
 
-PODFILE CHECKSUM: 5213a24c537f36dbb0fea256532c9eb5fb1b181a
+PODFILE CHECKSUM: 3231e4a35c615b30f3a95df0fbf88846f2263189
 
 COCOAPODS: 1.7.1

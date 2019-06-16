@@ -8,11 +8,31 @@
 
 import UIKit
 import FirebaseAuth
+import GoogleSignIn
 
 struct FirebaseLayer {
     static func isUserSignedIn() -> Bool {
         guard Auth.auth().currentUser != nil else { return false }
         return true
+    }
+
+    static func sign(_ signIn: GIDSignIn!, _ user: GIDGoogleUser!, _ error: Error?, completion: @escaping ((AuthDataResult?) -> Void)) {
+        if let error = error {
+            presentErrorAlert(error: error)
+            return
+        }
+
+        guard let authentication = user.authentication else { return }
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                       accessToken: authentication.accessToken)
+
+        Auth.auth().signIn(with: credential) { result, error in
+            if let error = error {
+                presentErrorAlert(error: error)
+                return
+            }
+            completion(result)
+        }
     }
 
     static func getUid() {
@@ -29,7 +49,11 @@ struct FirebaseLayer {
     static func createUser(email: String, password: String, completion: @escaping ((AuthDataResult?) -> Void) ) {
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
             if error != nil {
-                presentErrorAlert(error: error)
+                if (error as NSError?)?.code == 17007 {
+                    presentAlert(msg: "이미 가입된 이메일 입니다")
+                } else {
+                    presentErrorAlert(error: error)
+                }
                 return
             }
 

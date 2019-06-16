@@ -15,18 +15,42 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        hideKeyboardWhenTappedAround()
         setUpGoogleLogin()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        checkLogin()
     }
 }
 
 extension LoginViewController {
+    func checkLogin() {
+        if FirebaseLayer.isUserSignedIn() {
+            dismiss(animated: true, completion: nil)
+        }
+    }
+
     func setUpGoogleLogin() {
-        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance()?.uiDelegate = self
+        GIDSignIn.sharedInstance().delegate = self
     }
 }
 
-extension LoginViewController: GIDSignInUIDelegate {
-    func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) {
-        Log(signIn)
+extension LoginViewController: GIDSignInDelegate, GIDSignInUIDelegate {
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
+        showActivityIndicator()
+
+        FirebaseLayer.sign(signIn, user, error) { [weak self] result in
+            Log(result)
+            hideActivityIndicator()
+            self?.checkLogin()
+        }
+    }
+
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        // Perform any operations when the user disconnects from app here.
     }
 }

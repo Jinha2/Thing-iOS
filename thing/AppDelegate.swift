@@ -51,21 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate: GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
-        if let error = error {
-            Log(error.localizedDescription)
-            return
-        }
-
-        guard let authentication = user.authentication else { return }
-        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
-                                                       accessToken: authentication.accessToken)
-
-        Auth.auth().signIn(with: credential) { result, error in
-            if let error = error {
-                Log(error.localizedDescription)
-                return
-            }
-            // User is signed in
+        FirebaseLayer.sign(signIn, user, error) { result in
             Log(result)
         }
     }

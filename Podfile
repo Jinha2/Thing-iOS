@@ -4,9 +4,14 @@ inhibit_all_warnings!
 target 'thing' do
   use_frameworks!
  
+  # Network
   pod 'Alamofire'
   pod 'Moya'
   pod 'Kingfisher'
+  
+  # View
+  pod 'NVActivityIndicatorView'
+  
   # GA
   pod 'Firebase/Analytics'
   # Login
