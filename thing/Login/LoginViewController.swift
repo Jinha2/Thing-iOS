@@ -8,9 +8,10 @@
 
 import UIKit
 import GoogleSignIn
-import FirebaseAnalytics
 
 class LoginViewController: UIViewController {
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var googleSignInButton: GIDSignInButton!
 
     override func viewDidLoad() {
@@ -25,14 +26,22 @@ class LoginViewController: UIViewController {
 
         checkLogin()
     }
+
+    @IBAction private func loginButtonAction(_ sender: Any) {
+        guard let email = emailTextField.text, let password = passwordTextField.text else { return }
+        showActivityIndicator()
+
+        FirebaseLayer.loginUser(email: email, password: password) { [weak self] result in
+            Log(result)
+            hideActivityIndicator()
+            self?.checkLogin()
+        }
+    }
 }
 
 extension LoginViewController {
     func checkLogin() {
         if FirebaseLayer.isUserSignedIn() {
-            Analytics.logEvent(AnalyticsEventLogin, parameters: [
-                AnalyticsParameterMethod: method
-            ])
             dismiss(animated: true, completion: nil)
         }
     }

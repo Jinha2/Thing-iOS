@@ -46,7 +46,18 @@ struct FirebaseLayer {
         })
     }
 
-    static func createUser(email: String, password: String, completion: @escaping ((AuthDataResult?) -> Void) ) {
+    static func loginUser(email: String, password: String, completion: @escaping ((AuthDataResult?) -> Void)) {
+        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+            if error != nil {
+                presentErrorAlert(error: error)
+                return
+            }
+
+            completion(result)
+        }
+    }
+
+    static func createUser(email: String, password: String, completion: @escaping ((AuthDataResult?) -> Void)) {
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
             if error != nil {
                 if (error as NSError?)?.code == 17007 {

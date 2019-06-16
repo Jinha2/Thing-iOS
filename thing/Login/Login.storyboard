@@ -35,6 +35,9 @@
                                 <rect key="frame" x="188" y="433" width="39" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="로그인"/>
+                                <connections>
+                                    <action selector="loginButtonAction:" destination="QTY-B2-JLg" eventType="touchUpInside" id="Us0-3i-Cox"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HbM-en-lj0">
                                 <rect key="frame" x="181" y="535" width="52" height="30"/>
@@ -54,7 +57,9 @@
                         <viewLayoutGuide key="safeArea" id="FEQ-aK-rG3"/>
                     </view>
                     <connections>
+                        <outlet property="emailTextField" destination="wDG-Od-KsP" id="Y8a-Va-hJi"/>
                         <outlet property="googleSignInButton" destination="GUK-4E-8Vp" id="nWC-NL-mUY"/>
+                        <outlet property="passwordTextField" destination="mLi-Uq-d0R" id="ybu-xz-sXz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pqg-lu-yI6" userLabel="First Responder" sceneMemberID="firstResponder"/>
