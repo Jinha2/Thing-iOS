@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAnalytics
 
 class RegisterAccountViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
@@ -26,6 +27,9 @@ class RegisterAccountViewController: UIViewController {
 
         FirebaseLayer.createUser(email: email, password: password, completion: { [weak self] result in
             hideActivityIndicator()
+            Analytics.logEvent(AnalyticsEventSignUp, parameters: [
+                AnalyticsParameterMethod: self?.method
+            ])
             guard let updateProfileViewController = self?.storyboard?.instantiateViewController(withIdentifier: "UpdateProfileViewController") else { return }
             self?.navigationController?.pushViewController(updateProfileViewController, animated: true)
             Log(result)

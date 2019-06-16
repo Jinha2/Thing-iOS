@@ -1,5 +1,8 @@
 PODS:
   - Alamofire (4.8.2)
+  - Crashlytics (3.12.0):
+    - Fabric (~> 1.9.0)
+  - Fabric (1.9.0)
   - Firebase/Analytics (6.2.0):
     - Firebase/Core
   - Firebase/Auth (6.2.0):
@@ -88,6 +91,8 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - Crashlytics (~> 3.12.0)
+  - Fabric (~> 1.9.0)
   - Firebase/Analytics
   - Firebase/Auth
   - GoogleSignIn
@@ -98,6 +103,8 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - Crashlytics
+    - Fabric
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -117,6 +124,8 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
+  Fabric: f988e33c97f08930a413e08123064d2e5f68d655
   Firebase: 5965bac23e7fcb5fa6d926ed429c9ecef8a2014e
   FirebaseAnalytics: 629301c2b9925f3537d4093a17a72751ae5b7084
   FirebaseAuth: 80879f0e9f2c5f40686d5b42f6ccb3cd5dce78ea
@@ -134,6 +143,6 @@ SPEC CHECKSUMS:
   NVActivityIndicatorView: b19ddab2576f805cbe0fb2306cba3476e09a1dea
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
 
-PODFILE CHECKSUM: 3231e4a35c615b30f3a95df0fbf88846f2263189
+PODFILE CHECKSUM: 2d8937f0c8c16c9b296f536974314f7627d5b9bd
 
 COCOAPODS: 1.7.1

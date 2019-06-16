@@ -17,6 +17,9 @@ target 'thing' do
   # Login
   pod 'Firebase/Auth'
   pod 'GoogleSignIn'
+  # Crashlityics
+  pod 'Fabric', '~> 1.9.0'
+  pod 'Crashlytics', '~> 3.12.0'
 end
 
 target 'thingTests' do

@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleSignIn
+import FirebaseAnalytics
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var googleSignInButton: GIDSignInButton!
@@ -29,6 +30,9 @@ class LoginViewController: UIViewController {
 extension LoginViewController {
     func checkLogin() {
         if FirebaseLayer.isUserSignedIn() {
+            Analytics.logEvent(AnalyticsEventLogin, parameters: [
+                AnalyticsParameterMethod: method
+            ])
             dismiss(animated: true, completion: nil)
         }
     }
