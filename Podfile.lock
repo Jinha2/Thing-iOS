@@ -73,7 +73,7 @@ PODS:
   - GoogleUtilities/UserDefaults (6.2.0):
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.2.2)
-  - Kingfisher (5.5.0)
+  - Kingfisher (5.6.0)
   - Moya (13.0.1):
     - Moya/Core (= 13.0.1)
   - Moya/Core (13.0.1):
@@ -137,7 +137,7 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: b3553629623a3b1bff17f555e736cd5a6d95ad55
   GoogleUtilities: 996e0db07153674fd1b54b220fda3a3dc3547cba
   GTMSessionFetcher: 61bb0f61a4cb560030f1222021178008a5727a23
-  Kingfisher: 6fe5e67a90fd335e49b0f5c075ff55ac5ebedd94
+  Kingfisher: 1a50df6880a60bae26f3e21a0df3d17b892f5e0b
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   NVActivityIndicatorView: b19ddab2576f805cbe0fb2306cba3476e09a1dea
@@ -145,4 +145,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 2d8937f0c8c16c9b296f536974314f7627d5b9bd
 
-COCOAPODS: 1.7.1
+COCOAPODS: 1.7.2

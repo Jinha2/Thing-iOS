@@ -14,6 +14,9 @@
 		303D039622AE829900ABCE0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 303D039522AE829900ABCE0F /* Assets.xcassets */; };
 		303D039922AE829900ABCE0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 303D039722AE829900ABCE0F /* LaunchScreen.storyboard */; };
 		7FCF33813C297A9F9AAE7EC3 /* Pods_thingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B523A42BEEF8A1FC6C7CC116 /* Pods_thingTests.framework */; };
+		E934DEA122B7D15500ED270E /* ThingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E934DEA022B7D15500ED270E /* ThingService.swift */; };
+		E934DEA422B7D25200ED270E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E934DEA322B7D25200ED270E /* UserModel.swift */; };
+		E953A2A822B93947006B4F9C /* ThingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E953A2A722B93947006B4F9C /* ThingProvider.swift */; };
 		EF7CA2FA22B54AF10063FC6C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF7CA2F922B54AF10063FC6C /* GoogleService-Info.plist */; };
 		EF7CA2FC22B569A00063FC6C /* UpdateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7CA2FB22B569A00063FC6C /* UpdateProfileViewController.swift */; };
 		EF7CA2FE22B572B80063FC6C /* FirebaseLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7CA2FD22B572B80063FC6C /* FirebaseLayer.swift */; };
@@ -53,6 +56,9 @@
 		B523A42BEEF8A1FC6C7CC116 /* Pods_thingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_thingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF6F9A87DC4D8A14EB5DF79D /* Pods-thingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-thingTests.debug.xcconfig"; path = "Target Support Files/Pods-thingTests/Pods-thingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E0426C9AA21F845960A8D3CE /* Pods-thing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-thing.release.xcconfig"; path = "Target Support Files/Pods-thing/Pods-thing.release.xcconfig"; sourceTree = "<group>"; };
+		E934DEA022B7D15500ED270E /* ThingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThingService.swift; sourceTree = "<group>"; };
+		E934DEA322B7D25200ED270E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		E953A2A722B93947006B4F9C /* ThingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingProvider.swift; sourceTree = "<group>"; };
 		EF7CA2F922B54AF10063FC6C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EF7CA2FB22B569A00063FC6C /* UpdateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileViewController.swift; sourceTree = "<group>"; };
 		EF7CA2FD22B572B80063FC6C /* FirebaseLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLayer.swift; sourceTree = "<group>"; };
@@ -112,6 +118,8 @@
 		303D038D22AE829800ABCE0F /* thing */ = {
 			isa = PBXGroup;
 			children = (
+				E934DEA222B7D22D00ED270E /* Model */,
+				E934DE9F22B7D14400ED270E /* Network */,
 				EFEF0DF922B2C5C7001B28AC /* Main */,
 				EFEF0DF622B2C594001B28AC /* Login */,
 				EFEF0DFE22B2CCFE001B28AC /* Extensions */,
@@ -138,6 +146,23 @@
 				48909AD671EF6791E02CC716 /* Pods-thingTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		E934DE9F22B7D14400ED270E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E934DEA022B7D15500ED270E /* ThingService.swift */,
+				E953A2A722B93947006B4F9C /* ThingProvider.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		E934DEA222B7D22D00ED270E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E934DEA322B7D25200ED270E /* UserModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		EFEF0DF622B2C594001B28AC /* Login */ = {
@@ -462,11 +487,14 @@
 				EFEF0DFD22B2C736001B28AC /* LoginViewController.swift in Sources */,
 				EFF60BD522B63B53009288AF /* Enums.swift in Sources */,
 				303D039122AE829800ABCE0F /* ViewController.swift in Sources */,
+				E934DEA122B7D15500ED270E /* ThingService.swift in Sources */,
 				EFEF0E0022B2CD17001B28AC /* Common.swift in Sources */,
 				EFEF0E0222B2CEC5001B28AC /* UIView+Extension.swift in Sources */,
+				E953A2A822B93947006B4F9C /* ThingProvider.swift in Sources */,
 				EF7CA2FE22B572B80063FC6C /* FirebaseLayer.swift in Sources */,
 				EF7CA2FC22B569A00063FC6C /* UpdateProfileViewController.swift in Sources */,
 				303D038F22AE829800ABCE0F /* AppDelegate.swift in Sources */,
+				E934DEA422B7D25200ED270E /* UserModel.swift in Sources */,
 				EFEF0E1522B2D26F001B28AC /* RegisterAccountViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

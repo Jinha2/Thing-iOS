@@ -18,9 +18,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ysc-z2-C6H">
-                                <rect key="frame" x="163" y="382" width="46" height="30"/>
+                                <rect key="frame" x="163" y="382" width="68" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Sign Out"/>
                                 <connections>
                                     <action selector="signOut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XDe-Dk-Ad3"/>
                                 </connections>
@@ -32,6 +32,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="101.78571428571428"/>
         </scene>
     </scenes>
 </document>
