@@ -20,6 +20,8 @@ target 'thing' do
   # Crashlityics
   pod 'Fabric', '~> 1.9.0'
   pod 'Crashlytics', '~> 3.12.0'
+  # Firebase Push
+  pod 'Firebase/Messaging'
 end
 
 target 'thingTests' do

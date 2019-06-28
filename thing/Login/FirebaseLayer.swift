@@ -16,6 +16,10 @@ struct FirebaseLayer {
         return true
     }
 
+    static func getDisplayName() -> String? {
+        return Auth.auth().currentUser?.displayName
+    }
+
     static func sign(_ signIn: GIDSignIn!, _ user: GIDGoogleUser!, _ error: Error?, completion: @escaping ((AuthDataResult?) -> Void)) {
         if let error = error {
             presentErrorAlert(error: error)

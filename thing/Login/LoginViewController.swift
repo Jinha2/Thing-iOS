@@ -42,13 +42,22 @@ class LoginViewController: UIViewController {
 extension LoginViewController {
     func checkLogin() {
         if FirebaseLayer.isUserSignedIn() {
-            dismiss(animated: true, completion: nil)
+//            if FirebaseLayer.getDisplayName() != nil {
+//                showUpdateProfileViewController()
+//            } else {
+                dismiss(animated: true, completion: nil)
+//            }
         }
     }
 
     func setUpGoogleLogin() {
         GIDSignIn.sharedInstance()?.uiDelegate = self
         GIDSignIn.sharedInstance().delegate = self
+    }
+
+    func showUpdateProfileViewController() {
+        guard let updateProfileViewController = storyboard?.instantiateViewController(withIdentifier: "UpdateProfileViewController") else { return }
+        present(updateProfileViewController, animated: true, completion: nil)
     }
 }
 
