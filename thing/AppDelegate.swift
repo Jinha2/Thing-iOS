@@ -19,11 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         //GA를 위해서 사용
         FirebaseApp.configure()
+        //Firebase Push
+        setPushToken(application)
         //Google Login
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
-        //Firebase Push
-        setPushToken(application)
 
         return true
     }
