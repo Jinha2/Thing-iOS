@@ -22,11 +22,11 @@ class RegisterAccountViewController: UIViewController {
 
     }
     @IBAction func checkButtonAction(_ sender: Any) {
-
+        checkButtonAction.isSelected = checkButtonAction.isSelected ? false : true
     }
 
     @IBAction private func nextButtonAction(_ sender: Any) {
-        guard let email = emailTextField.text, let password = passwordTextField.text, checkValidation() else { return }
+        guard let email = emailTextField.text, let password = passwordTextField.text, checkValidation(), checkButtonAction.isSelected else { return }
 
         showActivityIndicator()
 

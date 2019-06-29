@@ -18,10 +18,12 @@ class EndPageViewController: UIViewController {
 
         tableView.delegate = self
         tableView.dataSource = self
+
+        tableView.contentInset = .init(top: 70, left: 0, bottom: 0, right: 0)
     }
 
     @IBAction private func dismissTouchUpInsideAction(_ sender: UIButton) {
-
+        dismiss(animated: true, completion: nil)
     }
 
 }
@@ -55,6 +57,17 @@ extension EndPageViewController: UITableViewDataSource {
             return youtuberPopularVideoCell(tableView, cellForRowAt: indexPath)
         case 2:
             return oneLineReviewTitleCell(tableView, cellForRowAt: indexPath)
+        case 3: // 좋아요
+            if indexPath.row == 0 {
+                return likeNumCell(tableView, cellForRowAt: indexPath)
+            }
+            return .init()
+        case 4: // 싫어요
+            if indexPath.row == 0 {
+                return likeNumCell(tableView, cellForRowAt: indexPath)
+            }
+            return .init()
+
         default:
             return .init()
         }
@@ -71,11 +84,30 @@ extension EndPageViewController {
     func youtuberDescriptionCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "YoutuberDescriptionTableViewCell", for: indexPath) as? YoutuberDescriptionTableViewCell else { return .init() }
 
+        cell.descriptionLabel.text = """
+        재르시 구독과 좋아요 부탁드립니다.
+        재르시 구독과 좋아요 부탁드립니다.
+        재르시 구독과 좋아요 부탁드립니다.
+        재르시 구독과 좋아요 부탁드립니다.
+        재르시 구독과 좋아요 부탁드립니다.
+        재르시 구독과 좋아요 부탁드립니다.
+        재르시 구독과 좋아요 부탁드립니다.
+        재르시 구독과 좋아요 부탁드립니다.
+
+        """
         return cell
     }
 
     func youtuberPopularVideoCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "YoutuberPopularVideoTableViewCell", for: indexPath) as? YoutuberPopularVideoTableViewCell else { return .init() }
+
+        return cell
+    }
+
+    func likeNumCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "LikeNumTableViewCell", for: indexPath) as? LikeNumTableViewCell else { return .init() }
+
+        cell.configure(indexPath: indexPath)
 
         return cell
     }
@@ -86,8 +118,29 @@ extension EndPageViewController {
         return cell
     }
 
+    func myMainCommentCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MyMainCommentTableViewCell", for: indexPath) as? MyMainCommentTableViewCell else { return UITableViewCell() }
+        cell.indexPath = indexPath
+        cell.delegate = self
+        return cell
+    }
+
 }
 
 extension EndPageViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
 
+extension EndPageViewController: CommentReportDelegate {
+    func moreButtonTouchAction(_ indexPath: IndexPath?) {
+        guard let indexPath = indexPath else { return }
+
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "신고", style: .destructive, handler: { _ in }))
+        alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: { _ in }))
+
+        present(alert, animated: true)
+    }
 }

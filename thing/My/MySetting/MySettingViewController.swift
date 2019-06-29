@@ -18,9 +18,14 @@ class MySettingViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.row == 3 {
             FirebaseLayer.signOut()
             tabBarController?.selectedIndex = 0
+        } else if indexPath.row == 2 {
+            guard let vc = UIStoryboard(name: "EndPage", bundle: nil).instantiateViewController(withIdentifier: "EndPageViewController") as? EndPageViewController else { return }
+
+                present(vc, animated: true, completion: nil)
         }
     }
 }
