@@ -23,9 +23,6 @@ class MySettingViewController: UITableViewController {
             FirebaseLayer.signOut()
             tabBarController?.selectedIndex = 0
         } else if indexPath.row == 2 {
-            guard let vc = UIStoryboard(name: "EndPage", bundle: nil).instantiateViewController(withIdentifier: "EndPageViewController") as? EndPageViewController else { return }
-
-                present(vc, animated: true, completion: nil)
         }
     }
 }
