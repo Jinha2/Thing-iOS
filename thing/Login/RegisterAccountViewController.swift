@@ -33,12 +33,12 @@ class RegisterAccountViewController: UIViewController {
         guard let updateProfileViewController = self.storyboard?.instantiateViewController(withIdentifier: "UpdateProfileViewController") else { return }
         self.navigationController?.pushViewController(updateProfileViewController, animated: true)
 
-//        FirebaseLayer.createUser(email: email, password: password, completion: { [weak self] result in
-//            hideActivityIndicator()
-//            guard let updateProfileViewController = self?.storyboard?.instantiateViewController(withIdentifier: "UpdateProfileViewController") else { return }
-//            self?.navigationController?.pushViewController(updateProfileViewController, animated: true)
-//            Log(result)
-//        })
+        FirebaseLayer.createUser(email: email, password: password, completion: { [weak self] result in
+            hideActivityIndicator()
+            guard let updateProfileViewController = self?.storyboard?.instantiateViewController(withIdentifier: "UpdateProfileViewController") else { return }
+            self?.navigationController?.pushViewController(updateProfileViewController, animated: true)
+            Log(result)
+        })
     }
 
     @IBAction func closeButtonAction(_ sender: Any) {

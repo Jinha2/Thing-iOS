@@ -36,7 +36,7 @@ extension ViewController {
 
     func showLoginView() {
         let storyboard = UIStoryboard(name: "Login", bundle: nil)
-        let loginViewContoller = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+        let loginViewContoller = storyboard.instantiateViewController(withIdentifier: "HiddenNavigationViewController")
         present(loginViewContoller, animated: true, completion: nil)
     }
 }
