@@ -24,6 +24,7 @@
 		EF7CA2FA22B54AF10063FC6C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF7CA2F922B54AF10063FC6C /* GoogleService-Info.plist */; };
 		EF7CA2FC22B569A00063FC6C /* UpdateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7CA2FB22B569A00063FC6C /* UpdateProfileViewController.swift */; };
 		EF7CA2FE22B572B80063FC6C /* FirebaseLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7CA2FD22B572B80063FC6C /* FirebaseLayer.swift */; };
+		EFE673F522C788FB00226299 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFE673F422C788FB00226299 /* Colors.xcassets */; };
 		EFEF0DFB22B2C5D5001B28AC /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFEF0DFA22B2C5D5001B28AC /* Login.storyboard */; };
 		EFEF0DFD22B2C736001B28AC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEF0DFC22B2C736001B28AC /* LoginViewController.swift */; };
 		EFEF0E0022B2CD17001B28AC /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEF0DFF22B2CD17001B28AC /* Common.swift */; };
@@ -70,6 +71,7 @@
 		EF7CA2F922B54AF10063FC6C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EF7CA2FB22B569A00063FC6C /* UpdateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileViewController.swift; sourceTree = "<group>"; };
 		EF7CA2FD22B572B80063FC6C /* FirebaseLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLayer.swift; sourceTree = "<group>"; };
+		EFE673F422C788FB00226299 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		EFEF0DFA22B2C5D5001B28AC /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		EFEF0DFC22B2C736001B28AC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EFEF0DFF22B2CD17001B28AC /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 			children = (
 				EFFFBC3C22C6839D003B1B17 /* thing.entitlements */,
 				303D038E22AE829800ABCE0F /* AppDelegate.swift */,
+				EFE673F422C788FB00226299 /* Colors.xcassets */,
 				303D039522AE829900ABCE0F /* Assets.xcassets */,
 				303D039722AE829900ABCE0F /* LaunchScreen.storyboard */,
 				EF7CA2F922B54AF10063FC6C /* GoogleService-Info.plist */,
@@ -354,6 +357,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFE673F522C788FB00226299 /* Colors.xcassets in Resources */,
 				EFEF0DFB22B2C5D5001B28AC /* Login.storyboard in Resources */,
 				303D039922AE829900ABCE0F /* LaunchScreen.storyboard in Resources */,
 				E9304E4122C75F1D0093929A /* My.storyboard in Resources */,
