@@ -2,18 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "changeBtn.pdf",
-      "resizing" : {
-        "mode" : "3-part-horizontal",
-        "center" : {
-          "mode" : "tile",
-          "width" : 1
-        },
-        "cap-insets" : {
-          "right" : 22,
-          "left" : 21
-        }
-      }
+      "filename" : "changeBtn.pdf"
     }
   ],
   "info" : {

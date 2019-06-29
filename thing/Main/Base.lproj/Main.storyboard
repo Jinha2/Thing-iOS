@@ -48,6 +48,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" name="MainRed"/>
+                        <color key="selectedImageTintColor" name="MainRed"/>
                     </tabBar>
                     <connections>
                         <segue destination="Gq5-fe-zsx" kind="relationship" relationship="viewControllers" id="iUj-6d-DJz"/>
@@ -245,7 +247,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="thU-yM-6fx"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Main" id="mih-w9-Sd7"/>
+                    <tabBarItem key="tabBarItem" title="Main" image="homeIcon" selectedImage="homeSelectBtn" id="mih-w9-Sd7"/>
                     <navigationItem key="navigationItem" id="iai-Xj-5aq"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
@@ -274,6 +276,8 @@
     </scenes>
     <resources>
         <image name="group11" width="44" height="44"/>
+        <image name="homeIcon" width="30" height="28"/>
+        <image name="homeSelectBtn" width="30" height="27"/>
         <image name="profileBtn" width="96" height="96"/>
         <namedColor name="MainRed">
             <color red="0.99599999189376831" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -1,8 +1,8 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
-      "filename" : "mypageIcon.pdf"
+      "filename" : "mypageIcon.pdf",
+      "idiom" : "universal"
     }
   ],
   "info" : {

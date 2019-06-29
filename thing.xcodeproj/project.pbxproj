@@ -19,6 +19,7 @@
 		30696B7422C7D37400DEEA98 /* OneLineReviewTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30696B7322C7D37400DEEA98 /* OneLineReviewTitleTableViewCell.swift */; };
 		30696B7622C7D39C00DEEA98 /* YoutuberPopularVideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30696B7522C7D39C00DEEA98 /* YoutuberPopularVideoCollectionViewCell.swift */; };
 		30696B7822C7D56900DEEA98 /* LikeNumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30696B7722C7D56900DEEA98 /* LikeNumTableViewCell.swift */; };
+		30696B7A22C7DFC900DEEA98 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30696B7922C7DFC900DEEA98 /* Color.xcassets */; };
 		30D729FE22C7ACC80078155D /* EndPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D729FD22C7ACC80078155D /* EndPageViewController.swift */; };
 		30D72A0022C7ACD20078155D /* EndPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30D729FF22C7ACD20078155D /* EndPage.storyboard */; };
 		7FCF33813C297A9F9AAE7EC3 /* Pods_thingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B523A42BEEF8A1FC6C7CC116 /* Pods_thingTests.framework */; };
@@ -37,7 +38,6 @@
 		EF7CA2FE22B572B80063FC6C /* FirebaseLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7CA2FD22B572B80063FC6C /* FirebaseLayer.swift */; };
 		EF99199922C7D3C500380878 /* MyModifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF99199822C7D3C500380878 /* MyModifyViewController.swift */; };
 		EF99199C22C7DA8300380878 /* MySettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF99199B22C7DA8300380878 /* MySettingViewController.swift */; };
-		EFE673F522C788FB00226299 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFE673F422C788FB00226299 /* Colors.xcassets */; };
 		EFE673F822C7AF1200226299 /* MyMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE673F722C7AF1200226299 /* MyMainViewController.swift */; };
 		EFE673FC22C7AF4900226299 /* MyMainCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE673FB22C7AF4900226299 /* MyMainCommentTableViewCell.swift */; };
 		EFEF0DFB22B2C5D5001B28AC /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFEF0DFA22B2C5D5001B28AC /* Login.storyboard */; };
@@ -77,6 +77,7 @@
 		30696B7322C7D37400DEEA98 /* OneLineReviewTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLineReviewTitleTableViewCell.swift; sourceTree = "<group>"; };
 		30696B7522C7D39C00DEEA98 /* YoutuberPopularVideoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutuberPopularVideoCollectionViewCell.swift; sourceTree = "<group>"; };
 		30696B7722C7D56900DEEA98 /* LikeNumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeNumTableViewCell.swift; sourceTree = "<group>"; };
+		30696B7922C7DFC900DEEA98 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		30D729FD22C7ACC80078155D /* EndPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPageViewController.swift; sourceTree = "<group>"; };
 		30D729FF22C7ACD20078155D /* EndPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EndPage.storyboard; sourceTree = "<group>"; };
 		48909AD671EF6791E02CC716 /* Pods-thingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-thingTests.release.xcconfig"; path = "Target Support Files/Pods-thingTests/Pods-thingTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -99,7 +100,6 @@
 		EF7CA2FD22B572B80063FC6C /* FirebaseLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLayer.swift; sourceTree = "<group>"; };
 		EF99199822C7D3C500380878 /* MyModifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyModifyViewController.swift; sourceTree = "<group>"; };
 		EF99199B22C7DA8300380878 /* MySettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySettingViewController.swift; sourceTree = "<group>"; };
-		EFE673F422C788FB00226299 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		EFE673F722C7AF1200226299 /* MyMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMainViewController.swift; sourceTree = "<group>"; };
 		EFE673FB22C7AF4900226299 /* MyMainCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMainCommentTableViewCell.swift; sourceTree = "<group>"; };
 		EFEF0DFA22B2C5D5001B28AC /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -306,11 +306,11 @@
 			children = (
 				EFFFBC3C22C6839D003B1B17 /* thing.entitlements */,
 				303D038E22AE829800ABCE0F /* AppDelegate.swift */,
-				EFE673F422C788FB00226299 /* Colors.xcassets */,
 				303D039522AE829900ABCE0F /* Assets.xcassets */,
 				303D039722AE829900ABCE0F /* LaunchScreen.storyboard */,
 				EF7CA2F922B54AF10063FC6C /* GoogleService-Info.plist */,
 				303D039A22AE829900ABCE0F /* Info.plist */,
+				30696B7922C7DFC900DEEA98 /* Color.xcassets */,
 			);
 			name = "Supports Items";
 			sourceTree = "<group>";
@@ -435,7 +435,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFE673F522C788FB00226299 /* Colors.xcassets in Resources */,
 				30D72A0022C7ACD20078155D /* EndPage.storyboard in Resources */,
 				EFEF0DFB22B2C5D5001B28AC /* Login.storyboard in Resources */,
 				303D039922AE829900ABCE0F /* LaunchScreen.storyboard in Resources */,
@@ -443,6 +442,7 @@
 				EF7CA2FA22B54AF10063FC6C /* GoogleService-Info.plist in Resources */,
 				E9304E3E22C7501F0093929A /* Category.storyboard in Resources */,
 				303D039622AE829900ABCE0F /* Assets.xcassets in Resources */,
+				30696B7A22C7DFC900DEEA98 /* Color.xcassets in Resources */,
 				E9304E3A22C74F400093929A /* Search.storyboard in Resources */,
 				303D039422AE829800ABCE0F /* Main.storyboard in Resources */,
 			);
