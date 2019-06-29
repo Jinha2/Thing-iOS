@@ -16,16 +16,21 @@ class YoutuberPopularVideoTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
 
-        collectionView.delegate = self
-        collectionView.dataSource = self
-
-        setCollectionViewLayout()
+        setCollectionView()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+
+    func setCollectionView() {
+
+        collectionView.delegate = self
+        collectionView.dataSource = self
+
+        setCollectionViewLayout()
     }
 
     func setCollectionViewLayout() {
@@ -43,10 +48,12 @@ extension YoutuberPopularVideoTableViewCell: UICollectionViewDelegate {
 extension YoutuberPopularVideoTableViewCell: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return 6
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return .init()
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "YoutuberPopularVideoCollectionViewCell", for: indexPath) as? YoutuberPopularVideoCollectionViewCell else { return .init() }
+
+        return cell
     }
 }
