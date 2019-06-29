@@ -13,11 +13,16 @@ class RegisterAccountViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmTextField: UITextField!
     @IBOutlet var agreeLinkTextView: UITextView!
+    @IBOutlet var checkButtonAction: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        clickLink()
         hideKeyboardWhenTappedAround()
+
+    }
+    @IBAction func checkButtonAction(_ sender: Any) {
+
     }
 
     @IBAction private func nextButtonAction(_ sender: Any) {
@@ -76,17 +81,24 @@ extension RegisterAccountViewController {
 
     func clickLink() {
         let attributedString = NSMutableAttributedString(string: "회원가입에 따른 이용약관과 개인정보 보호 정책에 동의(필수)")
-        let url = URL(string: "https://www.apple.com")!
+        let url1 = URL(string: "https://www.apple.com")!
+        let url2 = URL(string: "https://www.apple.com")!
 
-        attributedString.setAttributes([.link: url], range: NSRange(location: 8, length: 4))
+        attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(named: "brownGreyThree")!, range: NSRange(location: 0, length: attributedString.length))
+        attributedString.addAttribute(kCTFontAttributeName as NSAttributedString.Key, value: UIFont.boldSystemFont(ofSize: 13), range: NSRange(location: 9, length: 4))
+        attributedString.addAttribute(kCTFontAttributeName as NSAttributedString.Key, value: UIFont.boldSystemFont(ofSize: 13), range: NSRange(location: 15, length: 10))
+
+        attributedString.setAttributes([.link: url1], range: NSRange(location: 9, length: 4))
+        attributedString.setAttributes([.link: url2], range: NSRange(location: 15, length: 10))
 
         self.agreeLinkTextView.attributedText = attributedString
         self.agreeLinkTextView.isUserInteractionEnabled = true
         self.agreeLinkTextView.isEditable = false
 
         self.agreeLinkTextView.linkTextAttributes = [
-            .foregroundColor: UIColor.lightGray,
+            .foregroundColor: UIColor(named: "brownGreyThree")!,
             .underlineStyle: NSUnderlineStyle.single.rawValue
         ]
+
     }
 }

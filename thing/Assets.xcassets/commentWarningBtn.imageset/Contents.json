@@ -2,7 +2,18 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "commentWarningBtn.pdf"
+      "filename" : "commentWarningBtn.pdf",
+      "resizing" : {
+        "mode" : "3-part-horizontal",
+        "center" : {
+          "mode" : "tile",
+          "width" : 1
+        },
+        "cap-insets" : {
+          "right" : 22,
+          "left" : 21
+        }
+      }
     }
   ],
   "info" : {
