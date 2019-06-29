@@ -32,7 +32,7 @@ class LoginViewController: UIViewController {
         showActivityIndicator()
 
         FirebaseLayer.loginUser(email: email, password: password) { [weak self] result in
-            Log(result)
+            Log(result?.user.displayName)
             hideActivityIndicator()
             self?.checkLogin()
         }
@@ -42,11 +42,11 @@ class LoginViewController: UIViewController {
 extension LoginViewController {
     func checkLogin() {
         if FirebaseLayer.isUserSignedIn() {
-//            if FirebaseLayer.getDisplayName() != nil {
-//                showUpdateProfileViewController()
-//            } else {
+            if let displayName = FirebaseLayer.getDisplayName(), displayName != "" {
                 dismiss(animated: true, completion: nil)
-//            }
+            } else {
+                showUpdateProfileViewController()
+            }
         }
     }
 

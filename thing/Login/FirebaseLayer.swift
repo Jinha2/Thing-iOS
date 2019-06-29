@@ -76,11 +76,12 @@ struct FirebaseLayer {
         }
     }
 
-    static func changeUser(displayName: String?) {
+    static func changeUser(displayName: String?, completion: @escaping (() -> Void)) {
         let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
         changeRequest?.displayName = displayName
-        changeRequest?.commitChanges { error in
-            presentErrorAlert(error: error)
+        changeRequest?.commitChanges { data in
+            Log(data)
+            completion()
         }
     }
 
