@@ -17,6 +17,7 @@
 		E9304E3A22C74F400093929A /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9304E3922C74F400093929A /* Search.storyboard */; };
 		E9304E3E22C7501F0093929A /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9304E3D22C7501F0093929A /* Category.storyboard */; };
 		E9304E4122C75F1D0093929A /* My.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9304E4022C75F1D0093929A /* My.storyboard */; };
+		E9304E4422C7898E0093929A /* UnderLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9304E4322C7898E0093929A /* UnderLineTextField.swift */; };
 		E934DEA122B7D15500ED270E /* ThingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E934DEA022B7D15500ED270E /* ThingService.swift */; };
 		E934DEA422B7D25200ED270E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E934DEA322B7D25200ED270E /* UserModel.swift */; };
 		E953A2A822B93947006B4F9C /* ThingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E953A2A722B93947006B4F9C /* ThingProvider.swift */; };
@@ -62,6 +63,7 @@
 		E9304E3922C74F400093929A /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		E9304E3D22C7501F0093929A /* Category.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Category.storyboard; sourceTree = "<group>"; };
 		E9304E4022C75F1D0093929A /* My.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = My.storyboard; sourceTree = "<group>"; };
+		E9304E4322C7898E0093929A /* UnderLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineTextField.swift; sourceTree = "<group>"; };
 		E934DEA022B7D15500ED270E /* ThingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThingService.swift; sourceTree = "<group>"; };
 		E934DEA322B7D25200ED270E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		E953A2A722B93947006B4F9C /* ThingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingProvider.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 		303D038D22AE829800ABCE0F /* thing */ = {
 			isa = PBXGroup;
 			children = (
+				E9304E4222C788C60093929A /* New Group */,
 				E934DEA222B7D22D00ED270E /* Model */,
 				E934DE9F22B7D14400ED270E /* Network */,
 				EFEF0DF922B2C5C7001B28AC /* Main */,
@@ -180,6 +183,14 @@
 				E9304E4022C75F1D0093929A /* My.storyboard */,
 			);
 			path = My;
+			sourceTree = "<group>";
+		};
+		E9304E4222C788C60093929A /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				E9304E4322C7898E0093929A /* UnderLineTextField.swift */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		E934DE9F22B7D14400ED270E /* Network */ = {
@@ -525,6 +536,7 @@
 				EFEF0DFD22B2C736001B28AC /* LoginViewController.swift in Sources */,
 				EFF60BD522B63B53009288AF /* Enums.swift in Sources */,
 				303D039122AE829800ABCE0F /* ViewController.swift in Sources */,
+				E9304E4422C7898E0093929A /* UnderLineTextField.swift in Sources */,
 				E934DEA122B7D15500ED270E /* ThingService.swift in Sources */,
 				EFEF0E0022B2CD17001B28AC /* Common.swift in Sources */,
 				EFEF0E0222B2CEC5001B28AC /* UIView+Extension.swift in Sources */,
