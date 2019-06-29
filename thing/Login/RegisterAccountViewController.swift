@@ -31,6 +31,11 @@ class RegisterAccountViewController: UIViewController {
             Log(result)
         })
     }
+
+    @IBAction func closeButtonAction(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+
 }
 
 extension RegisterAccountViewController {
