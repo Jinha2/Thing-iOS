@@ -22,7 +22,7 @@ class RegisterAccountViewController: UIViewController {
 
     }
     @IBAction func checkButtonAction(_ sender: Any) {
-
+        checkButtonAction.isSelected = checkButtonAction.isSelected ? false : true
     }
 
     @IBAction private func nextButtonAction(_ sender: Any) {
@@ -30,12 +30,15 @@ class RegisterAccountViewController: UIViewController {
 
         showActivityIndicator()
 
-        FirebaseLayer.createUser(email: email, password: password, completion: { [weak self] result in
-            hideActivityIndicator()
-            guard let updateProfileViewController = self?.storyboard?.instantiateViewController(withIdentifier: "UpdateProfileViewController") else { return }
-            self?.navigationController?.pushViewController(updateProfileViewController, animated: true)
-            Log(result)
-        })
+        guard let updateProfileViewController = self.storyboard?.instantiateViewController(withIdentifier: "UpdateProfileViewController") else { return }
+        self.navigationController?.pushViewController(updateProfileViewController, animated: true)
+
+//        FirebaseLayer.createUser(email: email, password: password, completion: { [weak self] result in
+//            hideActivityIndicator()
+//            guard let updateProfileViewController = self?.storyboard?.instantiateViewController(withIdentifier: "UpdateProfileViewController") else { return }
+//            self?.navigationController?.pushViewController(updateProfileViewController, animated: true)
+//            Log(result)
+//        })
     }
 
     @IBAction func closeButtonAction(_ sender: Any) {
