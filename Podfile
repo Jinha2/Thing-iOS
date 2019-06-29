@@ -22,6 +22,8 @@ target 'thing' do
   pod 'Crashlytics', '~> 3.12.0'
   # Firebase Push
   pod 'Firebase/Messaging'
+  
+  pod 'YoutubeKit', :git => 'https://github.com/JeaSungLEE/YoutubeKit.git'
 end
 
 target 'thingTests' do
