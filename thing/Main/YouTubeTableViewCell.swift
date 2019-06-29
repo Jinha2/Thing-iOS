@@ -1,5 +1,5 @@
 //
-//  YouTubeTableViewCell.swift
+//  YoutubeTableViewCell.swift
 //  thing
 //
 //  Created by Jinha Park on 2019/06/30.
@@ -8,17 +8,26 @@
 
 import UIKit
 
-class YouTubeTableViewCell: UITableViewCell {
+class YoutubeTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var thumbnailImageView: UIImageView!
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak var topRankLabel: UILabel!
+    @IBOutlet weak var rankLabel: UILabel!
+
+    private func reset() {
+        thumbnailImageView.image = nil
+        profileImageView.image = nil
+        titleLabel.text = nil
+        countLabel.text = nil
+        topRankLabel.text = nil
+        rankLabel.text = nil
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    func contents(_ model: YoutubeModel) {
+        reset()
 
-        // Configure the view for the selected state
     }
-
 }

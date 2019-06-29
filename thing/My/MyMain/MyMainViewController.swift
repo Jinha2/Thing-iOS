@@ -9,6 +9,28 @@
 import UIKit
 
 class MyMainViewController: UIViewController {
+    var isLikeSelected: Bool = true
+    var lastSelectedButton: UIButton?
+    @IBOutlet weak var tableView: UITableView!
+
+    @IBAction func likeButtonAction(_ sender: UIButton) {
+        isLikeSelected = true
+        sender.isSelected = true
+        if sender != lastSelectedButton {
+            lastSelectedButton?.isSelected = false
+            tableView.reloadData()
+        }
+        lastSelectedButton = sender
+    }
+    @IBAction func dislikeButtonAction(_ sender: UIButton) {
+        isLikeSelected = false
+        sender.isSelected = true
+        if sender != lastSelectedButton {
+            lastSelectedButton?.isSelected = false
+            tableView.reloadData()
+        }
+        lastSelectedButton = sender
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

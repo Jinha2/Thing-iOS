@@ -26,6 +26,21 @@ class SearchViewController: UIViewController {
     private func fetch() {
 
     }
+
+    private func endEditing() {
+        view.endEditing(true)
+
+        cancelButtonWidthConstraint.constant = 0
+        navigationBarHeightConstraint.constant = 99
+
+        UIView.animate(withDuration: 0.3) { [weak self] in
+            self?.view.layoutIfNeeded()
+        }
+    }
+
+    @IBAction func cancelTouchAction(_ sender: Any) {
+        endEditing()
+    }
 }
 
 extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
@@ -55,15 +70,7 @@ extension SearchViewController: UITextFieldDelegate {
     }
 
     func textFieldShouldReturn(_ scoreText: UITextField) -> Bool {
-        view.endEditing(true)
-
-        cancelButtonWidthConstraint.constant = 0
-        navigationBarHeightConstraint.constant = 99
-
-        UIView.animate(withDuration: 0.3) {
-            self.view.layoutIfNeeded()
-        }
-
+        endEditing()
         return false
     }
 }
