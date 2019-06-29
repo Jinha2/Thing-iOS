@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "commentWarningBtn.pdf",
+      "filename" : "signupDefaultCopy.pdf",
       "resizing" : {
         "mode" : "3-part-horizontal",
         "center" : {
@@ -10,8 +10,8 @@
           "width" : 1
         },
         "cap-insets" : {
-          "right" : 22,
-          "left" : 21
+          "right" : 15,
+          "left" : 15
         }
       }
     }
