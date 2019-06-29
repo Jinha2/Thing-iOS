@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        navigationController?.navigationBar.isHidden = true
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -36,5 +38,17 @@ extension ViewController {
         let storyboard = UIStoryboard(name: "Login", bundle: nil)
         let loginViewContoller = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
         present(loginViewContoller, animated: true, completion: nil)
+    }
+}
+
+extension ViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "YouTubeTableViewCell", for: indexPath) as! YouTubeTableViewCell
+
+        return cell
     }
 }
