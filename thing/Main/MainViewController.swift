@@ -1,14 +1,14 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  thing
 //
-//  Created by 이호찬 on 10/06/2019.
+//  Created by Jinha Park on 2019/06/30.
 //  Copyright © 2019 mashup. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController {
+extension MainViewController {
     func checkLogin() {
         if !FirebaseLayer.isUserSignedIn() {
             showLoginView()
@@ -41,13 +41,13 @@ extension ViewController {
     }
 }
 
-extension ViewController: UITableViewDataSource, UITableViewDelegate {
+extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "YouTubeTableViewCell", for: indexPath) as! YouTubeTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "YouTubeTableViewCell", for: indexPath) as! YoutubeTableViewCell
 
         return cell
     }
