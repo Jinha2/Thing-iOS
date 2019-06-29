@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14810.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="I7X-Io-pWa">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="I7X-Io-pWa">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14766.15"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -33,7 +34,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTL-bJ-IZ4">
-                                                <rect key="frame" x="39" y="290.5" width="336" height="40"/>
+                                                <rect key="frame" x="39" y="291.5" width="336" height="40"/>
                                                 <color key="backgroundColor" name="MainRed"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="u74-ub-XS8"/>
@@ -52,7 +53,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HbM-en-lj0">
-                                                <rect key="frame" x="39" y="410.5" width="336" height="40"/>
+                                                <rect key="frame" x="39" y="411.5" width="336" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="Da7-w1-12J"/>
                                                 </constraints>
@@ -91,7 +92,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DdH-uZ-Fb5">
-                                                <rect key="frame" x="146" y="244" width="122" height="26.5"/>
+                                                <rect key="frame" x="145.5" y="244" width="123" height="27.5"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle">
                                                         <fragment content="비밀번호를">
@@ -126,7 +127,7 @@
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JS4-27-dDU">
-                                                <rect key="frame" x="39" y="362.5" width="336" height="40"/>
+                                                <rect key="frame" x="39" y="363.5" width="336" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="u3D-xe-DQC"/>
                                                 </constraints>
@@ -431,12 +432,16 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="YjM-6V-lTx"/>
                                         </constraints>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="선택 안하기" backgroundImage="genderOption03Default">
                                             <color key="titleColor" name="veryLightPink"/>
                                         </state>
                                         <state key="selected" backgroundImage="genderOption03Selected">
                                             <color key="titleColor" name="veryLightPink"/>
                                         </state>
+                                        <connections>
+                                            <action selector="noneButtonAction:" destination="3Tc-8b-7y9" eventType="touchUpInside" id="8aB-mr-hH3"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJU-VN-Ag1">
                                         <rect key="frame" x="0.0" y="0.0" width="112" height="40"/>
@@ -450,18 +455,25 @@
                                         <state key="selected" backgroundImage="genderOption01Selected">
                                             <color key="titleColor" name="veryLightPink"/>
                                         </state>
+                                        <connections>
+                                            <action selector="manButtonAction:" destination="3Tc-8b-7y9" eventType="touchUpInside" id="4Ar-cY-41e"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWf-cM-QyK">
                                         <rect key="frame" x="120" y="0.0" width="112" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="3Vu-Lh-Bnz"/>
                                         </constraints>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="여자" backgroundImage="genderOption02Default">
                                             <color key="titleColor" name="veryLightPink"/>
                                         </state>
                                         <state key="selected" backgroundImage="genderOption02Selected">
                                             <color key="titleColor" name="veryLightPink"/>
                                         </state>
+                                        <connections>
+                                            <action selector="womanButtonAction:" destination="3Tc-8b-7y9" eventType="touchUpInside" id="TmJ-B2-86v"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
