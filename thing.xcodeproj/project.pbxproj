@@ -20,12 +20,15 @@
 		E9304E4422C7898E0093929A /* UnderLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9304E4322C7898E0093929A /* UnderLineTextField.swift */; };
 		E9304E4622C79A630093929A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9304E4522C79A620093929A /* SearchViewController.swift */; };
 		E9304E4822C7A28A0093929A /* SearchWordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9304E4722C7A2890093929A /* SearchWordTableViewCell.swift */; };
+		E9304E4A22C7D0B50093929A /* YouTubeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9304E4922C7D0B40093929A /* YouTubeTableViewCell.swift */; };
 		E934DEA122B7D15500ED270E /* ThingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E934DEA022B7D15500ED270E /* ThingService.swift */; };
 		E934DEA422B7D25200ED270E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E934DEA322B7D25200ED270E /* UserModel.swift */; };
 		E953A2A822B93947006B4F9C /* ThingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E953A2A722B93947006B4F9C /* ThingProvider.swift */; };
 		EF7CA2FA22B54AF10063FC6C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF7CA2F922B54AF10063FC6C /* GoogleService-Info.plist */; };
 		EF7CA2FC22B569A00063FC6C /* UpdateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7CA2FB22B569A00063FC6C /* UpdateProfileViewController.swift */; };
 		EF7CA2FE22B572B80063FC6C /* FirebaseLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7CA2FD22B572B80063FC6C /* FirebaseLayer.swift */; };
+		EF99199922C7D3C500380878 /* MyModifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF99199822C7D3C500380878 /* MyModifyViewController.swift */; };
+		EF99199C22C7DA8300380878 /* MySettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF99199B22C7DA8300380878 /* MySettingViewController.swift */; };
 		EFE673F522C788FB00226299 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFE673F422C788FB00226299 /* Colors.xcassets */; };
 		EFE673F822C7AF1200226299 /* MyMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE673F722C7AF1200226299 /* MyMainViewController.swift */; };
 		EFE673FC22C7AF4900226299 /* MyMainCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE673FB22C7AF4900226299 /* MyMainCommentTableViewCell.swift */; };
@@ -71,12 +74,15 @@
 		E9304E4322C7898E0093929A /* UnderLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineTextField.swift; sourceTree = "<group>"; };
 		E9304E4522C79A620093929A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		E9304E4722C7A2890093929A /* SearchWordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordTableViewCell.swift; sourceTree = "<group>"; };
+		E9304E4922C7D0B40093929A /* YouTubeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeTableViewCell.swift; sourceTree = "<group>"; };
 		E934DEA022B7D15500ED270E /* ThingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThingService.swift; sourceTree = "<group>"; };
 		E934DEA322B7D25200ED270E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		E953A2A722B93947006B4F9C /* ThingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingProvider.swift; sourceTree = "<group>"; };
 		EF7CA2F922B54AF10063FC6C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EF7CA2FB22B569A00063FC6C /* UpdateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileViewController.swift; sourceTree = "<group>"; };
 		EF7CA2FD22B572B80063FC6C /* FirebaseLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLayer.swift; sourceTree = "<group>"; };
+		EF99199822C7D3C500380878 /* MyModifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyModifyViewController.swift; sourceTree = "<group>"; };
+		EF99199B22C7DA8300380878 /* MySettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySettingViewController.swift; sourceTree = "<group>"; };
 		EFE673F422C788FB00226299 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		EFE673F722C7AF1200226299 /* MyMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMainViewController.swift; sourceTree = "<group>"; };
 		EFE673FB22C7AF4900226299 /* MyMainCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMainCommentTableViewCell.swift; sourceTree = "<group>"; };
@@ -192,6 +198,8 @@
 		E9304E3F22C75F000093929A /* My */ = {
 			isa = PBXGroup;
 			children = (
+				EF99199A22C7DA7300380878 /* MySetting */,
+				EF99199722C7D3AD00380878 /* MyModify */,
 				EFE673F622C7AF0400226299 /* MyMain */,
 				E9304E4022C75F1D0093929A /* My.storyboard */,
 			);
@@ -221,6 +229,22 @@
 				E934DEA322B7D25200ED270E /* UserModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		EF99199722C7D3AD00380878 /* MyModify */ = {
+			isa = PBXGroup;
+			children = (
+				EF99199822C7D3C500380878 /* MyModifyViewController.swift */,
+			);
+			path = MyModify;
+			sourceTree = "<group>";
+		};
+		EF99199A22C7DA7300380878 /* MySetting */ = {
+			isa = PBXGroup;
+			children = (
+				EF99199B22C7DA8300380878 /* MySettingViewController.swift */,
+			);
+			path = MySetting;
 			sourceTree = "<group>";
 		};
 		EFE673F622C7AF0400226299 /* MyMain */ = {
@@ -263,6 +287,7 @@
 			children = (
 				303D039222AE829800ABCE0F /* Main.storyboard */,
 				303D039022AE829800ABCE0F /* ViewController.swift */,
+				E9304E4922C7D0B40093929A /* YouTubeTableViewCell.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -562,7 +587,9 @@
 				EFF60BD522B63B53009288AF /* Enums.swift in Sources */,
 				303D039122AE829800ABCE0F /* ViewController.swift in Sources */,
 				E9304E4422C7898E0093929A /* UnderLineTextField.swift in Sources */,
+				EF99199922C7D3C500380878 /* MyModifyViewController.swift in Sources */,
 				E934DEA122B7D15500ED270E /* ThingService.swift in Sources */,
+				E9304E4A22C7D0B50093929A /* YouTubeTableViewCell.swift in Sources */,
 				EFE673FC22C7AF4900226299 /* MyMainCommentTableViewCell.swift in Sources */,
 				EFEF0E0022B2CD17001B28AC /* Common.swift in Sources */,
 				EFEF0E0222B2CEC5001B28AC /* UIView+Extension.swift in Sources */,
@@ -574,6 +601,7 @@
 				E9304E4822C7A28A0093929A /* SearchWordTableViewCell.swift in Sources */,
 				E934DEA422B7D25200ED270E /* UserModel.swift in Sources */,
 				EFEF0E1522B2D26F001B28AC /* RegisterAccountViewController.swift in Sources */,
+				EF99199C22C7DA8300380878 /* MySettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
