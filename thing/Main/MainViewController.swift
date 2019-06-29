@@ -39,6 +39,15 @@ extension MainViewController {
         let loginViewContoller = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
         present(loginViewContoller, animated: true, completion: nil)
     }
+
+    func showSortAlert() {
+        let alert = UIAlertController(title: "정렬 방식", message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "구독자순", style: .default, handler: { _ in }))
+        alert.addAction(UIAlertAction(title: "급상승순", style: .default, handler: { _ in }))
+        alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: { _ in }))
+
+        present(alert, animated: true)
+    }
 }
 
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
