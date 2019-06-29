@@ -13,6 +13,8 @@
 		303D039422AE829800ABCE0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 303D039222AE829800ABCE0F /* Main.storyboard */; };
 		303D039622AE829900ABCE0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 303D039522AE829900ABCE0F /* Assets.xcassets */; };
 		303D039922AE829900ABCE0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 303D039722AE829900ABCE0F /* LaunchScreen.storyboard */; };
+		30B1627F22C75B3E00F918FA /* YoutubePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B1627E22C75B3E00F918FA /* YoutubePlayerViewController.swift */; };
+		30D9CC5622C7682600CA01A0 /* YoutubePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9CC5522C7682600CA01A0 /* YoutubePlayerView.swift */; };
 		7FCF33813C297A9F9AAE7EC3 /* Pods_thingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B523A42BEEF8A1FC6C7CC116 /* Pods_thingTests.framework */; };
 		E9304E3A22C74F400093929A /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9304E3922C74F400093929A /* Search.storyboard */; };
 		E9304E3E22C7501F0093929A /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9304E3D22C7501F0093929A /* Category.storyboard */; };
@@ -54,6 +56,8 @@
 		303D039522AE829900ABCE0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		303D039822AE829900ABCE0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		303D039A22AE829900ABCE0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30B1627E22C75B3E00F918FA /* YoutubePlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubePlayerViewController.swift; sourceTree = "<group>"; };
+		30D9CC5522C7682600CA01A0 /* YoutubePlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubePlayerView.swift; sourceTree = "<group>"; };
 		48909AD671EF6791E02CC716 /* Pods-thingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-thingTests.release.xcconfig"; path = "Target Support Files/Pods-thingTests/Pods-thingTests.release.xcconfig"; sourceTree = "<group>"; };
 		AB4437E4F3494E112572C06D /* Pods_thing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_thing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B523A42BEEF8A1FC6C7CC116 /* Pods_thingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_thingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +129,7 @@
 		303D038D22AE829800ABCE0F /* thing */ = {
 			isa = PBXGroup;
 			children = (
+				30B1627D22C759D600F918FA /* youtube */,
 				E934DEA222B7D22D00ED270E /* Model */,
 				E934DE9F22B7D14400ED270E /* Network */,
 				EFEF0DF922B2C5C7001B28AC /* Main */,
@@ -136,6 +141,15 @@
 				EFEF0DF822B2C5B0001B28AC /* Supports Items */,
 			);
 			path = thing;
+			sourceTree = "<group>";
+		};
+		30B1627D22C759D600F918FA /* youtube */ = {
+			isa = PBXGroup;
+			children = (
+				30B1627E22C75B3E00F918FA /* YoutubePlayerViewController.swift */,
+				30D9CC5522C7682600CA01A0 /* YoutubePlayerView.swift */,
+			);
+			path = youtube;
 			sourceTree = "<group>";
 		};
 		4B0873061A25D0DA25B1204A /* Frameworks */ = {
@@ -522,12 +536,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFF60BD322B62A2D009288AF /* UIViewController+Extension.swift in Sources */,
+				30D9CC5622C7682600CA01A0 /* YoutubePlayerView.swift in Sources */,
 				EFEF0DFD22B2C736001B28AC /* LoginViewController.swift in Sources */,
 				EFF60BD522B63B53009288AF /* Enums.swift in Sources */,
 				303D039122AE829800ABCE0F /* ViewController.swift in Sources */,
 				E934DEA122B7D15500ED270E /* ThingService.swift in Sources */,
 				EFEF0E0022B2CD17001B28AC /* Common.swift in Sources */,
 				EFEF0E0222B2CEC5001B28AC /* UIView+Extension.swift in Sources */,
+				30B1627F22C75B3E00F918FA /* YoutubePlayerViewController.swift in Sources */,
 				E953A2A822B93947006B4F9C /* ThingProvider.swift in Sources */,
 				EF7CA2FE22B572B80063FC6C /* FirebaseLayer.swift in Sources */,
 				EF7CA2FC22B569A00063FC6C /* UpdateProfileViewController.swift in Sources */,

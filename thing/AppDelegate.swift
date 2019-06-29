@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import YoutubeKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Google Login
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
+
+        YoutubeKit.shared.setAPIKey("AIzaSyA1wnMANvmhftP1AG_0-3S4pgmS2zy8L08")
 
         return true
     }
