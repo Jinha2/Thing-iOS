@@ -31,7 +31,7 @@ extension UnderLineTextField {
     func commonInit() {
         let underLine = CALayer()
 
-        underLine.backgroundColor = UIColor.lightGray.cgColor
+        underLine.backgroundColor = UIColor(named: "veryLightPink")?.cgColor
         underLine.frame = CGRect(x: 0, y: frame.size.height - 1, width: frame.size.width, height: 1)
 
         borderStyle = .none
