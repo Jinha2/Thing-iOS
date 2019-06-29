@@ -48,13 +48,16 @@ var activityIndicator: NVActivityIndicatorView?
 
 extension UIViewController {
     func showActivityIndicator() {
-        let width: CGFloat = 40
-        let height: CGFloat = 40
+        let width: CGFloat = 50
+        let height: CGFloat = 50
         let x: CGFloat = (UIScreen.main.bounds.maxX - width) / 2
         let y: CGFloat = (UIScreen.main.bounds.maxY - height) / 2
         let frame = CGRect(x: x, y: y, width: width, height: height)
-        let activityIndicatorView = NVActivityIndicatorView(frame: frame, type: NVActivityIndicatorType.allCases.randomElement(), color: .black, padding: 0)
+        let activityIndicatorView = NVActivityIndicatorView(frame: frame, type: NVActivityIndicatorType.allCases.randomElement(), color: .white, padding: 8)
         activityIndicator = activityIndicatorView
+        activityIndicatorView.backgroundColor = UIColor(named: "brownGrey")
+        activityIndicatorView.alpha = 0.8
+        activityIndicatorView.cornerRadius = 5
         view.addSubview(activityIndicatorView)
 
         activityIndicatorView.startAnimating()

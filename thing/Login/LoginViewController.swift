@@ -12,7 +12,7 @@ import GoogleSignIn
 class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var googleSignInButton: GIDSignInButton!
+    @IBOutlet weak var googleSignInButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +25,10 @@ class LoginViewController: UIViewController {
         super.viewDidAppear(animated)
 
         checkLogin()
+    }
+
+    @IBAction func googleSignInButtonAction(_ sender: UIButton) {
+        GIDSignIn.sharedInstance()?.signIn()
     }
 
     @IBAction private func loginButtonAction(_ sender: Any) {
