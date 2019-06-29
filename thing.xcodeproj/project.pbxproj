@@ -39,6 +39,7 @@
 		EF7CA2FE22B572B80063FC6C /* FirebaseLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7CA2FD22B572B80063FC6C /* FirebaseLayer.swift */; };
 		EF99199922C7D3C500380878 /* MyModifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF99199822C7D3C500380878 /* MyModifyViewController.swift */; };
 		EF99199C22C7DA8300380878 /* MySettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF99199B22C7DA8300380878 /* MySettingViewController.swift */; };
+		EF99199E22C7E32400380878 /* HiddenNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF99199D22C7E32400380878 /* HiddenNavigationViewController.swift */; };
 		EFE673F822C7AF1200226299 /* MyMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE673F722C7AF1200226299 /* MyMainViewController.swift */; };
 		EFE673FC22C7AF4900226299 /* MyMainCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE673FB22C7AF4900226299 /* MyMainCommentTableViewCell.swift */; };
 		EFEF0DFB22B2C5D5001B28AC /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFEF0DFA22B2C5D5001B28AC /* Login.storyboard */; };
@@ -102,6 +103,7 @@
 		EF7CA2FD22B572B80063FC6C /* FirebaseLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLayer.swift; sourceTree = "<group>"; };
 		EF99199822C7D3C500380878 /* MyModifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyModifyViewController.swift; sourceTree = "<group>"; };
 		EF99199B22C7DA8300380878 /* MySettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySettingViewController.swift; sourceTree = "<group>"; };
+		EF99199D22C7E32400380878 /* HiddenNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenNavigationViewController.swift; sourceTree = "<group>"; };
 		EFE673F722C7AF1200226299 /* MyMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMainViewController.swift; sourceTree = "<group>"; };
 		EFE673FB22C7AF4900226299 /* MyMainCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMainCommentTableViewCell.swift; sourceTree = "<group>"; };
 		EFEF0DFA22B2C5D5001B28AC /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -335,6 +337,7 @@
 				EFF60BD222B62A2D009288AF /* UIViewController+Extension.swift */,
 				EFEF0DFF22B2CD17001B28AC /* Common.swift */,
 				EFF60BD422B63B53009288AF /* Enums.swift */,
+				EF99199D22C7E32400380878 /* HiddenNavigationViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -620,6 +623,7 @@
 			files = (
 				E9304E4622C79A630093929A /* SearchViewController.swift in Sources */,
 				EFF60BD322B62A2D009288AF /* UIViewController+Extension.swift in Sources */,
+				EF99199E22C7E32400380878 /* HiddenNavigationViewController.swift in Sources */,
 				EFEF0DFD22B2C736001B28AC /* LoginViewController.swift in Sources */,
 				E909BC9922C7E8F00033D810 /* YoutubeModel.swift in Sources */,
 				EFF60BD522B63B53009288AF /* Enums.swift in Sources */,
