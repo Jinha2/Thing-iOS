@@ -13,6 +13,14 @@
 		303D039422AE829800ABCE0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 303D039222AE829800ABCE0F /* Main.storyboard */; };
 		303D039622AE829900ABCE0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 303D039522AE829900ABCE0F /* Assets.xcassets */; };
 		303D039922AE829900ABCE0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 303D039722AE829900ABCE0F /* LaunchScreen.storyboard */; };
+		30696B6E22C7D28800DEEA98 /* YoutuberInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30696B6D22C7D28800DEEA98 /* YoutuberInfoTableViewCell.swift */; };
+		30696B7022C7D29B00DEEA98 /* YoutuberDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30696B6F22C7D29B00DEEA98 /* YoutuberDescriptionTableViewCell.swift */; };
+		30696B7222C7D2F500DEEA98 /* YoutuberPopularVideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30696B7122C7D2F500DEEA98 /* YoutuberPopularVideoTableViewCell.swift */; };
+		30696B7422C7D37400DEEA98 /* OneLineReviewTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30696B7322C7D37400DEEA98 /* OneLineReviewTitleTableViewCell.swift */; };
+		30696B7622C7D39C00DEEA98 /* YoutuberPopularVideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30696B7522C7D39C00DEEA98 /* YoutuberPopularVideoCollectionViewCell.swift */; };
+		30696B7822C7D56900DEEA98 /* LikeNumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30696B7722C7D56900DEEA98 /* LikeNumTableViewCell.swift */; };
+		30D729FE22C7ACC80078155D /* EndPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D729FD22C7ACC80078155D /* EndPageViewController.swift */; };
+		30D72A0022C7ACD20078155D /* EndPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30D729FF22C7ACD20078155D /* EndPage.storyboard */; };
 		7FCF33813C297A9F9AAE7EC3 /* Pods_thingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B523A42BEEF8A1FC6C7CC116 /* Pods_thingTests.framework */; };
 		E9304E3A22C74F400093929A /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9304E3922C74F400093929A /* Search.storyboard */; };
 		E9304E3E22C7501F0093929A /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9304E3D22C7501F0093929A /* Category.storyboard */; };
@@ -60,6 +68,14 @@
 		303D039522AE829900ABCE0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		303D039822AE829900ABCE0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		303D039A22AE829900ABCE0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30696B6D22C7D28800DEEA98 /* YoutuberInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutuberInfoTableViewCell.swift; sourceTree = "<group>"; };
+		30696B6F22C7D29B00DEEA98 /* YoutuberDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutuberDescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		30696B7122C7D2F500DEEA98 /* YoutuberPopularVideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutuberPopularVideoTableViewCell.swift; sourceTree = "<group>"; };
+		30696B7322C7D37400DEEA98 /* OneLineReviewTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLineReviewTitleTableViewCell.swift; sourceTree = "<group>"; };
+		30696B7522C7D39C00DEEA98 /* YoutuberPopularVideoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutuberPopularVideoCollectionViewCell.swift; sourceTree = "<group>"; };
+		30696B7722C7D56900DEEA98 /* LikeNumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeNumTableViewCell.swift; sourceTree = "<group>"; };
+		30D729FD22C7ACC80078155D /* EndPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPageViewController.swift; sourceTree = "<group>"; };
+		30D729FF22C7ACD20078155D /* EndPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EndPage.storyboard; sourceTree = "<group>"; };
 		48909AD671EF6791E02CC716 /* Pods-thingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-thingTests.release.xcconfig"; path = "Target Support Files/Pods-thingTests/Pods-thingTests.release.xcconfig"; sourceTree = "<group>"; };
 		AB4437E4F3494E112572C06D /* Pods_thing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_thing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B523A42BEEF8A1FC6C7CC116 /* Pods_thingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_thingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				E9304E4222C788C60093929A /* New Group */,
+				30D729FC22C7ACA50078155D /* End Page */,
 				E934DEA222B7D22D00ED270E /* Model */,
 				E934DE9F22B7D14400ED270E /* Network */,
 				EFEF0DF922B2C5C7001B28AC /* Main */,
@@ -149,6 +166,22 @@
 				EFEF0DF822B2C5B0001B28AC /* Supports Items */,
 			);
 			path = thing;
+			sourceTree = "<group>";
+		};
+		30D729FC22C7ACA50078155D /* End Page */ = {
+			isa = PBXGroup;
+			children = (
+				30D729FD22C7ACC80078155D /* EndPageViewController.swift */,
+				30D729FF22C7ACD20078155D /* EndPage.storyboard */,
+				30696B7722C7D56900DEEA98 /* LikeNumTableViewCell.swift */,
+				30696B6D22C7D28800DEEA98 /* YoutuberInfoTableViewCell.swift */,
+				30696B6F22C7D29B00DEEA98 /* YoutuberDescriptionTableViewCell.swift */,
+				30696B7522C7D39C00DEEA98 /* YoutuberPopularVideoCollectionViewCell.swift */,
+				30696B7122C7D2F500DEEA98 /* YoutuberPopularVideoTableViewCell.swift */,
+				30696B7322C7D37400DEEA98 /* OneLineReviewTitleTableViewCell.swift */,
+			);
+			name = "End Page";
+			path = "New Group/End Page";
 			sourceTree = "<group>";
 		};
 		4B0873061A25D0DA25B1204A /* Frameworks */ = {
@@ -378,6 +411,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFE673F522C788FB00226299 /* Colors.xcassets in Resources */,
+				30D72A0022C7ACD20078155D /* EndPage.storyboard in Resources */,
 				EFEF0DFB22B2C5D5001B28AC /* Login.storyboard in Resources */,
 				303D039922AE829900ABCE0F /* LaunchScreen.storyboard in Resources */,
 				E9304E4122C75F1D0093929A /* My.storyboard in Resources */,
@@ -561,6 +595,8 @@
 				EFEF0DFD22B2C736001B28AC /* LoginViewController.swift in Sources */,
 				EFF60BD522B63B53009288AF /* Enums.swift in Sources */,
 				303D039122AE829800ABCE0F /* ViewController.swift in Sources */,
+				30696B7022C7D29B00DEEA98 /* YoutuberDescriptionTableViewCell.swift in Sources */,
+				30D729FE22C7ACC80078155D /* EndPageViewController.swift in Sources */,
 				E9304E4422C7898E0093929A /* UnderLineTextField.swift in Sources */,
 				E934DEA122B7D15500ED270E /* ThingService.swift in Sources */,
 				EFE673FC22C7AF4900226299 /* MyMainCommentTableViewCell.swift in Sources */,
@@ -569,11 +605,16 @@
 				E953A2A822B93947006B4F9C /* ThingProvider.swift in Sources */,
 				EF7CA2FE22B572B80063FC6C /* FirebaseLayer.swift in Sources */,
 				EFE673F822C7AF1200226299 /* MyMainViewController.swift in Sources */,
+				30696B7622C7D39C00DEEA98 /* YoutuberPopularVideoCollectionViewCell.swift in Sources */,
+				30696B7822C7D56900DEEA98 /* LikeNumTableViewCell.swift in Sources */,
 				EF7CA2FC22B569A00063FC6C /* UpdateProfileViewController.swift in Sources */,
 				303D038F22AE829800ABCE0F /* AppDelegate.swift in Sources */,
+				30696B6E22C7D28800DEEA98 /* YoutuberInfoTableViewCell.swift in Sources */,
 				E9304E4822C7A28A0093929A /* SearchWordTableViewCell.swift in Sources */,
 				E934DEA422B7D25200ED270E /* UserModel.swift in Sources */,
+				30696B7222C7D2F500DEEA98 /* YoutuberPopularVideoTableViewCell.swift in Sources */,
 				EFEF0E1522B2D26F001B28AC /* RegisterAccountViewController.swift in Sources */,
+				30696B7422C7D37400DEEA98 /* OneLineReviewTitleTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
