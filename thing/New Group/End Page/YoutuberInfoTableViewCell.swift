@@ -28,13 +28,7 @@ class YoutuberInfoTableViewCell: UITableViewCell {
     }
 
     private func roundCorners() {
-        let corners: UIRectCorner = [.topLeft, .topRight]
-        let radius: CGFloat = 20
-
-        let path = UIBezierPath(roundedRect: contentView.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-        let mask = CAShapeLayer()
-        mask.path = path.cgPath
-        layer.mask = mask
+        cornerRadius = 20
+        layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
-
 }
