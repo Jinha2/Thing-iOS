@@ -129,7 +129,7 @@
                                                     <constraint firstAttribute="height" constant="40" id="u3D-xe-DQC"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                <state key="normal" title="Google 으로  로그인하기">
+                                                <state key="normal" title="Google로  로그인하기">
                                                     <color key="titleColor" name="greyishBrown"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
