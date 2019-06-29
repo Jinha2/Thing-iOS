@@ -14,7 +14,7 @@ enum ThingService {
 }
 
 extension ThingService: TargetType {
-	var baseURL: URL { return URL(string: "http://13.124.57.224/")! }
+	var baseURL: URL { return URL(string: "http://13.124.57.224")! }
 
 	var path: String {
         switch self {

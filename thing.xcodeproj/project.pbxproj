@@ -119,7 +119,6 @@
 		303D038D22AE829800ABCE0F /* thing */ = {
 			isa = PBXGroup;
 			children = (
-				EFFFBC3C22C6839D003B1B17 /* thing.entitlements */,
 				E934DEA222B7D22D00ED270E /* Model */,
 				E934DE9F22B7D14400ED270E /* Network */,
 				EFEF0DF922B2C5C7001B28AC /* Main */,
@@ -182,6 +181,7 @@
 		EFEF0DF822B2C5B0001B28AC /* Supports Items */ = {
 			isa = PBXGroup;
 			children = (
+				EFFFBC3C22C6839D003B1B17 /* thing.entitlements */,
 				303D038E22AE829800ABCE0F /* AppDelegate.swift */,
 				303D039522AE829900ABCE0F /* Assets.xcassets */,
 				303D039722AE829900ABCE0F /* LaunchScreen.storyboard */,
