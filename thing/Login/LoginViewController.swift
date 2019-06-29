@@ -41,6 +41,7 @@ class LoginViewController: UIViewController {
             self?.checkLogin()
         }
     }
+
 }
 
 extension LoginViewController {
