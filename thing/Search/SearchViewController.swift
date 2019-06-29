@@ -10,8 +10,20 @@ import UIKit
 
 class SearchViewController: UIViewController {
 
+    var searchWord: [String]?
+
+    @IBOutlet weak var removeButton: UIButton!
+    @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var cancelButtonWidthConstraint: NSLayoutConstraint!
+
+    @IBOutlet weak var navigationBarHeightConstraint: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        fetch()
+    }
+
+    private func fetch() {
 
     }
 }
@@ -27,5 +39,31 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
         cell.titleLabel.text = "하이"
 
         return cell
+    }
+}
+
+extension SearchViewController: UITextFieldDelegate {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        cancelButtonWidthConstraint.constant = 43
+        navigationBarHeightConstraint.constant = 44
+
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+
+        return true
+    }
+
+    func textFieldShouldReturn(_ scoreText: UITextField) -> Bool {
+        view.endEditing(true)
+
+        cancelButtonWidthConstraint.constant = 0
+        navigationBarHeightConstraint.constant = 99
+
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+
+        return false
     }
 }

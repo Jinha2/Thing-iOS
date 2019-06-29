@@ -31,9 +31,9 @@
                                         <rect key="frame" x="0.0" y="55" width="414" height="44"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meC-D2-TXh">
-                                                <rect key="frame" x="356" y="7" width="43" height="30"/>
+                                                <rect key="frame" x="399" y="7" width="0.0" height="30"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="43" id="rTd-bv-IbT"/>
+                                                    <constraint firstAttribute="width" id="rTd-bv-IbT"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                 <state key="normal" title="취소">
@@ -41,13 +41,16 @@
                                                 </state>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="유튜버 이름을 검색하세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Y3-Cn-3NZ">
-                                                <rect key="frame" x="15" y="4" width="341" height="36"/>
+                                                <rect key="frame" x="15" y="4" width="384" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="2RR-UY-pBr"/>
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="ByE-GP-fDK" id="8Of-n1-fwi"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -146,6 +149,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" id="l0z-aI-1WB"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="cancelButtonWidthConstraint" destination="rTd-bv-IbT" id="m8l-69-27Q"/>
+                        <outlet property="navigationBarHeightConstraint" destination="lG1-Gj-phN" id="0Qn-Yo-xGn"/>
+                        <outlet property="removeButton" destination="d3i-HV-Lki" id="7DI-bw-kua"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hml-GR-bJ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
