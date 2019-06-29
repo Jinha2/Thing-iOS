@@ -12,11 +12,10 @@ class CategoryCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var selectedLineView: UIView!
-    
+
     private func reset() {
         self.titleLabel.text = nil
         self.selectedLineView.isHidden = true
     }
-    
-    
+
 }
