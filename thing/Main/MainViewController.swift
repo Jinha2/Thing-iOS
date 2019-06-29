@@ -21,9 +21,8 @@ class MainViewController: UIViewController {
         checkLogin()
     }
 
-    @IBAction private func signOut(_ sender: Any) {
-        FirebaseLayer.signOut()
-        checkLogin()
+    @IBAction private func filterButtonAction(_ sender: Any) {
+        showSortAlert()
     }
 }
 

@@ -9,6 +9,8 @@
 import UIKit
 
 class CategoryViewController: UIViewController {
+
+    @IBOutlet weak var youtubeRankTableView: UITableView!
     @IBOutlet weak var categoryCollectionView: UICollectionView!
 
     let category = ["일상", "오버워치", "엔터테이먼트", "ASMR", "뷰티", "졸료요", "P곤!"]
@@ -33,6 +35,21 @@ class CategoryViewController: UIViewController {
         categoryCollectionView.collectionViewLayout.invalidateLayout()
     }
 
+    @IBAction private func filterButtonAction(_ sender: Any) {
+
+        showSortAlert()
+    }
+}
+
+extension CategoryViewController {
+    func showSortAlert() {
+        let alert = UIAlertController(title: "정렬 방식", message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "구독자순", style: .default, handler: { _ in }))
+        alert.addAction(UIAlertAction(title: "급상승순", style: .default, handler: { _ in }))
+        alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: { _ in }))
+
+        present(alert, animated: true)
+    }
 }
 
 extension CategoryViewController: UITableViewDataSource, UITableViewDelegate {
@@ -55,6 +72,7 @@ extension CategoryViewController: UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as! CategoryCollectionViewCell
 
+        cell.selectedLineView.isHidden = true
         cell.titleLabel.text = category[indexPath.row]
 
         return cell
@@ -62,5 +80,11 @@ extension CategoryViewController: UICollectionViewDataSource, UICollectionViewDe
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as! CategoryCollectionViewCell
+
+        cell.selectedLineView.isHidden = false
+
+        collectionView.reloadData()
+//        youtubeRankTableView.reloadData()
     }
 }
