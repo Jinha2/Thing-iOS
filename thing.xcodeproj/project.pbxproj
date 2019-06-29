@@ -21,12 +21,16 @@
 		E9304E3A22C74F400093929A /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9304E3922C74F400093929A /* Search.storyboard */; };
 		E9304E3E22C7501F0093929A /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9304E3D22C7501F0093929A /* Category.storyboard */; };
 		E9304E4122C75F1D0093929A /* My.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9304E4022C75F1D0093929A /* My.storyboard */; };
+		E9304E4422C7898E0093929A /* UnderLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9304E4322C7898E0093929A /* UnderLineTextField.swift */; };
+		E9304E4622C79A630093929A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9304E4522C79A620093929A /* SearchViewController.swift */; };
+		E9304E4822C7A28A0093929A /* SearchWordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9304E4722C7A2890093929A /* SearchWordTableViewCell.swift */; };
 		E934DEA122B7D15500ED270E /* ThingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E934DEA022B7D15500ED270E /* ThingService.swift */; };
 		E934DEA422B7D25200ED270E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E934DEA322B7D25200ED270E /* UserModel.swift */; };
 		E953A2A822B93947006B4F9C /* ThingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E953A2A722B93947006B4F9C /* ThingProvider.swift */; };
 		EF7CA2FA22B54AF10063FC6C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF7CA2F922B54AF10063FC6C /* GoogleService-Info.plist */; };
 		EF7CA2FC22B569A00063FC6C /* UpdateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7CA2FB22B569A00063FC6C /* UpdateProfileViewController.swift */; };
 		EF7CA2FE22B572B80063FC6C /* FirebaseLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7CA2FD22B572B80063FC6C /* FirebaseLayer.swift */; };
+		EFE673F522C788FB00226299 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFE673F422C788FB00226299 /* Colors.xcassets */; };
 		EFEF0DFB22B2C5D5001B28AC /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFEF0DFA22B2C5D5001B28AC /* Login.storyboard */; };
 		EFEF0DFD22B2C736001B28AC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEF0DFC22B2C736001B28AC /* LoginViewController.swift */; };
 		EFEF0E0022B2CD17001B28AC /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEF0DFF22B2CD17001B28AC /* Common.swift */; };
@@ -70,12 +74,16 @@
 		E9304E3922C74F400093929A /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		E9304E3D22C7501F0093929A /* Category.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Category.storyboard; sourceTree = "<group>"; };
 		E9304E4022C75F1D0093929A /* My.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = My.storyboard; sourceTree = "<group>"; };
+		E9304E4322C7898E0093929A /* UnderLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineTextField.swift; sourceTree = "<group>"; };
+		E9304E4522C79A620093929A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		E9304E4722C7A2890093929A /* SearchWordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordTableViewCell.swift; sourceTree = "<group>"; };
 		E934DEA022B7D15500ED270E /* ThingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThingService.swift; sourceTree = "<group>"; };
 		E934DEA322B7D25200ED270E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		E953A2A722B93947006B4F9C /* ThingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingProvider.swift; sourceTree = "<group>"; };
 		EF7CA2F922B54AF10063FC6C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EF7CA2FB22B569A00063FC6C /* UpdateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileViewController.swift; sourceTree = "<group>"; };
 		EF7CA2FD22B572B80063FC6C /* FirebaseLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLayer.swift; sourceTree = "<group>"; };
+		EFE673F422C788FB00226299 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		EFEF0DFA22B2C5D5001B28AC /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		EFEF0DFC22B2C736001B28AC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EFEF0DFF22B2CD17001B28AC /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
@@ -133,6 +141,7 @@
 		303D038D22AE829800ABCE0F /* thing */ = {
 			isa = PBXGroup;
 			children = (
+				E9304E4222C788C60093929A /* New Group */,
 				30B1627D22C759D600F918FA /* youtube */,
 				E934DEA222B7D22D00ED270E /* Model */,
 				E934DE9F22B7D14400ED270E /* Network */,
@@ -190,6 +199,8 @@
 			isa = PBXGroup;
 			children = (
 				E9304E3922C74F400093929A /* Search.storyboard */,
+				E9304E4522C79A620093929A /* SearchViewController.swift */,
+				E9304E4722C7A2890093929A /* SearchWordTableViewCell.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -200,6 +211,14 @@
 				E9304E4022C75F1D0093929A /* My.storyboard */,
 			);
 			path = My;
+			sourceTree = "<group>";
+		};
+		E9304E4222C788C60093929A /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				E9304E4322C7898E0093929A /* UnderLineTextField.swift */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		E934DE9F22B7D14400ED270E /* Network */ = {
@@ -236,6 +255,7 @@
 			children = (
 				EFFFBC3C22C6839D003B1B17 /* thing.entitlements */,
 				303D038E22AE829800ABCE0F /* AppDelegate.swift */,
+				EFE673F422C788FB00226299 /* Colors.xcassets */,
 				303D039522AE829900ABCE0F /* Assets.xcassets */,
 				303D039722AE829900ABCE0F /* LaunchScreen.storyboard */,
 				EF7CA2F922B54AF10063FC6C /* GoogleService-Info.plist */,
@@ -363,6 +383,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFE673F522C788FB00226299 /* Colors.xcassets in Resources */,
 				EFEF0DFB22B2C5D5001B28AC /* Login.storyboard in Resources */,
 				303D039922AE829900ABCE0F /* LaunchScreen.storyboard in Resources */,
 				E9304E4122C75F1D0093929A /* My.storyboard in Resources */,
@@ -541,12 +562,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9304E4622C79A630093929A /* SearchViewController.swift in Sources */,
 				EFF60BD322B62A2D009288AF /* UIViewController+Extension.swift in Sources */,
 				30D9CC5622C7682600CA01A0 /* YoutubePlayerView.swift in Sources */,
 				EFEF0DFD22B2C736001B28AC /* LoginViewController.swift in Sources */,
 				30D9CC5A22C790E500CA01A0 /* YoutubePlayerViewEnum.swift in Sources */,
 				EFF60BD522B63B53009288AF /* Enums.swift in Sources */,
 				303D039122AE829800ABCE0F /* ViewController.swift in Sources */,
+				E9304E4422C7898E0093929A /* UnderLineTextField.swift in Sources */,
 				E934DEA122B7D15500ED270E /* ThingService.swift in Sources */,
 				EFEF0E0022B2CD17001B28AC /* Common.swift in Sources */,
 				EFEF0E0222B2CEC5001B28AC /* UIView+Extension.swift in Sources */,
@@ -556,6 +579,7 @@
 				EF7CA2FE22B572B80063FC6C /* FirebaseLayer.swift in Sources */,
 				EF7CA2FC22B569A00063FC6C /* UpdateProfileViewController.swift in Sources */,
 				303D038F22AE829800ABCE0F /* AppDelegate.swift in Sources */,
+				E9304E4822C7A28A0093929A /* SearchWordTableViewCell.swift in Sources */,
 				E934DEA422B7D25200ED270E /* UserModel.swift in Sources */,
 				EFEF0E1522B2D26F001B28AC /* RegisterAccountViewController.swift in Sources */,
 			);

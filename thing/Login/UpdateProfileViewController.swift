@@ -11,12 +11,21 @@ import UIKit
 class UpdateProfileViewController: UIViewController {
     @IBOutlet weak var displayNameTextField: UITextField!
     @IBOutlet weak var ageTextField: UITextField!
+    var year = [Int]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let pickerView = UIPickerView()
+
         hideKeyboardWhenTappedAround()
         ageTextField.delegate = self
+        pickerView.delegate = self
+        ageTextField.inputView = pickerView
+
+        for y in 1930...2019 {
+            year.append(y)
+        }
     }
 
     @IBAction private func completeButtonAction(_ sender: Any) {
@@ -30,13 +39,18 @@ class UpdateProfileViewController: UIViewController {
             self?.dismiss(animated: true, completion: nil)
         }
     }
+
+    @IBAction func closeButtonAction(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+
 }
 
 extension UpdateProfileViewController {
     func checkValidation() -> Bool {
         guard let displayName = displayNameTextField.text, let age = ageTextField.text else { return false }
 
-        return isValidDisplayName(displayName: displayName) && isValidAge(age: age)
+        return isValidDisplayName(displayName: displayName)
     }
 
     func isValidDisplayName(displayName: String) -> Bool {
@@ -48,14 +62,6 @@ extension UpdateProfileViewController {
         return false
     }
 
-    func isValidAge(age: String) -> Bool {
-        if age.count == 4 || age.count == 0 {
-            return true
-        }
-
-        presentAlert(msg: "생년을 4자리로 입력해주세요")
-        return false
-    }
 }
 
 extension UpdateProfileViewController: UITextFieldDelegate {
@@ -77,8 +83,27 @@ extension UpdateProfileViewController: UITextFieldDelegate {
 
         return count <= maxLength
     }
+}
 
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        return checkOnlyNumber(string: string) && checkMaxLength(maxLength: 4, textField: textField, range: range, string: string)
+extension UpdateProfileViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
     }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "\(year[year.count - row - 1])"
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return year.count
+    }
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let cal = Calendar.current
+        let date = Date()
+        let currentYear = cal.component(.year, from: date)
+
+        ageTextField.text = "\(year[year.count - row - 1]), 만 \(currentYear - year[year.count - row - 1])세"
+    }
+
 }
