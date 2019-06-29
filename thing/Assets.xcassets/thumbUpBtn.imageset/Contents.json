@@ -1,8 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "thumbUpBtn.pdf",
-      "idiom" : "universal"
+      "idiom" : "universal",
+      "filename" : "thumbUpBtn.pdf"
     }
   ],
   "info" : {

@@ -18,6 +18,7 @@ class MySettingViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.row == 3 {
             FirebaseLayer.signOut()
             tabBarController?.selectedIndex = 0
