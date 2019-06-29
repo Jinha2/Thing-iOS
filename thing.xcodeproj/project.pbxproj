@@ -14,6 +14,8 @@
 		303D039622AE829900ABCE0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 303D039522AE829900ABCE0F /* Assets.xcassets */; };
 		303D039922AE829900ABCE0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 303D039722AE829900ABCE0F /* LaunchScreen.storyboard */; };
 		7FCF33813C297A9F9AAE7EC3 /* Pods_thingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B523A42BEEF8A1FC6C7CC116 /* Pods_thingTests.framework */; };
+		E9304E3A22C74F400093929A /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9304E3922C74F400093929A /* Search.storyboard */; };
+		E9304E3E22C7501F0093929A /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9304E3D22C7501F0093929A /* Category.storyboard */; };
 		E934DEA122B7D15500ED270E /* ThingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E934DEA022B7D15500ED270E /* ThingService.swift */; };
 		E934DEA422B7D25200ED270E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E934DEA322B7D25200ED270E /* UserModel.swift */; };
 		E953A2A822B93947006B4F9C /* ThingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E953A2A722B93947006B4F9C /* ThingProvider.swift */; };
@@ -56,6 +58,8 @@
 		B523A42BEEF8A1FC6C7CC116 /* Pods_thingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_thingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF6F9A87DC4D8A14EB5DF79D /* Pods-thingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-thingTests.debug.xcconfig"; path = "Target Support Files/Pods-thingTests/Pods-thingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E0426C9AA21F845960A8D3CE /* Pods-thing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-thing.release.xcconfig"; path = "Target Support Files/Pods-thing/Pods-thing.release.xcconfig"; sourceTree = "<group>"; };
+		E9304E3922C74F400093929A /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		E9304E3D22C7501F0093929A /* Category.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Category.storyboard; sourceTree = "<group>"; };
 		E934DEA022B7D15500ED270E /* ThingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThingService.swift; sourceTree = "<group>"; };
 		E934DEA322B7D25200ED270E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		E953A2A722B93947006B4F9C /* ThingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingProvider.swift; sourceTree = "<group>"; };
@@ -122,6 +126,8 @@
 				E934DEA222B7D22D00ED270E /* Model */,
 				E934DE9F22B7D14400ED270E /* Network */,
 				EFEF0DF922B2C5C7001B28AC /* Main */,
+				E9304E3822C74EFF0093929A /* Category */,
+				E9304E3C22C7500E0093929A /* Search */,
 				EFEF0DF622B2C594001B28AC /* Login */,
 				EFEF0DFE22B2CCFE001B28AC /* Extensions */,
 				EFEF0DF822B2C5B0001B28AC /* Supports Items */,
@@ -147,6 +153,22 @@
 				48909AD671EF6791E02CC716 /* Pods-thingTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		E9304E3822C74EFF0093929A /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				E9304E3D22C7501F0093929A /* Category.storyboard */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		E9304E3C22C7500E0093929A /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				E9304E3922C74F400093929A /* Search.storyboard */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		E934DE9F22B7D14400ED270E /* Network */ = {
@@ -313,7 +335,9 @@
 				EFEF0DFB22B2C5D5001B28AC /* Login.storyboard in Resources */,
 				303D039922AE829900ABCE0F /* LaunchScreen.storyboard in Resources */,
 				EF7CA2FA22B54AF10063FC6C /* GoogleService-Info.plist in Resources */,
+				E9304E3E22C7501F0093929A /* Category.storyboard in Resources */,
 				303D039622AE829900ABCE0F /* Assets.xcassets in Resources */,
+				E9304E3A22C74F400093929A /* Search.storyboard in Resources */,
 				303D039422AE829800ABCE0F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
