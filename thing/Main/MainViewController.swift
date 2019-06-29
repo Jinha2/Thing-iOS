@@ -21,9 +21,8 @@ class MainViewController: UIViewController {
         checkLogin()
     }
 
-    @IBAction private func signOut(_ sender: Any) {
-        FirebaseLayer.signOut()
-        checkLogin()
+    @IBAction private func filterButtonAction(_ sender: Any) {
+        showSortAlert()
     }
 }
 
@@ -59,5 +58,11 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "YoutubeTableViewCell", for: indexPath) as! YoutubeTableViewCell
 
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let vc = UIStoryboard(name: "EndPage", bundle: nil).instantiateViewController(withIdentifier: "EndPageViewController") as? EndPageViewController else { return }
+
+        present(vc, animated: true, completion: nil)
     }
 }

@@ -38,6 +38,9 @@
                                                 <constraint firstAttribute="height" constant="44" id="k7q-h7-AcE"/>
                                             </constraints>
                                             <state key="normal" image="group11"/>
+                                            <connections>
+                                                <action selector="filterButtonAction:" destination="wN5-Yv-uAS" eventType="touchUpInside" id="Mly-av-Fl3"/>
+                                            </connections>
                                         </button>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="y6u-sc-0W9">
                                             <rect key="frame" x="0.0" y="55" width="414" height="40"/>
@@ -144,7 +147,7 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eJC-6N-Xqu">
+                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eJC-6N-Xqu">
                                                     <rect key="frame" x="15" y="104" width="50" height="60"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="512345." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajl-fN-dAe">
@@ -180,7 +183,7 @@
                                                         <constraint firstItem="qy7-cI-arl" firstAttribute="top" secondItem="eJC-6N-Xqu" secondAttribute="top" id="zEo-qw-uOm"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="노래하는코트노래하는" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YsN-VN-2pd">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="J.Fla~~~~~~~" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YsN-VN-2pd">
                                                     <rect key="frame" x="117" y="113" width="282" height="18"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" id="qfs-ts-sQG"/>
