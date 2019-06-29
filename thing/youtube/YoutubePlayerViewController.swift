@@ -7,12 +7,10 @@
 //
 
 import UIKit
-import YoutubeKit
 
 class YoutubePlayerViewController: UIViewController {
 
-    private var player: YTSwiftyPlayer!
-    @IBOutlet weak var youtubePlayerView: UIView!
+    @IBOutlet weak var youtubePlayerView: YoutubePlayerView!
     @IBOutlet weak var playButton: UIButton!
 
     override func viewDidLoad() {
@@ -20,31 +18,15 @@ class YoutubePlayerViewController: UIViewController {
 
         setButton()
 
+        youtubePlayerView.delegate = self
         playButton.isEnabled = false
+
+        youtubePlayerView.loadVideo(videoID: "8JVvrF5bIR4")
         // Create a new player
-        player = YTSwiftyPlayer(
-            frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 480),
-            playerVars: [.videoID("G_22bAj9m0w"), .showRelatedVideo(false), .playsInline(true)])
-
-//        player = YTS
-        // Enable auto playback when video is loaded
-        player.autoplay = false
-
-        // Set player view.
-        view.addSubview(player)
-
-        // Set delegate for detect callback information from the player.
-        player.delegate = self
-
-        // Load the video.
-        player.loadPlayer()
-        // Do any additional setup after loading the view.
-
-        // key: AIzaSyA1wnMANvmhftP1AG_0-3S4pgmS2zy8L08
     }
 
     @IBAction private func playTouchedAction(_ sender: UIButton) {
-        player.playVideo()
+        youtubePlayerView.playVideo()
     }
 
     /*
@@ -67,29 +49,13 @@ extension YoutubePlayerViewController {
 }
 
 extension YoutubePlayerViewController {
-    func youtubePlayer() {
-        let request = VideoListRequest(part: [.id, .statistics], filter: .chart)
-
-        // Send a request.
-        ApiSession.shared.send(request) { result in
-            switch result {
-            case .success(let response):
-                print(response)
-            case .failed(let error):
-                print(error)
-            }
-        }
-    }
-
-    func readyToPlay(_ player: YTSwiftyPlayer) {
+    func readyToPlay() {
         playButton.isEnabled = true
-
     }
 }
 
-extension YoutubePlayerViewController: YTSwiftyPlayerDelegate {
-    func playerReady(_ player: YTSwiftyPlayer) {
-        readyToPlay(player)
-//        player.playVideo()
+extension YoutubePlayerViewController: YoutubePlayerViewDelegate {
+    func playerReady(_ player: YoutubePlayerView) {
+        readyToPlay()
     }
 }
