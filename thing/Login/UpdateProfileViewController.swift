@@ -22,11 +22,13 @@ class UpdateProfileViewController: UIViewController {
     @IBAction private func completeButtonAction(_ sender: Any) {
         guard let displayName = displayNameTextField.text, let age = ageTextField.text, checkValidation() else { return }
 
-        FirebaseLayer.changeUser(displayName: displayName)
-
         // 우리서버에 날려야함
         showActivityIndicator()
-        hideActivityIndicator()
+
+        FirebaseLayer.changeUser(displayName: displayName) { [weak self] in
+            hideActivityIndicator()
+            self?.dismiss(animated: true, completion: nil)
+        }
     }
 }
 
