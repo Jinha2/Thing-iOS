@@ -18,10 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hao-mV-1Cs">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="267"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="363"/>
                                 <subviews>
                                     <button opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wt7-dZ-bUw">
-                                        <rect key="frame" x="139.5" y="61" width="96" height="96"/>
+                                        <rect key="frame" x="91.5" y="61" width="192" height="192"/>
                                         <state key="normal" image="profileBtn"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -40,20 +40,20 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아이디" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNq-Qb-MXM">
-                                        <rect key="frame" x="139" y="161" width="73" height="33.5"/>
+                                        <rect key="frame" x="139" y="257" width="73" height="33.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5D0-u6-eJP">
-                                        <rect key="frame" x="214" y="154" width="44" height="44"/>
+                                        <rect key="frame" x="214" y="228" width="88" height="88"/>
                                         <state key="normal" image="changeBtn"/>
                                         <connections>
                                             <segue destination="aQd-jr-ohG" kind="show" id="V1Q-9U-ark"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="nbN-9w-S9o">
-                                        <rect key="frame" x="0.0" y="216.5" width="375" height="40"/>
+                                        <rect key="frame" x="0.0" y="312.5" width="375" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oVj-sL-gpP">
                                                 <rect key="frame" x="0.0" y="0.0" width="187.5" height="40"/>
@@ -87,7 +87,7 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ja-pQ-9UO">
-                                        <rect key="frame" x="0.0" y="266.5" width="375" height="0.5"/>
+                                        <rect key="frame" x="0.0" y="362.5" width="375" height="0.5"/>
                                         <color key="backgroundColor" name="brownGreyThree"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="0.5" id="Yv1-P2-99V"/>
@@ -114,7 +114,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="Rgd-OZ-4bW">
-                                <rect key="frame" x="0.0" y="267" width="375" height="351"/>
+                                <rect key="frame" x="0.0" y="363" width="375" height="255"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyMainCommentTableViewCell" rowHeight="139" id="nJj-db-WLv" customClass="MyMainCommentTableViewCell" customModule="thing" customModuleProvider="target">
@@ -379,7 +379,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2eD-IH-1wD">
-                                        <rect key="frame" x="0.0" y="13" width="44" height="44"/>
+                                        <rect key="frame" x="0.0" y="-9" width="88" height="88"/>
                                         <state key="normal" image="back"/>
                                         <connections>
                                             <action selector="popAction:" destination="aQd-jr-ohG" eventType="touchUpInside" id="wvc-QE-FaH"/>
