@@ -19,7 +19,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="jVo-aa-KVa"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Category" id="Ytp-Gq-ITv"/>
+                    <tabBarItem key="tabBarItem" title="Category" image="menuIcon" selectedImage="menuSelectBtn" id="Ytp-Gq-ITv"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GAM-CQ-lFo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -27,4 +27,8 @@
             <point key="canvasLocation" x="157" y="100"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="menuIcon" width="31" height="23"/>
+        <image name="menuSelectBtn" width="31" height="22"/>
+    </resources>
 </document>

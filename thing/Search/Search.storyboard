@@ -147,7 +147,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Tha-V9-2l3"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" id="l0z-aI-1WB"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="searchBtn" selectedImage="searchSelectBtn" id="l0z-aI-1WB"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="cancelButtonWidthConstraint" destination="rTd-bv-IbT" id="m8l-69-27Q"/>
@@ -161,6 +161,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="searchBtn" width="25" height="27"/>
+        <image name="searchSelectBtn" width="25" height="26"/>
         <namedColor name="brownGrey">
             <color red="0.56499999761581421" green="0.56499999761581421" blue="0.56499999761581421" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
