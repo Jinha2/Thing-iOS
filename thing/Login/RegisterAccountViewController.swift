@@ -12,6 +12,7 @@ class RegisterAccountViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmTextField: UITextField!
+    @IBOutlet var agreeLinkTextView: UITextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,5 +72,21 @@ extension RegisterAccountViewController {
         }
         presentAlert(msg: "비밀번호가 일치하지 않습니다")
         return false
+    }
+
+    func clickLink() {
+        let attributedString = NSMutableAttributedString(string: "회원가입에 따른 이용약관과 개인정보 보호 정책에 동의(필수)")
+        let url = URL(string: "https://www.apple.com")!
+
+        attributedString.setAttributes([.link: url], range: NSRange(location: 8, length: 4))
+
+        self.agreeLinkTextView.attributedText = attributedString
+        self.agreeLinkTextView.isUserInteractionEnabled = true
+        self.agreeLinkTextView.isEditable = false
+
+        self.agreeLinkTextView.linkTextAttributes = [
+            .foregroundColor: UIColor.lightGray,
+            .underlineStyle: NSUnderlineStyle.single.rawValue
+        ]
     }
 }
