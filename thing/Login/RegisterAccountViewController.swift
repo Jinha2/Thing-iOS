@@ -22,13 +22,16 @@ class RegisterAccountViewController: UIViewController {
 
     }
     @IBAction func checkButtonAction(_ sender: Any) {
-
+        checkButtonAction.isSelected = checkButtonAction.isSelected ? false : true
     }
 
     @IBAction private func nextButtonAction(_ sender: Any) {
         guard let email = emailTextField.text, let password = passwordTextField.text, checkValidation() else { return }
 
         showActivityIndicator()
+
+        guard let updateProfileViewController = self.storyboard?.instantiateViewController(withIdentifier: "UpdateProfileViewController") else { return }
+        self.navigationController?.pushViewController(updateProfileViewController, animated: true)
 
         FirebaseLayer.createUser(email: email, password: password, completion: { [weak self] result in
             hideActivityIndicator()
