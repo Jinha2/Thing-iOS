@@ -60,7 +60,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5xi-qe-dSc">
-                                                    <rect key="frame" x="15" y="159" width="345" height="1"/>
+                                                    <rect key="frame" x="15" y="159" width="384" height="1"/>
                                                     <color key="backgroundColor" name="brownGreyThree"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="uNI-eY-h9u"/>
@@ -103,7 +103,7 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                     <inset key="titleEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
+                                                    <inset key="imageEdgeInsets" minX="10" minY="0.0" maxX="15" maxY="0.0"/>
                                                     <state key="normal" title="바로가기" image="invalidName">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
@@ -116,6 +116,9 @@
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="17"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="self.imageView.contentMode">
+                                                            <integer key="value" value="2"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
@@ -151,13 +154,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWc-aG-9aG">
-                                                    <rect key="frame" x="15" y="15" width="295" height="28"/>
+                                                    <rect key="frame" x="15" y="15" width="334" height="28"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                     <color key="textColor" name="greyishBrown"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOL-ab-Pbs">
-                                                    <rect key="frame" x="287" y="63" width="73" height="28"/>
+                                                    <rect key="frame" x="326" y="63" width="73" height="28"/>
                                                     <color key="backgroundColor" name="veryLightPink"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="73" id="WK8-Ev-1Ve"/>
@@ -200,7 +203,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="G4F-ma-77s">
-                                                    <rect key="frame" x="15" y="87" width="360" height="125"/>
+                                                    <rect key="frame" x="15" y="87" width="399" height="125"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="125" id="5Oa-F5-3Uh"/>
@@ -276,7 +279,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="commentrmore" translatesAutoresizingMaskIntoConstraints="NO" id="Onh-N1-xCk">
-                                                    <rect key="frame" x="343" y="15.5" width="17" height="17"/>
+                                                    <rect key="frame" x="382" y="15.5" width="17" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="17" id="bEW-fA-B0v"/>
                                                         <constraint firstAttribute="width" secondItem="Onh-N1-xCk" secondAttribute="height" id="iEq-JM-Eh0"/>
