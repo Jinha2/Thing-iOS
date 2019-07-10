@@ -255,7 +255,7 @@
         <scene sceneID="b6J-fe-huS">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Qtw-ef-D88" customClass="HiddenNavigationViewController" customModule="thing" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Category" image="menuIcon" selectedImage="menuSelectBtn" id="xbt-JT-ddY"/>
+                    <tabBarItem key="tabBarItem" title="Category" image="category" selectedImage="categorySelect" id="xbt-JT-ddY"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XJj-2y-7iY">
                         <autoresizingMask key="autoresizingMask"/>
@@ -271,9 +271,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="category" width="26" height="13"/>
+        <image name="categorySelect" width="26" height="13"/>
         <image name="group11" width="44" height="44"/>
-        <image name="menuIcon" width="31" height="23"/>
-        <image name="menuSelectBtn" width="31" height="22"/>
         <image name="profileBtn" width="96" height="96"/>
         <namedColor name="MainRed">
             <color red="0.99599999189376831" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
