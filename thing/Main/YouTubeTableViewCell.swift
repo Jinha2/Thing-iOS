@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class YoutubeTableViewCell: UITableViewCell {
 
@@ -19,15 +20,29 @@ class YoutubeTableViewCell: UITableViewCell {
 
     private func reset() {
         thumbnailImageView.image = nil
-        profileImageView.image = nil
+        profileImageView.image = UIImage(named: "profileBtn")
         titleLabel.text = nil
         countLabel.text = nil
-        topRankLabel.text = nil
-        rankLabel.text = nil
+        topRankLabel.isHidden = true
+        rankLabel.isHidden = true
     }
 
-    func contents(_ model: Youtube) {
+    func contents(_ model: RankingList) {
         reset()
 
+        if let thumbnail = model.thumbnail {
+            let url = URL(string: thumbnail)
+            profileImageView.kf.setImage(with: url)
+        }
+
+        if let bannerImage = model.bannerImgUrl {
+            let url = URL(string: bannerImage)
+            thumbnailImageView.kf.setImage(with: url)
+        }
+
+        rankLabel.isHidden = false
+        rankLabel.text = "\(model.ranking)"
+        titleLabel.text = model.name
+        countLabel.text = "구독 : \(model.subscriberCount) · 조회수 : \(model.viewCount)"
     }
 }
