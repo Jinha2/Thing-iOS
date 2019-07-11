@@ -26,7 +26,7 @@ class YoutubeTableViewCell: UITableViewCell {
         rankLabel.text = nil
     }
 
-    func contents(_ model: YoutubeModel) {
+    func contents(_ model: Youtube) {
         reset()
 
     }
