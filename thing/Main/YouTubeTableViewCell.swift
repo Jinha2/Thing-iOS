@@ -15,7 +15,6 @@ class YoutubeTableViewCell: UITableViewCell {
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var countLabel: UILabel!
-    @IBOutlet weak var topRankLabel: UILabel!
     @IBOutlet weak var rankLabel: UILabel!
 
     private func reset() {
@@ -23,7 +22,6 @@ class YoutubeTableViewCell: UITableViewCell {
         profileImageView.image = UIImage(named: "profileBtn")
         titleLabel.text = nil
         countLabel.text = nil
-        topRankLabel.isHidden = true
         rankLabel.isHidden = true
     }
 
