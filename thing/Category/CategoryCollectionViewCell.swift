@@ -7,18 +7,11 @@
 //
 
 import UIKit
-protocol CategoryCollectionViewCellDelegate: class {
-    func changeCategory(_ id: Int)
-}
 
 class CategoryCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var selectedLineView: UIView!
-
-    var id: Int?
-
-    weak var delegate: CategoryCollectionViewCellDelegate?
 
     override var isSelected: Bool {
         didSet {
@@ -31,17 +24,13 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         selectedLineView.isHidden = true
     }
 
-    func contents(_ model: Category) {
+    func contents(_ model: CategoryList) {
         reset()
 
-        id = model.id
         titleLabel.text = model.categoryType
     }
 
     func categorySelected() {
-//        guard let id = id else { return }
         selectedLineView.isHidden = isSelected == true ? false : true
-
-        delegate?.changeCategory(id ?? 0)
     }
 }

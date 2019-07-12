@@ -42,10 +42,17 @@ class UpdateProfileViewController: UIViewController {
     }
 
     func 성별선택(sender: UIButton, type: Int) {
-        sender.isSelected = true
-        현재버튼?.isSelected = false
-        현재버튼 = sender
+        if sender == 현재버튼 {
+            현재버튼?.isSelected.toggle()
+        } else {
+            sender.isSelected = true
+            현재버튼?.isSelected = false
+            현재버튼 = sender
+        }
         성별 = type
+        if !(현재버튼?.isSelected ?? false) {
+            성별 = nil
+        }
     }
 
     @IBAction private func completeButtonAction(_ sender: Any) {
