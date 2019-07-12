@@ -41,24 +41,16 @@ struct FirebaseLayer {
         }
     }
 
-    static func getUid() {
-        Auth.auth().currentUser?.getIDTokenForcingRefresh(true, completion: { result, error in
-            if error != nil {
-                presentErrorAlert(error: error)
-                hideActivityIndicator()
-                return
-            }
-
-            Log(result)
-        })
+    static func getUid() -> String? {
+        return Auth.auth().currentUser?.uid
     }
 
     static func loginUser(email: String, password: String, completion: @escaping ((AuthDataResult?) -> Void)) {
         Auth.auth().signIn(withEmail: email, password: password) { result, error in
             if error != nil {
-                if (error as? NSError)?.code == 17009 {
+                if (error as NSError?)?.code == 17009 {
                     presentAlert(msg: "이메일 / 비밀번호가 틀립니다.")
-                } else if (error as? NSError)?.code == 17008 {
+                } else if (error as NSError?)?.code == 17008 {
                     presentAlert(msg: "이메일 형식을 확인해 주세요.")
                 } else {
                     presentErrorAlert(error: error)

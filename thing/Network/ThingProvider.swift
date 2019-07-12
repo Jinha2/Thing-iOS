@@ -13,7 +13,7 @@ import Result
 class ThingProvider {
     let provider = MoyaProvider<ThingService>()
 
-    func signUp(uid: String, nickname: String, gender: Int?, birth: Double?, completion: @escaping ((Data?) -> Void), failure: @escaping ((Error) -> Void)) {
+    func signUp(uid: String, nickname: String, gender: Int?, birth: Int?, completion: @escaping ((Data?) -> Void), failure: @escaping ((Error) -> Void)) {
         provider.request(.signUp(uid: uid, nickname: nickname, gender: gender, birth: birth)) { result in
             self.resultTask(result, completion: completion, failure: failure)
         }
