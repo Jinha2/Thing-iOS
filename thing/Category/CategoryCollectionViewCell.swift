@@ -42,6 +42,6 @@ class CategoryCollectionViewCell: UICollectionViewCell {
 //        guard let id = id else { return }
         selectedLineView.isHidden = isSelected == true ? false : true
 
-        delegate?.changeCategory(id)
+        delegate?.changeCategory(id ?? 0)
     }
 }
