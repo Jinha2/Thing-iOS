@@ -42,6 +42,7 @@ class CategoryViewController: UIViewController {
         super.viewDidAppear(animated)
 
         if isFirstView {
+            categoryCollectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: false, scrollPosition: .left)
             requestRankings(categoryId: categories[0].id, filter: filter, page: 0)
             isFirstView = false
         }
