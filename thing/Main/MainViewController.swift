@@ -30,6 +30,7 @@ class MainViewController: UIViewController {
             showLoginView()
         } else {
             if isFirstView {
+                requestLogin()
                 requestRankings(filter: filter, page: 0)
                 isFirstView = false
             }
@@ -42,12 +43,35 @@ class MainViewController: UIViewController {
 }
 
 extension MainViewController {
+    func requestLogin() {
+        ThingProvider().signIn(completion: { data in
+            guard let data = data else { return }
+
+            do {
+                let decoder = JSONDecoder()
+                let user = try decoder.decode(User.self, from: data)
+
+                Category.sharedInstance.categories = user.categories
+            } catch {}
+        }) { _ in
+
+        }
+    }
+
     func requestRankings(filter: String, page: Int) {
         if page == 0 {
             rankings.removeAll()
+            rankingTableView.reloadData()
         }
 
+        showActivityIndicator()
+
         ThingProvider().rankings(filter: filter, page: page, completion: { [weak self] data in
+            defer {
+                hideActivityIndicator()
+                self?.rankingTableView.reloadData()
+            }
+
             guard let data = data else { return }
 
             do {
@@ -59,8 +83,6 @@ extension MainViewController {
                 for ranking in rankings.rankings {
                     self?.rankings.append(ranking)
                 }
-
-                self?.rankingTableView.reloadData()
             } catch {}
         }) { _ in
 

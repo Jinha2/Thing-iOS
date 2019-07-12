@@ -16,8 +16,9 @@ class CategoryViewController: UIViewController {
     private var filter = "TOTAL"
     private var nextPage: Int?
     private var rankings = [RankingList]()
-
-    let category = ["일상", "오버워치", "엔터테이먼트", "ASMR", "뷰티", "졸료요", "P곤!"]
+    private var categories = [CategoryList]()
+    private var isFirstView: Bool = true
+    private var categoryId = 1
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +28,6 @@ class CategoryViewController: UIViewController {
         layout?.itemSize = UICollectionViewFlowLayout.automaticSize
 
         setCategory()
-    }
-
-    func setCategory() {
-
-        categoryCollectionView.reloadData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -45,6 +41,11 @@ class CategoryViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
+        if isFirstView {
+            requestRankings(categoryId: categories[0].id, filter: filter, page: 0)
+            isFirstView = false
+        }
+
         categoryCollectionView.collectionViewLayout.invalidateLayout()
     }
 
@@ -54,12 +55,27 @@ class CategoryViewController: UIViewController {
 }
 
 extension CategoryViewController {
-    func requestRankings(filter: String, page: Int) {
+    func setCategory() {
+        guard let category = Category.sharedInstance.categories else { return }
+
+        categories = category
+        categoryCollectionView.reloadData()
+    }
+
+    func requestRankings(categoryId: Int, filter: String, page: Int) {
         if page == 0 {
             rankings.removeAll()
+            rankingTableView.reloadData()
         }
 
-        ThingProvider().rankings(filter: filter, page: page, completion: { data in
+        showActivityIndicator()
+
+        ThingProvider().categories(categoryId: categoryId, filter: filter, page: page, completion: { data in
+            defer {
+                hideActivityIndicator()
+                self.rankingTableView.reloadData()
+            }
+
             guard let data = data else { return }
 
             do {
@@ -71,8 +87,6 @@ extension CategoryViewController {
                 for ranking in rankings.rankings {
                     self.rankings.append(ranking)
                 }
-
-                self.rankingTableView.reloadData()
             } catch {}
         }) { _ in
 
@@ -83,11 +97,11 @@ extension CategoryViewController {
         let alert = UIAlertController(title: "정렬 방식", message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "구독자순", style: .default, handler: { _ in
 //            self.filterTitleLabel.text = "유튜브 구독자 랭킹"
-            self.requestRankings(filter: "TOTAL", page: 0)
+            self.requestRankings(categoryId: self.categoryId, filter: "TOTAL", page: 0)
         }))
         alert.addAction(UIAlertAction(title: "급상승순", style: .default, handler: { _ in
 //            self.filterTitleLabel.text = "유튜브 급상승 랭킹"
-            self.requestRankings(filter: "SOARING", page: 0)
+            self.requestRankings(categoryId: self.categoryId, filter: "SOARING", page: 0)
         }))
         alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: { _ in }))
 
@@ -118,28 +132,24 @@ extension CategoryViewController: UITableViewDataSource, UITableViewDelegate {
         guard indexPath.row == rankings.count - 1 else { return }
         guard let nextPage = nextPage else { return }
 
-        requestRankings(filter: filter, page: nextPage)
+        requestRankings(categoryId: categoryId, filter: filter, page: nextPage)
     }
 }
 
 extension CategoryViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return category.count
+        return categories.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as! CategoryCollectionViewCell
 
-        cell.selectedLineView.isHidden = true
-        cell.titleLabel.text = category[indexPath.row]
+        cell.contents(categories[indexPath.row])
 
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as! CategoryCollectionViewCell
-
-        rankingTableView.reloadData()
+        requestRankings(categoryId: categories[indexPath.row].id, filter: filter, page: 0)
     }
 }

@@ -10,20 +10,16 @@ import Foundation
 
 struct User: Decodable {
     let id: Int
-    let nickName, uid: String
-    let dateBirth: Int
-    let profileURL, gender: String
-    let resSearches: [Search]
-    let resCategories: [Category]
-
-    enum CodingKeys: String, CodingKey {
-        case id, nickName, uid, dateBirth
-        case profileURL = "profileUrl"
-        case gender, resSearches, resCategories
-    }
+    let uid: String
+    let nickName: String?
+    let dateBirth: Int?
+    let gender: String?
+    let profileUrl: String?
+    let searches: [Search]
+    let categories: [CategoryList]
 }
 
-struct Category: Decodable {
+struct CategoryList: Decodable {
     let id: Int
     let categoryType: String
 }

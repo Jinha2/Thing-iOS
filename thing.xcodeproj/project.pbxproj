@@ -29,6 +29,7 @@
 		E934DEA422B7D25200ED270E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E934DEA322B7D25200ED270E /* User.swift */; };
 		E93D81E122D7544D0017D023 /* Rankings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93D81E022D7544D0017D023 /* Rankings.swift */; };
 		E953A2A822B93947006B4F9C /* ThingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E953A2A722B93947006B4F9C /* ThingProvider.swift */; };
+		E99F906D22D8D3B100650711 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F906C22D8D3B100650711 /* Category.swift */; };
 		E9E4D1DB22D758030094F681 /* OneLineReviewTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E4D1D322D758030094F681 /* OneLineReviewTitleTableViewCell.swift */; };
 		E9E4D1DC22D758030094F681 /* EndPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9E4D1D422D758030094F681 /* EndPage.storyboard */; };
 		E9E4D1DD22D758030094F681 /* LikeNumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E4D1D522D758030094F681 /* LikeNumTableViewCell.swift */; };
@@ -96,6 +97,7 @@
 		E934DEA322B7D25200ED270E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E93D81E022D7544D0017D023 /* Rankings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rankings.swift; sourceTree = "<group>"; };
 		E953A2A722B93947006B4F9C /* ThingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingProvider.swift; sourceTree = "<group>"; };
+		E99F906C22D8D3B100650711 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		E9E4D1D322D758030094F681 /* OneLineReviewTitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneLineReviewTitleTableViewCell.swift; sourceTree = "<group>"; };
 		E9E4D1D422D758030094F681 /* EndPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EndPage.storyboard; sourceTree = "<group>"; };
 		E9E4D1D522D758030094F681 /* LikeNumTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeNumTableViewCell.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				E9304E4322C7898E0093929A /* UnderLineTextField.swift */,
+				E99F906C22D8D3B100650711 /* Category.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -641,6 +644,7 @@
 				EFEF0DFD22B2C736001B28AC /* LoginViewController.swift in Sources */,
 				EFF60BD522B63B53009288AF /* Enums.swift in Sources */,
 				E9E4D1E122D758030094F681 /* YoutuberPopularVideoTableViewCell.swift in Sources */,
+				E99F906D22D8D3B100650711 /* Category.swift in Sources */,
 				E9304E4422C7898E0093929A /* UnderLineTextField.swift in Sources */,
 				E909BC9B22C7EA800033D810 /* MainViewController.swift in Sources */,
 				EF99199922C7D3C500380878 /* MyModifyViewController.swift in Sources */,

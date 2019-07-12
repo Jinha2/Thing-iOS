@@ -10,6 +10,7 @@ import Foundation
 import Moya
 
 enum ThingService {
+    case signIn
     case signUp(uid: String, nickname: String, gender: Int?, birth: Int?)
     case rankings(filter: String, page: Int)
     case categories(categoryId: Int, filter: String, page: Int)
@@ -21,11 +22,13 @@ extension ThingService: TargetType {
 
 	var path: String {
         switch self {
+        case .signIn:
+            return "/v1/sign-in"
         case .signUp:
             return "/v1/users"
         case .rankings:
             return "/v1/rankings"
-        case .categories(let categoryId):
+        case .categories(let categoryId, _, _):
             return "/v1/categories/\(categoryId)/rankings"
         case .youtuber:
             return "/v1/youtubers"
@@ -36,7 +39,7 @@ extension ThingService: TargetType {
 		switch self {
         case .signUp:
             return .post
-        case .rankings, .categories, .youtuber:
+        case .signIn, .rankings, .categories, .youtuber:
             return .get
 		}
 	}
@@ -47,6 +50,8 @@ extension ThingService: TargetType {
 
 	var task: Task {
         switch self {
+        case .signIn:
+            return .requestParameters(parameters: [:], encoding: URLEncoding.default)
         case .signUp(let uid, let nickname, let gender, let birth):
             var params: [String: Any] = ["uid": uid, "nickname": nickname]
 
