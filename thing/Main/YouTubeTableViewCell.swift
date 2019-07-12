@@ -32,7 +32,7 @@ class YoutubeTableViewCell: UITableViewCell {
 
         if let thumbnail = model.thumbnail {
             let url = URL(string: thumbnail)
-            profileImageView.kf.setImage(with: url)
+            profileImageView.kf.setImage(with: url, placeholder: UIImage(named: "profileBtn"))
         }
 
         if let bannerImage = model.bannerImgUrl {
