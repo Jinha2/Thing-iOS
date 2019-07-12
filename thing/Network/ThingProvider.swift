@@ -24,6 +24,12 @@ class ThingProvider {
             self.resultTask(result, completion: completion, failure: failure)
         }
     }
+
+    func categories(categoryId: Int, filter: String, page: Int, completion: @escaping ((Data?) -> Void), failure: @escaping ((Error) -> Void)) {
+        provider.request(.categories(categoryId: categoryId, filter: filter, page: page)) { result in
+            self.resultTask(result, completion: completion, failure: failure)
+        }
+    }
 }
 
 extension ThingProvider {

@@ -14,7 +14,6 @@
 		303D039922AE829900ABCE0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 303D039722AE829900ABCE0F /* LaunchScreen.storyboard */; };
 		30696B7A22C7DFC900DEEA98 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30696B7922C7DFC900DEEA98 /* Color.xcassets */; };
 		7FCF33813C297A9F9AAE7EC3 /* Pods_thingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B523A42BEEF8A1FC6C7CC116 /* Pods_thingTests.framework */; };
-		E909BC9922C7E8F00033D810 /* Youtube.swift in Sources */ = {isa = PBXBuildFile; fileRef = E909BC9822C7E8F00033D810 /* Youtube.swift */; };
 		E909BC9B22C7EA800033D810 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E909BC9A22C7EA800033D810 /* MainViewController.swift */; };
 		E909BC9D22C7F1640033D810 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E909BC9C22C7F1630033D810 /* CategoryViewController.swift */; };
 		E909BC9F22C7F2220033D810 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E909BC9E22C7F2220033D810 /* CategoryCollectionViewCell.swift */; };
@@ -81,7 +80,6 @@
 		B523A42BEEF8A1FC6C7CC116 /* Pods_thingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_thingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF6F9A87DC4D8A14EB5DF79D /* Pods-thingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-thingTests.debug.xcconfig"; path = "Target Support Files/Pods-thingTests/Pods-thingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E0426C9AA21F845960A8D3CE /* Pods-thing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-thing.release.xcconfig"; path = "Target Support Files/Pods-thing/Pods-thing.release.xcconfig"; sourceTree = "<group>"; };
-		E909BC9822C7E8F00033D810 /* Youtube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Youtube.swift; sourceTree = "<group>"; };
 		E909BC9A22C7EA800033D810 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E909BC9C22C7F1630033D810 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		E909BC9E22C7F2220033D810 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -256,7 +254,6 @@
 			isa = PBXGroup;
 			children = (
 				E934DEA322B7D25200ED270E /* User.swift */,
-				E909BC9822C7E8F00033D810 /* Youtube.swift */,
 				E93D81E022D7544D0017D023 /* Rankings.swift */,
 			);
 			path = Model;
@@ -638,7 +635,6 @@
 				EF99199E22C7E32400380878 /* HiddenNavigationViewController.swift in Sources */,
 				E93D81E122D7544D0017D023 /* Rankings.swift in Sources */,
 				EFEF0DFD22B2C736001B28AC /* LoginViewController.swift in Sources */,
-				E909BC9922C7E8F00033D810 /* Youtube.swift in Sources */,
 				EFF60BD522B63B53009288AF /* Enums.swift in Sources */,
 				E9E4D1E122D758030094F681 /* YoutuberPopularVideoTableViewCell.swift in Sources */,
 				E9304E4422C7898E0093929A /* UnderLineTextField.swift in Sources */,

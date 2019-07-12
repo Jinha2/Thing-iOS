@@ -9,8 +9,27 @@
 import Foundation
 
 struct User: Decodable {
-    let dateBirth: Double
-    let gender: Int
-    let nickName: String
-    let uid: String
+    let id: Int
+    let nickName, uid: String
+    let dateBirth: Int
+    let profileURL, gender: String
+    let resSearches: [Search]
+    let resCategories: [Category]
+
+    enum CodingKeys: String, CodingKey {
+        case id, nickName, uid, dateBirth
+        case profileURL = "profileUrl"
+        case gender, resSearches, resCategories
+    }
+}
+
+struct Category: Decodable {
+    let id: Int
+    let categoryType: String
+}
+
+struct Search: Decodable {
+    let createAt: String
+    let id: Int
+    let text: String
 }

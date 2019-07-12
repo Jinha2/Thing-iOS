@@ -12,6 +12,7 @@ import Moya
 enum ThingService {
     case signUp(uid: String, nickname: String, gender: Int?, birth: Double?)
     case rankings(filter: String, page: Int)
+    case categories(categoryId: Int, filter: String, page: Int)
 }
 
 extension ThingService: TargetType {
@@ -23,14 +24,16 @@ extension ThingService: TargetType {
             return "/v1/users"
         case .rankings:
             return "/v1/rankings"
+        case .categories(let categoryId):
+            return "/v1/categories/\(categoryId)/rankings"
 		}
 	}
 
 	var method: Moya.Method {
 		switch self {
-		case .signUp:
-			return .post
-        case .rankings:
+        case .signUp:
+            return .post
+        case .rankings, .categories:
             return .get
 		}
 	}
@@ -55,12 +58,14 @@ extension ThingService: TargetType {
             return .requestParameters(parameters: params, encoding: JSONEncoding.default)
         case .rankings(let filter, let page):
             return .requestParameters(parameters: ["filter": filter, "page": page], encoding: URLEncoding.default)
+        case .categories(let categoryId, let filter, let page):
+            return .requestParameters(parameters: ["categoryId": categoryId, "filter": filter, "page": page], encoding: URLEncoding.default)
 		}
 	}
 
 	var headers: [String: String]? {
 //        guard let token = "uid" else { return ["Content-type": "application/json"] }
-        let uid = "qwertyasdfg"
+        let uid = "test"
 
         return ["Content-type": "application/json", "uid": uid]
 	}

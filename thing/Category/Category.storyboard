@@ -39,7 +39,7 @@
                                             </constraints>
                                             <state key="normal" image="group11"/>
                                             <connections>
-                                                <action selector="filterButtonAction:" destination="wN5-Yv-uAS" eventType="touchUpInside" id="Mly-av-Fl3"/>
+                                                <action selector="filterButtonAction:" destination="wN5-Yv-uAS" eventType="touchUpInside" id="Bry-F0-flu"/>
                                             </connections>
                                         </button>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="y6u-sc-0W9">
@@ -245,6 +245,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="categoryCollectionView" destination="y6u-sc-0W9" id="6Kl-fP-CyN"/>
+                        <outlet property="rankingTableView" destination="sv1-Sm-S06" id="rW4-Ko-7h9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kWy-uJ-omg" userLabel="First Responder" sceneMemberID="firstResponder"/>
