@@ -10,7 +10,7 @@ import Foundation
 import Moya
 
 enum ThingService {
-    case signUp(uid: String, nickname: String, gender: Int?, birth: Double?)
+    case signUp(uid: String, nickname: String, gender: Int?, birth: Int?)
     case rankings(filter: String, page: Int)
 }
 
@@ -49,7 +49,7 @@ extension ThingService: TargetType {
             }
 
             if let birth = birth {
-                params["birth"] = birth
+                params["dateBirth"] = birth
             }
 
             return .requestParameters(parameters: params, encoding: JSONEncoding.default)
@@ -59,8 +59,7 @@ extension ThingService: TargetType {
 	}
 
 	var headers: [String: String]? {
-//        guard let token = "uid" else { return ["Content-type": "application/json"] }
-        let uid = "qwertyasdfg"
+        guard let uid = FirebaseLayer.getUid() else { return ["Content-type": "application/json"] }
 
         return ["Content-type": "application/json", "uid": uid]
 	}
