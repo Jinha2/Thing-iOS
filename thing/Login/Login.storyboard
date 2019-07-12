@@ -34,7 +34,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTL-bJ-IZ4">
-                                                <rect key="frame" x="39" y="275.5" width="336" height="40"/>
+                                                <rect key="frame" x="39" y="291.5" width="336" height="40"/>
                                                 <color key="backgroundColor" name="MainRed"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="u74-ub-XS8"/>
@@ -53,7 +53,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HbM-en-lj0">
-                                                <rect key="frame" x="39" y="395.5" width="336" height="40"/>
+                                                <rect key="frame" x="39" y="411.5" width="336" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="Da7-w1-12J"/>
                                                 </constraints>
@@ -83,13 +83,16 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="패스워드 입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mLi-Uq-d0R" customClass="UnderLineTextField" customModule="thing" customModuleProvider="target">
-                                                <rect key="frame" x="39" y="193" width="336" height="18"/>
+                                                <rect key="frame" x="39" y="193" width="336" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34" id="nJK-vW-CmS"/>
+                                                </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DdH-uZ-Fb5">
-                                                <rect key="frame" x="145.5" y="228" width="123" height="27.5"/>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DdH-uZ-Fb5">
+                                                <rect key="frame" x="145.5" y="244" width="123" height="27.5"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle">
                                                         <fragment content="비밀번호를">
@@ -123,13 +126,15 @@
                                                     </attributedString>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JS4-27-dDU">
-                                                <rect key="frame" x="39" y="347.5" width="336" height="40"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JS4-27-dDU">
+                                                <rect key="frame" x="39" y="363.5" width="336" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="u3D-xe-DQC"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                <state key="normal" title="Google로  로그인하기">
+                                                <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="4" maxY="0.0"/>
+                                                <state key="normal" title="Google로 로그인하기" image="google.png">
                                                     <color key="titleColor" name="greyishBrown"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -380,7 +385,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="당신만을 위한 유튜브 영상 추천을 위해 활용됩니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oB7-0y-oqk">
-                                <rect key="frame" x="41" y="152" width="332" height="16"/>
+                                <rect key="frame" x="41" y="152" width="261.5" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="Xkq-AS-JqK"/>
                                 </constraints>
@@ -389,7 +394,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="성별" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19R-BD-iia">
-                                <rect key="frame" x="41" y="308" width="65" height="22"/>
+                                <rect key="frame" x="41" y="308" width="26" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="Ozp-EG-PcT"/>
                                 </constraints>
@@ -398,7 +403,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나이 (출생년도)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shn-5V-i52">
-                                <rect key="frame" x="41" y="420" width="127" height="22"/>
+                                <rect key="frame" x="41" y="420" width="93" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="wM2-gB-f7U"/>
                                 </constraints>
@@ -509,14 +514,11 @@
                             <constraint firstItem="W4K-7i-jsw" firstAttribute="leading" secondItem="NSB-Hz-WfL" secondAttribute="leading" constant="40" id="bb5-6H-VUw"/>
                             <constraint firstItem="shn-5V-i52" firstAttribute="leading" secondItem="NSB-Hz-WfL" secondAttribute="leading" constant="41" id="bgh-hb-S5Q"/>
                             <constraint firstItem="NSB-Hz-WfL" firstAttribute="trailing" secondItem="W4K-7i-jsw" secondAttribute="trailing" constant="40" id="bnB-EX-JCo"/>
-                            <constraint firstItem="NSB-Hz-WfL" firstAttribute="trailing" secondItem="19R-BD-iia" secondAttribute="trailing" constant="308" id="czp-cA-Xgi"/>
                             <constraint firstItem="NSB-Hz-WfL" firstAttribute="trailing" secondItem="Swr-9I-x3R" secondAttribute="trailing" constant="41" id="eo9-P7-nIg"/>
                             <constraint firstItem="Swr-9I-x3R" firstAttribute="top" secondItem="shn-5V-i52" secondAttribute="bottom" constant="16" id="iZ9-Wr-xdd"/>
                             <constraint firstItem="akd-v7-o3H" firstAttribute="top" secondItem="19R-BD-iia" secondAttribute="bottom" constant="12" id="kF6-ga-Syr"/>
-                            <constraint firstItem="NSB-Hz-WfL" firstAttribute="trailing" secondItem="shn-5V-i52" secondAttribute="trailing" constant="246" id="nww-Ex-UCd"/>
                             <constraint firstItem="fQW-sm-Kgs" firstAttribute="leading" secondItem="oAf-o8-MaE" secondAttribute="leading" id="qOb-aI-45y"/>
                             <constraint firstItem="Swr-9I-x3R" firstAttribute="leading" secondItem="NSB-Hz-WfL" secondAttribute="leading" constant="39" id="rFt-TM-ptO"/>
-                            <constraint firstItem="NSB-Hz-WfL" firstAttribute="trailing" secondItem="oB7-0y-oqk" secondAttribute="trailing" constant="41" id="ubI-B9-iNA"/>
                             <constraint firstItem="19R-BD-iia" firstAttribute="leading" secondItem="NSB-Hz-WfL" secondAttribute="leading" constant="41" id="vTI-hY-8Og"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NSB-Hz-WfL"/>
@@ -524,9 +526,6 @@
                     <connections>
                         <outlet property="ageTextField" destination="Swr-9I-x3R" id="Oxx-mC-rEo"/>
                         <outlet property="displayNameTextField" destination="YhT-Oa-LaY" id="4tZ-8F-AGh"/>
-                        <outlet property="manButtonAction" destination="UJU-VN-Ag1" id="hrE-c3-VzO"/>
-                        <outlet property="noneButtonAction" destination="x3l-zr-vPG" id="1x2-eI-TKj"/>
-                        <outlet property="womanButtonAction" destination="ZWf-cM-QyK" id="lXg-22-sOS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Kb-fl-3vg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -558,6 +557,7 @@
         <image name="genderOption02Selected" width="69" height="39"/>
         <image name="genderOption03Default" width="39" height="39"/>
         <image name="genderOption03Selected" width="39" height="39"/>
+        <image name="google.png" width="18" height="18"/>
         <image name="signupDefault" width="44" height="44"/>
         <image name="signupDefaultCopy" width="44" height="44"/>
         <namedColor name="MainRed">
