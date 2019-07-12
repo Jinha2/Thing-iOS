@@ -12,6 +12,8 @@ class YoutuberPopularVideoTableViewCell: UITableViewCell {
 
     @IBOutlet weak var collectionView: UICollectionView!
 
+    var videos = [Video]()
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,7 +26,9 @@ class YoutuberPopularVideoTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+}
 
+extension YoutuberPopularVideoTableViewCell {
     func setCollectionView() {
 
         collectionView.delegate = self
@@ -41,6 +45,12 @@ class YoutuberPopularVideoTableViewCell: UITableViewCell {
     }
 }
 
+extension YoutuberPopularVideoTableViewCell {
+    func configure(_ videos: [Video]) {
+        self.videos = videos
+    }
+}
+
 extension YoutuberPopularVideoTableViewCell: UICollectionViewDelegate {
 
 }
@@ -48,12 +58,12 @@ extension YoutuberPopularVideoTableViewCell: UICollectionViewDelegate {
 extension YoutuberPopularVideoTableViewCell: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return videos.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "YoutuberPopularVideoCollectionViewCell", for: indexPath) as? YoutuberPopularVideoCollectionViewCell else { return .init() }
-
+        cell.configure(videos[indexPath.row])
         return cell
     }
 }

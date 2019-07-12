@@ -30,8 +30,8 @@ extension ThingService: TargetType {
             return "/v1/rankings"
         case .categories(let categoryId, _, _):
             return "/v1/categories/\(categoryId)/rankings"
-        case .youtuber:
-            return "/v1/youtubers"
+        case .youtuber(let id):
+            return "/v1/youtubers/\(id)"
 		}
 	}
 
@@ -68,14 +68,14 @@ extension ThingService: TargetType {
             return .requestParameters(parameters: ["filter": filter, "page": page], encoding: URLEncoding.default)
         case .categories(let categoryId, let filter, let page):
             return .requestParameters(parameters: ["categoryId": categoryId, "filter": filter, "page": page], encoding: URLEncoding.default)
-        case .youtuber(let id):
-            return .requestParameters(parameters: ["youTuberId": id], encoding: URLEncoding.default)
+        case .youtuber:
+            return .requestPlain
 		}
 	}
 
 	var headers: [String: String]? {
         guard let uid = FirebaseLayer.getUid() else { return ["Content-type": "application/json"] }
 
-        return ["Content-type": "application/json", "uid": uid]
+        return ["Content-type": "application/json", "uid": "test"]
 	}
 }

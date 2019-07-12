@@ -7,27 +7,20 @@
 //
 
 import UIKit
+import Kingfisher
 
 class EndPageViewController: UIViewController {
 
-    @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var bannerImageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
 
     var id: Int?
-
     var youtuber: Youtuber?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.delegate = self
-        tableView.dataSource = self
-
-        tableView.contentInset = .init(top: 70, left: 0, bottom: 0, right: 0)
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        setTableView()
 
         guard let id = id else { return }
         requestYoutuber(id: id)
@@ -40,55 +33,55 @@ class EndPageViewController: UIViewController {
 }
 
 extension EndPageViewController {
+    func setTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+
+        let topInset = UIScreen.main.bounds.width * 0.3
+        tableView.contentInset = .init(top: topInset, left: 0, bottom: 0, right: 0)
+    }
+}
+
+extension EndPageViewController {
     func requestYoutuber(id: Int) {
 
         ThingProvider().youtuber(id: id, completion: { data in
+            print(id)
             guard let data = data else { return }
-            print(data)
             do {
                 let decoder = JSONDecoder()
                 let youtuber = try decoder.decode(Youtuber.self, from: data)
 
-                print(youtuber)
-
-            } catch {}
+                self.youtuber = youtuber
+                self.setBannerImage()
+            } catch { }
         }) { _ in
 
         }
-
-//        ThingProvider().rankings(filter: filter, page: page, completion: { data in
-//            guard let data = data else { return }
-//
-//            do {
-//                let decoder = JSONDecoder()
-//                let rankings = try decoder.decode(Rankings.self, from: data)
-//
-//                self.nextPage = rankings.nextPage
-//
-//                for ranking in rankings.rankings {
-//                    self.rankings.append(ranking)
-//                }
-//
-//                self.rankingTableView.reloadData()
-//            } catch {}
-//        }) { _ in
-//
-//        }
     }
+
+    func setBannerImage() {
+        guard let youtuber = youtuber else { return }
+        if let banner = youtuber.bannerImgUrl {
+            let url = URL(string: banner)
+            bannerImageView.kf.setImage(with: url)
+        }
+    }
+
 }
 
 extension EndPageViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        return 2
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
             return 2
-        case 3: //3,4 는 한줄평 섹션
-            return 1 // 수정
-        case 4:
-            return 1 // 수정
+//        case 3: //3,4 는 한줄평 섹션
+//            return 1 // 수정
+//        case 4:
+//            return 1 // 수정
         default:
             return 1
         }
@@ -126,30 +119,20 @@ extension EndPageViewController: UITableViewDataSource {
 extension EndPageViewController {
     func youtuberInfoCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "YoutuberInfoTableViewCell", for: indexPath) as? YoutuberInfoTableViewCell else { return .init() }
+             cell.configure(youtuber)
 
         return cell
     }
 
     func youtuberDescriptionCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "YoutuberDescriptionTableViewCell", for: indexPath) as? YoutuberDescriptionTableViewCell else { return .init() }
-
-        cell.descriptionLabel.text = """
-        재르시 구독과 좋아요 부탁드립니다.
-        재르시 구독과 좋아요 부탁드립니다.
-        재르시 구독과 좋아요 부탁드립니다.
-        재르시 구독과 좋아요 부탁드립니다.
-        재르시 구독과 좋아요 부탁드립니다.
-        재르시 구독과 좋아요 부탁드립니다.
-        재르시 구독과 좋아요 부탁드립니다.
-        재르시 구독과 좋아요 부탁드립니다.
-
-        """
+        cell.configure(description: youtuber?.description)
         return cell
     }
 
     func youtuberPopularVideoCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "YoutuberPopularVideoTableViewCell", for: indexPath) as? YoutuberPopularVideoTableViewCell else { return .init() }
-
+        cell.configure(youtuber?.videos ?? [])
         return cell
     }
 

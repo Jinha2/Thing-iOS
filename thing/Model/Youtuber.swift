@@ -9,32 +9,35 @@
 import Foundation
 
 struct Youtuber: Decodable {
-    let bannerImgUrl: String
+    let bannerImgUrl: String?
     let channelId: String
     let description: String
     let id: Int
     let likeReviews: [Review]
     let name: String
     let noReviews: [Review]
-    let publishedAt: Date
+    let publishedAt: String
     let subscriberCount: Int
-    let thumbnail: String
+    let thumbnail: String?
+    let noReviewCount: Int
+    let likeReviewCount: Int
     let videos: [Video]
     let viewCount: Int
 }
 
 struct Review: Decodable {
-    let createAt: Date
+    let createAt: Double
     let id: Int
     let liked: String
     let nickName: String
+    let owner: Bool
     let profileUrl: String
     let text: String
 }
 
 struct Video: Decodable {
     let id: Int
-    let publishedAt: Date
+    let publishedAt: String
     let thumbnail: String
     let title: String
     let youtubeVideoId: String

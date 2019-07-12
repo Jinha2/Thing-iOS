@@ -7,9 +7,20 @@
 //
 
 import UIKit
+import Kingfisher
 
 class YoutuberPopularVideoCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var thumbnailImageView: UIImageView!
 
+}
+
+extension YoutuberPopularVideoCollectionViewCell {
+    func configure(_ video: Video) {
+        titleLabel.text = video.title
+
+        let url = URL(string: video.thumbnail)
+        thumbnailImageView.kf.setImage(with: url)
+    }
 }

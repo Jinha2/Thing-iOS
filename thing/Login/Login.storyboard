@@ -85,13 +85,13 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="패스워드 입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mLi-Uq-d0R" customClass="UnderLineTextField" customModule="thing" customModuleProvider="target">
                                                 <rect key="frame" x="39" y="193" width="336" height="34"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="34" id="zmd-Hp-0Tf"/>
+                                                    <constraint firstAttribute="height" constant="34" id="nJK-vW-CmS"/>
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DdH-uZ-Fb5">
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DdH-uZ-Fb5">
                                                 <rect key="frame" x="145.5" y="244" width="123" height="27.5"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle">
@@ -126,13 +126,15 @@
                                                     </attributedString>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JS4-27-dDU">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JS4-27-dDU">
                                                 <rect key="frame" x="39" y="363.5" width="336" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="u3D-xe-DQC"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                <state key="normal" title="Google로  로그인하기">
+                                                <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="4" maxY="0.0"/>
+                                                <state key="normal" title="Google로 로그인하기" image="google.png">
                                                     <color key="titleColor" name="greyishBrown"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -242,7 +244,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일로 가입하기" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1e-0e-1pS">
-                                <rect key="frame" x="41" y="84" width="189" height="27"/>
+                                <rect key="frame" x="41" y="84" width="332" height="27"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -256,7 +258,7 @@
                                 <state key="normal" image="signupDefault"/>
                                 <state key="selected" image="signupDefaultCopy"/>
                                 <connections>
-                                    <action selector="checkButtonAction:" destination="5RI-gy-uXj" eventType="touchUpInside" id="rYU-HI-kte"/>
+                                    <action selector="checkButtonAction:" destination="5RI-gy-uXj" eventType="touchUpInside" id="NQO-1Z-qDS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ndG-32-PSa">
@@ -291,7 +293,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="DZP-Bp-uvQ" firstAttribute="top" secondItem="WFx-Mb-Nvt" secondAttribute="bottom" constant="16" id="1dT-WI-m3V"/>
-                            <constraint firstItem="ZrM-2u-8Dn" firstAttribute="trailing" secondItem="B1e-0e-1pS" secondAttribute="trailing" constant="184" id="60V-Pp-lUN"/>
+                            <constraint firstItem="ZrM-2u-8Dn" firstAttribute="trailing" secondItem="B1e-0e-1pS" secondAttribute="trailing" constant="41" id="75J-Xz-6JY"/>
                             <constraint firstItem="ZrM-2u-8Dn" firstAttribute="trailing" secondItem="KEb-kM-kOF" secondAttribute="trailing" constant="40" id="BBW-Hx-lT3"/>
                             <constraint firstItem="KEb-kM-kOF" firstAttribute="top" secondItem="B1e-0e-1pS" secondAttribute="bottom" constant="38" id="Cd4-M9-bfE"/>
                             <constraint firstItem="sZp-cW-PVW" firstAttribute="leading" secondItem="gdV-m8-muS" secondAttribute="trailing" id="DH2-fW-u42"/>
@@ -322,7 +324,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="agreeLinkTextView" destination="sZp-cW-PVW" id="ikk-lH-QPI"/>
-                        <outlet property="checkButtonAction" destination="gdV-m8-muS" id="G25-ag-LJx"/>
+                        <outlet property="checkButtonAction" destination="gdV-m8-muS" id="xXe-pn-h5L"/>
                         <outlet property="confirmTextField" destination="DZP-Bp-uvQ" id="mAH-Do-RpH"/>
                         <outlet property="emailTextField" destination="KEb-kM-kOF" id="jtD-4j-akl"/>
                         <outlet property="passwordTextField" destination="WFx-Mb-Nvt" id="IdO-lC-d3o"/>
@@ -383,7 +385,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="당신만을 위한 유튜브 영상 추천을 위해 활용됩니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oB7-0y-oqk">
-                                <rect key="frame" x="41" y="152" width="316" height="16"/>
+                                <rect key="frame" x="41" y="152" width="261.5" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="Xkq-AS-JqK"/>
                                 </constraints>
@@ -392,7 +394,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="성별" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19R-BD-iia">
-                                <rect key="frame" x="41" y="308" width="65" height="22"/>
+                                <rect key="frame" x="41" y="308" width="26" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="Ozp-EG-PcT"/>
                                 </constraints>
@@ -401,7 +403,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나이 (출생년도)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shn-5V-i52">
-                                <rect key="frame" x="41" y="420" width="127" height="22"/>
+                                <rect key="frame" x="41" y="420" width="93" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="wM2-gB-f7U"/>
                                 </constraints>
@@ -440,7 +442,7 @@
                                             <color key="titleColor" name="veryLightPink"/>
                                         </state>
                                         <connections>
-                                            <action selector="noneButtonAction:" destination="3Tc-8b-7y9" eventType="touchUpInside" id="8aB-mr-hH3"/>
+                                            <action selector="noneButtonAction:" destination="3Tc-8b-7y9" eventType="touchUpInside" id="Mxf-KG-lK9"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJU-VN-Ag1">
@@ -456,7 +458,7 @@
                                             <color key="titleColor" name="veryLightPink"/>
                                         </state>
                                         <connections>
-                                            <action selector="manButtonAction:" destination="3Tc-8b-7y9" eventType="touchUpInside" id="4Ar-cY-41e"/>
+                                            <action selector="manButtonAction:" destination="3Tc-8b-7y9" eventType="touchUpInside" id="If3-iA-Xk9"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWf-cM-QyK">
@@ -472,7 +474,7 @@
                                             <color key="titleColor" name="veryLightPink"/>
                                         </state>
                                         <connections>
-                                            <action selector="womanButtonAction:" destination="3Tc-8b-7y9" eventType="touchUpInside" id="TmJ-B2-86v"/>
+                                            <action selector="womanButtonAction:" destination="3Tc-8b-7y9" eventType="touchUpInside" id="X39-qb-aKL"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -512,12 +514,9 @@
                             <constraint firstItem="W4K-7i-jsw" firstAttribute="leading" secondItem="NSB-Hz-WfL" secondAttribute="leading" constant="40" id="bb5-6H-VUw"/>
                             <constraint firstItem="shn-5V-i52" firstAttribute="leading" secondItem="NSB-Hz-WfL" secondAttribute="leading" constant="41" id="bgh-hb-S5Q"/>
                             <constraint firstItem="NSB-Hz-WfL" firstAttribute="trailing" secondItem="W4K-7i-jsw" secondAttribute="trailing" constant="40" id="bnB-EX-JCo"/>
-                            <constraint firstItem="NSB-Hz-WfL" firstAttribute="trailing" secondItem="19R-BD-iia" secondAttribute="trailing" constant="308" id="czp-cA-Xgi"/>
                             <constraint firstItem="NSB-Hz-WfL" firstAttribute="trailing" secondItem="Swr-9I-x3R" secondAttribute="trailing" constant="41" id="eo9-P7-nIg"/>
                             <constraint firstItem="Swr-9I-x3R" firstAttribute="top" secondItem="shn-5V-i52" secondAttribute="bottom" constant="16" id="iZ9-Wr-xdd"/>
                             <constraint firstItem="akd-v7-o3H" firstAttribute="top" secondItem="19R-BD-iia" secondAttribute="bottom" constant="12" id="kF6-ga-Syr"/>
-                            <constraint firstItem="NSB-Hz-WfL" firstAttribute="trailing" secondItem="oB7-0y-oqk" secondAttribute="trailing" constant="57" id="l9f-sq-efD"/>
-                            <constraint firstItem="NSB-Hz-WfL" firstAttribute="trailing" secondItem="shn-5V-i52" secondAttribute="trailing" constant="246" id="nww-Ex-UCd"/>
                             <constraint firstItem="fQW-sm-Kgs" firstAttribute="leading" secondItem="oAf-o8-MaE" secondAttribute="leading" id="qOb-aI-45y"/>
                             <constraint firstItem="Swr-9I-x3R" firstAttribute="leading" secondItem="NSB-Hz-WfL" secondAttribute="leading" constant="39" id="rFt-TM-ptO"/>
                             <constraint firstItem="19R-BD-iia" firstAttribute="leading" secondItem="NSB-Hz-WfL" secondAttribute="leading" constant="41" id="vTI-hY-8Og"/>
@@ -558,6 +557,7 @@
         <image name="genderOption02Selected" width="69" height="39"/>
         <image name="genderOption03Default" width="39" height="39"/>
         <image name="genderOption03Selected" width="39" height="39"/>
+        <image name="google.png" width="18" height="18"/>
         <image name="signupDefault" width="44" height="44"/>
         <image name="signupDefaultCopy" width="44" height="44"/>
         <namedColor name="MainRed">
