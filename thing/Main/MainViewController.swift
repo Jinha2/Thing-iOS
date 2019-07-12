@@ -11,6 +11,7 @@ import UIKit
 class MainViewController: UIViewController {
     @IBOutlet weak var filterTitleLabel: UILabel!
     @IBOutlet weak var rankingTableView: UITableView!
+    @IBOutlet weak var filterButton: UIButton!
 
     private var filter = "TOTAL"
     private var nextPage: Int?
@@ -106,6 +107,11 @@ extension MainViewController {
             self.requestRankings(filter: "SOARING", page: 0)
         }))
         alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: { _ in }))
+
+        if let popoverController = alert.popoverPresentationController {
+            popoverController.sourceView = filterButton
+            popoverController.sourceRect = CGRect(x: filterButton.bounds.midX, y: filterButton.bounds.maxY, width: 0, height: 0)
+        }
 
         present(alert, animated: true)
     }
