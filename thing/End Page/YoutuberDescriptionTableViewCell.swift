@@ -24,3 +24,9 @@ class YoutuberDescriptionTableViewCell: UITableViewCell {
     }
 
 }
+
+extension YoutuberDescriptionTableViewCell {
+    func configure(description: String?) {
+        descriptionLabel.text = description
+    }
+}

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class YoutuberInfoTableViewCell: UITableViewCell {
 
@@ -31,5 +32,23 @@ class YoutuberInfoTableViewCell: UITableViewCell {
         contentView.cornerRadius = 20
         contentView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         contentView.clipsToBounds = true
+    }
+}
+
+extension YoutuberInfoTableViewCell {
+    func configure(_ youtuber: Youtuber?) {
+        youtuberNameLabel.text = youtuber?.name
+        subscribeNumLabel.text = (insertCommas(youtuber?.subscriberCount ?? 0) ?? "0") + " 명"
+
+        if let thumbNail = youtuber?.thumbnail {
+            let url = URL(string: thumbNail)
+            youtuberImageView.kf.setImage(with: url)
+        }
+    }
+
+    func insertCommas(_ num: Int) -> String? {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        return numberFormatter.string(from: NSNumber(value: num))
     }
 }
