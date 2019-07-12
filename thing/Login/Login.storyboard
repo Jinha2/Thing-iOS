@@ -134,7 +134,7 @@
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="4" maxY="0.0"/>
-                                                <state key="normal" title="Google로 로그인하기" image="google.png">
+                                                <state key="normal" title="Google로 로그인하기" image="bitmap">
                                                     <color key="titleColor" name="greyishBrown"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -551,13 +551,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bitmap" width="15" height="16"/>
         <image name="btnMan" width="70" height="40"/>
         <image name="genderOption01Selected" width="70" height="40"/>
         <image name="genderOption02Default" width="69" height="39"/>
         <image name="genderOption02Selected" width="69" height="39"/>
         <image name="genderOption03Default" width="39" height="39"/>
         <image name="genderOption03Selected" width="39" height="39"/>
-        <image name="google.png" width="18" height="18"/>
         <image name="signupDefault" width="44" height="44"/>
         <image name="signupDefaultCopy" width="44" height="44"/>
         <namedColor name="MainRed">
