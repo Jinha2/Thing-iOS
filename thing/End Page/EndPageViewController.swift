@@ -36,6 +36,8 @@ extension EndPageViewController {
     func setTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.estimatedRowHeight = 160
+        tableView.rowHeight = UITableView.automaticDimension
 
         let topInset = UIScreen.main.bounds.width * 0.3
         tableView.contentInset = .init(top: topInset, left: 0, bottom: 0, right: 0)
@@ -53,6 +55,9 @@ extension EndPageViewController {
                 let youtuber = try decoder.decode(Youtuber.self, from: data)
 
                 self.youtuber = youtuber
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
                 self.setBannerImage()
             } catch { }
         }) { _ in

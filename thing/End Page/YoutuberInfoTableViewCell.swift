@@ -15,6 +15,8 @@ class YoutuberInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var youtuberNameLabel: UILabel!
     @IBOutlet weak var subscribeNumLabel: UILabel!
 
+    var channelId: String?
+
     override func awakeFromNib() {
         super.awakeFromNib()
 
@@ -24,14 +26,9 @@ class YoutuberInfoTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-
-    private func roundCorners() {
-        backgroundColor = .clear
-        contentView.backgroundColor = .white
-
-        contentView.cornerRadius = 20
-        contentView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        contentView.clipsToBounds = true
+    @IBAction func goToYoutubeAction(_ sender: UIButton) {
+        guard let channelId = channelId else { return }
+        playInYoutube(youtubeId: channelId)
     }
 }
 
@@ -44,11 +41,32 @@ extension YoutuberInfoTableViewCell {
             let url = URL(string: thumbNail)
             youtuberImageView.kf.setImage(with: url)
         }
+        channelId = youtuber?.channelId
     }
 
     func insertCommas(_ num: Int) -> String? {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
         return numberFormatter.string(from: NSNumber(value: num))
+    }
+
+    private func roundCorners() {
+        backgroundColor = .clear
+        contentView.backgroundColor = .white
+
+        contentView.cornerRadius = 20
+        contentView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        contentView.clipsToBounds = true
+    }
+
+    func playInYoutube(youtubeId: String) {
+//        if let youtubeURL = URL(string: "youtube://\(youtubeId)"),
+//            UIApplication.shared.canOpenURL(youtubeURL) {
+//            // redirect to app
+//            UIApplication.shared.open(youtubeURL, options: [:], completionHandler: nil)
+        if let youtubeURL = URL(string: "https://www.youtube.com/channel/\(youtubeId)") {
+            // redirect through safari
+            UIApplication.shared.open(youtubeURL, options: [:], completionHandler: nil)
+        }
     }
 }

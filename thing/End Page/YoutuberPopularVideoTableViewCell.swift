@@ -49,10 +49,24 @@ extension YoutuberPopularVideoTableViewCell {
     func configure(_ videos: [Video]) {
         self.videos = videos
     }
+
+    func playInYoutube(youtubeId: String) {
+        //        if let youtubeURL = URL(string: "youtube://\(youtubeId)"),
+        //            UIApplication.shared.canOpenURL(youtubeURL) {
+        //            // redirect to app
+        //            UIApplication.shared.open(youtubeURL, options: [:], completionHandler: nil)
+        if let youtubeURL = URL(string: "https://www.youtube.com/watch?v=\(youtubeId)") {
+            // redirect through safari
+            UIApplication.shared.open(youtubeURL, options: [:], completionHandler: nil)
+        }
+    }
+
 }
 
 extension YoutuberPopularVideoTableViewCell: UICollectionViewDelegate {
-
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        playInYoutube(youtubeId: videos[indexPath.row].youtubeVideoId)
+    }
 }
 
 extension YoutuberPopularVideoTableViewCell: UICollectionViewDataSource {
