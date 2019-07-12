@@ -53,11 +53,11 @@ extension YoutuberPopularVideoTableViewCell {
     }
 
     private func playInYoutube(youtubeId: String) {
-        //        if let youtubeURL = URL(string: "youtube://\(youtubeId)"),
-        //            UIApplication.shared.canOpenURL(youtubeURL) {
-        //            // redirect to app
-        //            UIApplication.shared.open(youtubeURL, options: [:], completionHandler: nil)
-        if let youtubeURL = URL(string: "https://www.youtube.com/watch?v=\(youtubeId)") {
+        if let youtubeURL = URL(string: "youtube://\(youtubeId)"),
+            UIApplication.shared.canOpenURL(youtubeURL) {
+            // redirect to app
+            UIApplication.shared.open(youtubeURL, options: [:], completionHandler: nil)
+        } else if let youtubeURL = URL(string: "https://www.youtube.com/watch?v=\(youtubeId)") {
             // redirect through safari
             UIApplication.shared.open(youtubeURL, options: [:], completionHandler: nil)
         }
