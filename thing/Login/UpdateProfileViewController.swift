@@ -15,6 +15,7 @@ class UpdateProfileViewController: UIViewController {
     var year = [Int]()
     var 성별: Int?
     var 현재버튼: UIButton?
+    var selectedYear: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,15 +49,17 @@ class UpdateProfileViewController: UIViewController {
     }
 
     @IBAction private func completeButtonAction(_ sender: Any) {
-        guard let displayName = displayNameTextField.text, let age = ageTextField.text, checkValidation() else { return }
-
-        // 우리서버에 날려야함
-        showActivityIndicator()
-
-        FirebaseLayer.changeUser(displayName: displayName) { [weak self] in
-            hideActivityIndicator()
-            self?.dismiss(animated: true, completion: nil)
+        guard let uid = FirebaseLayer.getUid(), let displayName = displayNameTextField.text, checkValidation() else { return }
+        ThingProvider().signUp(uid: uid, nickname: displayName, gender: 성별, birth: selectedYear, completion: { data in
+            Log(data)
+            FirebaseLayer.changeUser(displayName: displayName) { [weak self] in
+                hideActivityIndicator()
+                self?.dismiss(animated: true, completion: nil)
+            }
+        }) { error in
+            presentErrorAlert(error: error)
         }
+        showActivityIndicator()
     }
 
     @IBAction func closeButtonAction(_ sender: Any) {
@@ -121,7 +124,7 @@ extension UpdateProfileViewController: UIPickerViewDataSource, UIPickerViewDeleg
         let cal = Calendar.current
         let date = Date()
         let currentYear = cal.component(.year, from: date)
-
+        selectedYear = year[year.count - row - 1]
         ageTextField.text = "\(year[year.count - row - 1]), 만 \(currentYear - year[year.count - row - 1])세"
     }
 

@@ -13,7 +13,7 @@ import Result
 class ThingProvider {
     let provider = MoyaProvider<ThingService>()
 
-    func signUp(uid: String, nickname: String, gender: Int?, birth: Double?, completion: @escaping ((Data?) -> Void), failure: @escaping ((Error) -> Void)) {
+    func signUp(uid: String, nickname: String, gender: Int?, birth: Int?, completion: @escaping ((Data?) -> Void), failure: @escaping ((Error) -> Void)) {
         provider.request(.signUp(uid: uid, nickname: nickname, gender: gender, birth: birth)) { result in
             self.resultTask(result, completion: completion, failure: failure)
         }
@@ -27,6 +27,12 @@ class ThingProvider {
 
     func categories(categoryId: Int, filter: String, page: Int, completion: @escaping ((Data?) -> Void), failure: @escaping ((Error) -> Void)) {
         provider.request(.categories(categoryId: categoryId, filter: filter, page: page)) { result in
+            self.resultTask(result, completion: completion, failure: failure)
+        }
+    }
+
+    func youtuber(id: Int, completion: @escaping ((Data?) -> Void), failure: @escaping ((Error) -> Void)) {
+        provider.request(.youtuber(id: id)) { result in
             self.resultTask(result, completion: completion, failure: failure)
         }
     }

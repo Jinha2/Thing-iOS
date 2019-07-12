@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2dg-DY-TWy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0HB-q9-hmE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -224,7 +224,7 @@
             </objects>
             <point key="canvasLocation" x="1002.4" y="67.016491754122939"/>
         </scene>
-        <!--My Setting View Controller-->
+        <!--My-->
         <scene sceneID="F40-ur-5Ee">
             <objects>
                 <tableViewController id="0HB-q9-hmE" customClass="MySettingViewController" customModule="thing" customModuleProvider="target" sceneMemberID="viewController">
@@ -242,7 +242,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DuG-Yk-HZO">
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DuG-Yk-HZO">
                                                     <rect key="frame" x="15" y="13" width="44" height="44"/>
                                                     <state key="normal" image="back"/>
                                                     <connections>
@@ -324,6 +324,8 @@
                             <outlet property="delegate" destination="0HB-q9-hmE" id="lMX-y4-geZ"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="My" image="mypage" id="wZo-jR-Jxt"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x7Q-Ee-b2d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -13,6 +13,10 @@ class EndPageViewController: UIViewController {
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
 
+    var id: Int?
+
+    var youtuber: Youtuber?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,10 +26,55 @@ class EndPageViewController: UIViewController {
         tableView.contentInset = .init(top: 70, left: 0, bottom: 0, right: 0)
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        guard let id = id else { return }
+        requestYoutuber(id: id)
+    }
+
     @IBAction private func dismissTouchUpInsideAction(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
 
+}
+
+extension EndPageViewController {
+    func requestYoutuber(id: Int) {
+
+        ThingProvider().youtuber(id: id, completion: { data in
+            guard let data = data else { return }
+            print(data)
+            do {
+                let decoder = JSONDecoder()
+                let youtuber = try decoder.decode(Youtuber.self, from: data)
+
+                print(youtuber)
+
+            } catch {}
+        }) { _ in
+
+        }
+
+//        ThingProvider().rankings(filter: filter, page: page, completion: { data in
+//            guard let data = data else { return }
+//
+//            do {
+//                let decoder = JSONDecoder()
+//                let rankings = try decoder.decode(Rankings.self, from: data)
+//
+//                self.nextPage = rankings.nextPage
+//
+//                for ranking in rankings.rankings {
+//                    self.rankings.append(ranking)
+//                }
+//
+//                self.rankingTableView.reloadData()
+//            } catch {}
+//        }) { _ in
+//
+//        }
+    }
 }
 
 extension EndPageViewController: UITableViewDataSource {

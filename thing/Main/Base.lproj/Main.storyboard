@@ -54,7 +54,6 @@
                     <connections>
                         <segue destination="Gq5-fe-zsx" kind="relationship" relationship="viewControllers" id="iUj-6d-DJz"/>
                         <segue destination="gak-Lq-c7f" kind="relationship" relationship="viewControllers" id="AeG-fF-U8s"/>
-                        <segue destination="x5e-pa-5Ji" kind="relationship" relationship="viewControllers" id="LQJ-8a-VJF"/>
                         <segue destination="BC5-58-N9i" kind="relationship" relationship="viewControllers" id="q8h-CY-KvW"/>
                     </connections>
                 </tabBarController>
@@ -70,51 +69,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="174" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dqi-1O-WIV">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HRG-gc-W5Q">
+                                <rect key="frame" x="0.0" y="44" width="414" height="117"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="유튜버 랭킹" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DeR-aj-3re">
+                                        <rect key="frame" x="15" y="20" width="297" height="34"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                        <color key="textColor" name="MainRed"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="유튜브 구독자 랭킹" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPP-Gc-4xF">
+                                        <rect key="frame" x="15" y="70" width="384" height="27"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OCL-Ag-Ekf">
+                                        <rect key="frame" x="362" y="20" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="WPa-QA-418"/>
+                                            <constraint firstAttribute="height" constant="44" id="rsA-PP-Suz"/>
+                                        </constraints>
+                                        <state key="normal" image="group11"/>
+                                        <connections>
+                                            <action selector="filterButtonAction:" destination="Gq5-fe-zsx" eventType="touchUpInside" id="9f7-gx-YGJ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <view key="tableHeaderView" contentMode="scaleToFill" id="HRG-gc-W5Q">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="118"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="유튜버 랭킹" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DeR-aj-3re">
-                                            <rect key="frame" x="15" y="20" width="297" height="34"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
-                                            <color key="textColor" name="MainRed"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="유튜브 구독자 랭킹" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPP-Gc-4xF">
-                                            <rect key="frame" x="15" y="70" width="384" height="27"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OCL-Ag-Ekf">
-                                            <rect key="frame" x="362" y="20" width="44" height="44"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="44" id="WPa-QA-418"/>
-                                                <constraint firstAttribute="height" constant="44" id="rsA-PP-Suz"/>
-                                            </constraints>
-                                            <state key="normal" image="group11"/>
-                                            <connections>
-                                                <action selector="filterButtonAction:" destination="Gq5-fe-zsx" eventType="touchUpInside" id="9f7-gx-YGJ"/>
-                                            </connections>
-                                        </button>
-                                    </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <constraints>
-                                        <constraint firstItem="DeR-aj-3re" firstAttribute="leading" secondItem="HRG-gc-W5Q" secondAttribute="leading" constant="15" id="0h0-tA-32V"/>
-                                        <constraint firstItem="DeR-aj-3re" firstAttribute="top" secondItem="HRG-gc-W5Q" secondAttribute="top" constant="20" id="EUs-zd-KOm"/>
-                                        <constraint firstAttribute="trailing" secondItem="OCL-Ag-Ekf" secondAttribute="trailing" constant="8" id="Jiu-aP-J9A"/>
-                                        <constraint firstItem="OCL-Ag-Ekf" firstAttribute="top" secondItem="HRG-gc-W5Q" secondAttribute="top" constant="20" id="QNi-1i-dxj"/>
-                                        <constraint firstAttribute="trailing" secondItem="nPP-Gc-4xF" secondAttribute="trailing" constant="15" id="TkA-n9-CNr"/>
-                                        <constraint firstItem="nPP-Gc-4xF" firstAttribute="leading" secondItem="HRG-gc-W5Q" secondAttribute="leading" constant="15" id="maN-Hb-CEa"/>
-                                        <constraint firstItem="nPP-Gc-4xF" firstAttribute="top" secondItem="DeR-aj-3re" secondAttribute="bottom" constant="16" id="ufS-Uj-66q"/>
-                                        <constraint firstItem="OCL-Ag-Ekf" firstAttribute="leading" secondItem="DeR-aj-3re" secondAttribute="trailing" constant="50" id="vB2-Yv-orl"/>
-                                    </constraints>
-                                </view>
+                                <constraints>
+                                    <constraint firstItem="DeR-aj-3re" firstAttribute="leading" secondItem="HRG-gc-W5Q" secondAttribute="leading" constant="15" id="0h0-tA-32V"/>
+                                    <constraint firstItem="DeR-aj-3re" firstAttribute="top" secondItem="HRG-gc-W5Q" secondAttribute="top" constant="20" id="EUs-zd-KOm"/>
+                                    <constraint firstAttribute="trailing" secondItem="OCL-Ag-Ekf" secondAttribute="trailing" constant="8" id="Jiu-aP-J9A"/>
+                                    <constraint firstItem="OCL-Ag-Ekf" firstAttribute="top" secondItem="HRG-gc-W5Q" secondAttribute="top" constant="20" id="QNi-1i-dxj"/>
+                                    <constraint firstAttribute="trailing" secondItem="nPP-Gc-4xF" secondAttribute="trailing" constant="15" id="TkA-n9-CNr"/>
+                                    <constraint firstItem="nPP-Gc-4xF" firstAttribute="leading" secondItem="HRG-gc-W5Q" secondAttribute="leading" constant="15" id="maN-Hb-CEa"/>
+                                    <constraint firstAttribute="bottom" secondItem="nPP-Gc-4xF" secondAttribute="bottom" constant="20" id="nqZ-5w-w0L"/>
+                                    <constraint firstItem="nPP-Gc-4xF" firstAttribute="top" secondItem="DeR-aj-3re" secondAttribute="bottom" constant="16" id="ufS-Uj-66q"/>
+                                    <constraint firstItem="OCL-Ag-Ekf" firstAttribute="leading" secondItem="DeR-aj-3re" secondAttribute="trailing" constant="50" id="vB2-Yv-orl"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="174" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dqi-1O-WIV">
+                                <rect key="frame" x="0.0" y="161" width="414" height="652"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="YoutubeTableViewCell" id="dgU-t8-BiI" customClass="YoutubeTableViewCell" customModule="thing" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="146" width="414" height="174"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="174"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dgU-t8-BiI" id="hOA-QZ-Xpx">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="174"/>
@@ -147,12 +146,12 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P3C-gW-NcA">
                                                     <rect key="frame" x="15" y="104" width="50" height="60"/>
                                                     <subviews>
-                                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="512345." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCN-Dv-m0m">
-                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="53"/>
+                                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCN-Dv-m0m">
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="26.5"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgS-AO-f3g">
+                                                        <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgS-AO-f3g">
                                                             <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
                                                             <color key="backgroundColor" name="MainRed"/>
                                                             <constraints>
@@ -180,7 +179,7 @@
                                                         <constraint firstItem="fgS-AO-f3g" firstAttribute="leading" secondItem="P3C-gW-NcA" secondAttribute="leading" id="l8g-bX-mwq"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="J.Fla" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orx-v4-3cU">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orx-v4-3cU">
                                                     <rect key="frame" x="117" y="113" width="282" height="18"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" id="OV7-Sg-rf4"/>
@@ -188,7 +187,7 @@
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="구독 : 44만 조회수 : 50만" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbt-Mw-CKG">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbt-Mw-CKG">
                                                     <rect key="frame" x="74" y="148" width="325" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" name="greyishBrown"/>
@@ -232,7 +231,10 @@
                         <constraints>
                             <constraint firstItem="Dqi-1O-WIV" firstAttribute="leading" secondItem="thU-yM-6fx" secondAttribute="leading" id="0pq-bT-CrN"/>
                             <constraint firstItem="thU-yM-6fx" firstAttribute="trailing" secondItem="Dqi-1O-WIV" secondAttribute="trailing" id="8Eu-0Y-i3O"/>
-                            <constraint firstItem="Dqi-1O-WIV" firstAttribute="top" secondItem="thU-yM-6fx" secondAttribute="top" id="jrC-zC-aG6"/>
+                            <constraint firstItem="Dqi-1O-WIV" firstAttribute="top" secondItem="HRG-gc-W5Q" secondAttribute="bottom" id="DCw-1Z-qEp"/>
+                            <constraint firstItem="HRG-gc-W5Q" firstAttribute="leading" secondItem="thU-yM-6fx" secondAttribute="leading" id="Fgh-r0-7bx"/>
+                            <constraint firstItem="HRG-gc-W5Q" firstAttribute="top" secondItem="thU-yM-6fx" secondAttribute="top" id="PHg-dN-E3y"/>
+                            <constraint firstItem="HRG-gc-W5Q" firstAttribute="trailing" secondItem="thU-yM-6fx" secondAttribute="trailing" id="V4i-zo-uZV"/>
                             <constraint firstItem="thU-yM-6fx" firstAttribute="bottom" secondItem="Dqi-1O-WIV" secondAttribute="bottom" id="mGt-Ep-bUa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="thU-yM-6fx"/>
@@ -247,7 +249,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UZL-DC-xNl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-472" y="-3"/>
+            <point key="canvasLocation" x="-472.46376811594206" y="-3.3482142857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qTV-vH-lIf">

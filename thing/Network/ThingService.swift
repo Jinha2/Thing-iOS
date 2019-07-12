@@ -10,9 +10,10 @@ import Foundation
 import Moya
 
 enum ThingService {
-    case signUp(uid: String, nickname: String, gender: Int?, birth: Double?)
+    case signUp(uid: String, nickname: String, gender: Int?, birth: Int?)
     case rankings(filter: String, page: Int)
     case categories(categoryId: Int, filter: String, page: Int)
+    case youtuber(id: Int)
 }
 
 extension ThingService: TargetType {
@@ -26,6 +27,8 @@ extension ThingService: TargetType {
             return "/v1/rankings"
         case .categories(let categoryId):
             return "/v1/categories/\(categoryId)/rankings"
+        case .youtuber:
+            return "/v1/youtubers"
 		}
 	}
 
@@ -33,7 +36,7 @@ extension ThingService: TargetType {
 		switch self {
         case .signUp:
             return .post
-        case .rankings, .categories:
+        case .rankings, .categories, .youtuber:
             return .get
 		}
 	}
@@ -52,7 +55,7 @@ extension ThingService: TargetType {
             }
 
             if let birth = birth {
-                params["birth"] = birth
+                params["dateBirth"] = birth
             }
 
             return .requestParameters(parameters: params, encoding: JSONEncoding.default)
@@ -60,12 +63,13 @@ extension ThingService: TargetType {
             return .requestParameters(parameters: ["filter": filter, "page": page], encoding: URLEncoding.default)
         case .categories(let categoryId, let filter, let page):
             return .requestParameters(parameters: ["categoryId": categoryId, "filter": filter, "page": page], encoding: URLEncoding.default)
+        case .youtuber(let id):
+            return .requestParameters(parameters: ["youTuberId": id], encoding: URLEncoding.default)
 		}
 	}
 
 	var headers: [String: String]? {
-//        guard let token = "uid" else { return ["Content-type": "application/json"] }
-        let uid = "test"
+        guard let uid = FirebaseLayer.getUid() else { return ["Content-type": "application/json"] }
 
         return ["Content-type": "application/json", "uid": uid]
 	}

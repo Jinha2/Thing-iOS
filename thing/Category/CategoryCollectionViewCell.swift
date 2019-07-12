@@ -16,10 +16,10 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var selectedLineView: UIView!
 
-    let id: Int?
-    
+    var id: Int?
+
     weak var delegate: CategoryCollectionViewCellDelegate?
-    
+
     override var isSelected: Bool {
         didSet {
             categorySelected()
@@ -33,15 +33,15 @@ class CategoryCollectionViewCell: UICollectionViewCell {
 
     func contents(_ model: Category) {
         reset()
-        
+
         id = model.id
         titleLabel.text = model.categoryType
     }
 
     func categorySelected() {
-        guard let id = id else { return }
+//        guard let id = id else { return }
         selectedLineView.isHidden = isSelected == true ? false : true
-        
+
         delegate?.changeCategory(id)
     }
 }
