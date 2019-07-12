@@ -24,6 +24,13 @@ class ThingProvider {
             self.resultTask(result, completion: completion, failure: failure)
         }
     }
+
+    func youtuber(id: Int, completion: @escaping ((Data?) -> Void), failure: @escaping ((Error) -> Void)) {
+        provider.request(.youtuber(id: id)) { result in
+            self.resultTask(result, completion: completion, failure: failure)
+        }
+
+    }
 }
 
 extension ThingProvider {
