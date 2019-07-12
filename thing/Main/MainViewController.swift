@@ -15,6 +15,7 @@ class MainViewController: UIViewController {
     private var filter = "TOTAL"
     private var nextPage: Int?
     private var rankings = [RankingList]()
+    private var isFirstView: Bool = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +29,10 @@ class MainViewController: UIViewController {
         if !FirebaseLayer.isUserSignedIn() {
             showLoginView()
         } else {
-            requestRankings(filter: filter, page: 0)
+            if isFirstView {
+                requestRankings(filter: filter, page: 0)
+                isFirstView = false
+            }
         }
     }
 
@@ -43,20 +47,20 @@ extension MainViewController {
             rankings.removeAll()
         }
 
-        ThingProvider().rankings(filter: filter, page: page, completion: { data in
+        ThingProvider().rankings(filter: filter, page: page, completion: { [weak self] data in
             guard let data = data else { return }
 
             do {
                 let decoder = JSONDecoder()
                 let rankings = try decoder.decode(Rankings.self, from: data)
 
-                self.nextPage = rankings.nextPage
+                self?.nextPage = rankings.nextPage
 
                 for ranking in rankings.rankings {
-                    self.rankings.append(ranking)
+                    self?.rankings.append(ranking)
                 }
 
-                self.rankingTableView.reloadData()
+                self?.rankingTableView.reloadData()
             } catch {}
         }) { _ in
 

@@ -54,6 +54,7 @@ extension UIViewController {
         let y: CGFloat = (UIScreen.main.bounds.maxY - height) / 2
         let frame = CGRect(x: x, y: y, width: width, height: height)
         let activityIndicatorView = NVActivityIndicatorView(frame: frame, type: NVActivityIndicatorType.allCases.randomElement(), color: .white, padding: 8)
+        activityIndicator?.stopAnimating()
         activityIndicator = activityIndicatorView
         activityIndicatorView.backgroundColor = UIColor(named: "brownGrey")
         activityIndicatorView.alpha = 0.8

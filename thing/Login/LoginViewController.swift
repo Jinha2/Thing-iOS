@@ -29,6 +29,7 @@ class LoginViewController: UIViewController {
 
     @IBAction func googleSignInButtonAction(_ sender: UIButton) {
         GIDSignIn.sharedInstance()?.signIn()
+        showActivityIndicator()
     }
 
     @IBAction private func loginButtonAction(_ sender: Any) {
@@ -68,8 +69,6 @@ extension LoginViewController {
 
 extension LoginViewController: GIDSignInDelegate, GIDSignInUIDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
-        showActivityIndicator()
-
         FirebaseLayer.sign(signIn, user, error) { [weak self] result in
             Log(result)
             hideActivityIndicator()
