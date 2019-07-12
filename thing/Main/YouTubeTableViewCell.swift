@@ -43,6 +43,6 @@ class YoutubeTableViewCell: UITableViewCell {
         rankLabel.isHidden = false
         rankLabel.text = "\(model.ranking)"
         titleLabel.text = model.name
-        countLabel.text = "구독 : \(model.subscriberCount) · 조회수 : \(model.viewCount)"
+        countLabel.text = "구독 \(model.subscriberCount) · 조회수 \(model.viewCount)"
     }
 }
