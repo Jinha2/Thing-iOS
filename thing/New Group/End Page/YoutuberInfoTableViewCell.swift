@@ -27,7 +27,7 @@ class YoutuberInfoTableViewCell: UITableViewCell {
     private func roundCorners() {
         backgroundColor = .clear
         contentView.backgroundColor = .white
-        
+
         contentView.cornerRadius = 20
         contentView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         contentView.clipsToBounds = true

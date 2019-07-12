@@ -21,9 +21,6 @@ class RegisterAccountViewController: UIViewController {
         hideKeyboardWhenTappedAround()
 
     }
-    @IBAction func checkButtonAction(_ sender: Any) {
-        checkButtonAction.isSelected = checkButtonAction.isSelected ? false : true
-    }
 
     @IBAction private func nextButtonAction(_ sender: Any) {
         guard let email = emailTextField.text, let password = passwordTextField.text, checkValidation(), checkButtonAction.isSelected else { return }
@@ -42,10 +39,22 @@ class RegisterAccountViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 
+    @IBAction func checkButtonAction(_ sender: Any) {
+        checkButtonAction.isSelected = checkButtonAction.isSelected ? false : true
+
+    }
 }
 
 extension RegisterAccountViewController {
     func checkValidation() -> Bool {
+        if checkButtonAction.isSelected == false {
+            let alert = UIAlertController(title: "ERROR", message: "개인정보 보호 정책에 동의해주셔야 가입이 가능합니다.", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            }
+            alert.addAction(okAction)
+            present(alert, animated: true, completion: nil)
+        }
+
         guard let email = emailTextField.text, let password = passwordTextField.text, let confirm = confirmTextField.text else { return false }
 
         return isValidEmail(enteredEmail: email) && isValidPassword(password: password) && isEqaul(password: password, confirm: confirm)
@@ -80,16 +89,13 @@ extension RegisterAccountViewController {
     }
 
     func clickLink() {
-        let attributedString = NSMutableAttributedString(string: "회원가입에 따른 이용약관과 개인정보 보호 정책에 동의(필수)")
-        let url1 = URL(string: "https://www.apple.com")!
-        let url2 = URL(string: "https://www.apple.com")!
+        let attributedString = NSMutableAttributedString(string: "회원가입에 따른 개인정보 보호 정책에 동의(필수)")
+        let url = URL(string: "https://github.com/JeaSungLEE/Privacy-Policy/blob/master/U2U2.md")!
 
         attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(named: "brownGreyThree")!, range: NSRange(location: 0, length: attributedString.length))
-        attributedString.addAttribute(kCTFontAttributeName as NSAttributedString.Key, value: UIFont.boldSystemFont(ofSize: 13), range: NSRange(location: 9, length: 4))
-        attributedString.addAttribute(kCTFontAttributeName as NSAttributedString.Key, value: UIFont.boldSystemFont(ofSize: 13), range: NSRange(location: 15, length: 10))
+        attributedString.addAttribute(kCTFontAttributeName as NSAttributedString.Key, value: UIFont.boldSystemFont(ofSize: 13), range: NSRange(location: 9, length: 10))
 
-        attributedString.setAttributes([.link: url1], range: NSRange(location: 9, length: 4))
-        attributedString.setAttributes([.link: url2], range: NSRange(location: 15, length: 10))
+        attributedString.setAttributes([.link: url], range: NSRange(location: 9, length: 10))
 
         self.agreeLinkTextView.attributedText = attributedString
         self.agreeLinkTextView.isUserInteractionEnabled = true

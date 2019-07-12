@@ -11,6 +11,9 @@ import UIKit
 class UpdateProfileViewController: UIViewController {
     @IBOutlet weak var displayNameTextField: UITextField!
     @IBOutlet weak var ageTextField: UITextField!
+    @IBOutlet var manButtonAction: UIButton!
+    @IBOutlet var womanButtonAction: UIButton!
+    @IBOutlet var noneButtonAction: UIButton!
 
     var year = [Int]()
     var 성별: Int?
@@ -32,12 +35,15 @@ class UpdateProfileViewController: UIViewController {
     }
     @IBAction func manButtonAction(_ sender: UIButton) {
         성별선택(sender: sender, type: 1)
+        manButtonAction.isSelected = manButtonAction.isSelected ? false : true
     }
     @IBAction func womanButtonAction(_ sender: UIButton) {
         성별선택(sender: sender, type: 0)
+        womanButtonAction.isSelected = womanButtonAction.isSelected ? false : true
     }
     @IBAction func noneButtonAction(_ sender: UIButton) {
         성별선택(sender: sender, type: 2)
+        noneButtonAction.isSelected = noneButtonAction.isSelected ? false : true
     }
 
     func 성별선택(sender: UIButton, type: Int) {
