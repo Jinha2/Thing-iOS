@@ -15,7 +15,7 @@ class EndPageViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     var id: Int?
-    var youtuber: Youtuber?
+    private var youtuber: Youtuber?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +33,7 @@ class EndPageViewController: UIViewController {
 }
 
 extension EndPageViewController {
-    func setTableView() {
+    private func setTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.estimatedRowHeight = 160
@@ -45,7 +45,7 @@ extension EndPageViewController {
 }
 
 extension EndPageViewController {
-    func requestYoutuber(id: Int) {
+    private func requestYoutuber(id: Int) {
 
         ThingProvider().youtuber(id: id, completion: { data in
             print(id)
@@ -65,7 +65,7 @@ extension EndPageViewController {
         }
     }
 
-    func setBannerImage() {
+    private func setBannerImage() {
         guard let youtuber = youtuber else { return }
         if let banner = youtuber.bannerImgUrl {
             let url = URL(string: banner)

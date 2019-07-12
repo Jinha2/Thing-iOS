@@ -15,7 +15,7 @@ class YoutuberInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var youtuberNameLabel: UILabel!
     @IBOutlet weak var subscribeNumLabel: UILabel!
 
-    var channelId: String?
+    private var channelId: String?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,7 +26,7 @@ class YoutuberInfoTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    @IBAction func goToYoutubeAction(_ sender: UIButton) {
+    @IBAction private func goToYoutubeAction(_ sender: UIButton) {
         guard let channelId = channelId else { return }
         playInYoutube(youtubeId: channelId)
     }
@@ -44,7 +44,7 @@ extension YoutuberInfoTableViewCell {
         channelId = youtuber?.channelId
     }
 
-    func insertCommas(_ num: Int) -> String? {
+    private func insertCommas(_ num: Int) -> String? {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
         return numberFormatter.string(from: NSNumber(value: num))
@@ -59,7 +59,7 @@ extension YoutuberInfoTableViewCell {
         contentView.clipsToBounds = true
     }
 
-    func playInYoutube(youtubeId: String) {
+    private func playInYoutube(youtubeId: String) {
 //        if let youtubeURL = URL(string: "youtube://\(youtubeId)"),
 //            UIApplication.shared.canOpenURL(youtubeURL) {
 //            // redirect to app

@@ -12,7 +12,7 @@ class YoutuberPopularVideoTableViewCell: UITableViewCell {
 
     @IBOutlet weak var collectionView: UICollectionView!
 
-    var videos = [Video]()
+    private var videos = [Video]()
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,7 +29,7 @@ class YoutuberPopularVideoTableViewCell: UITableViewCell {
 }
 
 extension YoutuberPopularVideoTableViewCell {
-    func setCollectionView() {
+    private func setCollectionView() {
 
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -37,7 +37,7 @@ extension YoutuberPopularVideoTableViewCell {
         setCollectionViewLayout()
     }
 
-    func setCollectionViewLayout() {
+    private func setCollectionViewLayout() {
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.itemSize = CGSize(width: 163, height: 125)
             flowLayout.minimumInteritemSpacing = 8
@@ -48,9 +48,11 @@ extension YoutuberPopularVideoTableViewCell {
 extension YoutuberPopularVideoTableViewCell {
     func configure(_ videos: [Video]) {
         self.videos = videos
+
+        collectionView.reloadData()
     }
 
-    func playInYoutube(youtubeId: String) {
+    private func playInYoutube(youtubeId: String) {
         //        if let youtubeURL = URL(string: "youtube://\(youtubeId)"),
         //            UIApplication.shared.canOpenURL(youtubeURL) {
         //            // redirect to app
