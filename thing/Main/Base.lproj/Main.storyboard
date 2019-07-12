@@ -289,6 +289,7 @@
                     <navigationItem key="navigationItem" id="iai-Xj-5aq"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="filterButton" destination="OCL-Ag-Ekf" id="4Kp-g6-Sr4"/>
                         <outlet property="filterTitleLabel" destination="nPP-Gc-4xF" id="R5o-Q0-pTk"/>
                         <outlet property="rankingTableView" destination="Dqi-1O-WIV" id="lUt-4k-IZM"/>
                     </connections>

@@ -283,6 +283,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="categoryCollectionView" destination="y6u-sc-0W9" id="6Kl-fP-CyN"/>
+                        <outlet property="filterButton" destination="al2-gU-pma" id="gGD-ZM-fhS"/>
                         <outlet property="rankingTableView" destination="sv1-Sm-S06" id="rW4-Ko-7h9"/>
                     </connections>
                 </viewController>
