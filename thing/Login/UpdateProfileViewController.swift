@@ -33,24 +33,26 @@ class UpdateProfileViewController: UIViewController {
             year.append(y)
         }
     }
+
     @IBAction func manButtonAction(_ sender: UIButton) {
         성별선택(sender: sender, type: 1)
-        manButtonAction.isSelected = manButtonAction.isSelected ? false : true
     }
     @IBAction func womanButtonAction(_ sender: UIButton) {
         성별선택(sender: sender, type: 0)
-        womanButtonAction.isSelected = womanButtonAction.isSelected ? false : true
     }
     @IBAction func noneButtonAction(_ sender: UIButton) {
         성별선택(sender: sender, type: 2)
-        noneButtonAction.isSelected = noneButtonAction.isSelected ? false : true
     }
 
     func 성별선택(sender: UIButton, type: Int) {
+        if sender == 현재버튼 {
+            sender.isSelected = sender.isSelected ? false : true
+        } else {
         sender.isSelected = true
         현재버튼?.isSelected = false
         현재버튼 = sender
         성별 = type
+        }
     }
 
     @IBAction private func completeButtonAction(_ sender: Any) {

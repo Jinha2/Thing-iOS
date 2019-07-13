@@ -86,7 +86,7 @@
                                                 <rect key="frame" x="39" y="193" width="336" height="18"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DdH-uZ-Fb5">
                                                 <rect key="frame" x="145.5" y="228" width="123" height="27.5"/>
@@ -239,7 +239,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일로 가입하기" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1e-0e-1pS">
-                                <rect key="frame" x="41" y="84" width="332" height="27"/>
+                                <rect key="frame" x="41" y="84" width="358" height="27"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -288,9 +288,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="DZP-Bp-uvQ" firstAttribute="top" secondItem="WFx-Mb-Nvt" secondAttribute="bottom" constant="16" id="1dT-WI-m3V"/>
-                            <constraint firstItem="ZrM-2u-8Dn" firstAttribute="trailing" secondItem="B1e-0e-1pS" secondAttribute="trailing" constant="41" id="75J-Xz-6JY"/>
                             <constraint firstItem="ZrM-2u-8Dn" firstAttribute="trailing" secondItem="KEb-kM-kOF" secondAttribute="trailing" constant="40" id="BBW-Hx-lT3"/>
                             <constraint firstItem="KEb-kM-kOF" firstAttribute="top" secondItem="B1e-0e-1pS" secondAttribute="bottom" constant="38" id="Cd4-M9-bfE"/>
+                            <constraint firstItem="ZrM-2u-8Dn" firstAttribute="trailing" secondItem="B1e-0e-1pS" secondAttribute="trailing" constant="15" id="Cer-cY-sar"/>
                             <constraint firstItem="sZp-cW-PVW" firstAttribute="leading" secondItem="gdV-m8-muS" secondAttribute="trailing" id="DH2-fW-u42"/>
                             <constraint firstItem="ndG-32-PSa" firstAttribute="top" secondItem="sZp-cW-PVW" secondAttribute="bottom" constant="19" id="J0M-f7-wh1"/>
                             <constraint firstItem="ZrM-2u-8Dn" firstAttribute="trailing" secondItem="DZP-Bp-uvQ" secondAttribute="trailing" constant="40" id="Tv8-HD-cl4"/>
@@ -380,7 +380,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="당신만을 위한 유튜브 영상 추천을 위해 활용됩니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oB7-0y-oqk">
-                                <rect key="frame" x="41" y="152" width="332" height="16"/>
+                                <rect key="frame" x="41" y="152" width="358" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="Xkq-AS-JqK"/>
                                 </constraints>
@@ -389,7 +389,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="성별" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19R-BD-iia">
-                                <rect key="frame" x="41" y="308" width="65" height="22"/>
+                                <rect key="frame" x="41" y="308" width="358" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="Ozp-EG-PcT"/>
                                 </constraints>
@@ -398,7 +398,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나이 (출생년도)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shn-5V-i52">
-                                <rect key="frame" x="41" y="420" width="127" height="22"/>
+                                <rect key="frame" x="41" y="420" width="358" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="wM2-gB-f7U"/>
                                 </constraints>
@@ -502,6 +502,7 @@
                             <constraint firstItem="shn-5V-i52" firstAttribute="top" secondItem="akd-v7-o3H" secondAttribute="bottom" constant="38" id="Ly2-is-xrf"/>
                             <constraint firstItem="NSB-Hz-WfL" firstAttribute="trailing" secondItem="oAf-o8-MaE" secondAttribute="trailing" constant="58" id="Nav-Wm-hwb"/>
                             <constraint firstItem="oAf-o8-MaE" firstAttribute="top" secondItem="NSB-Hz-WfL" secondAttribute="top" constant="46" id="OK0-VM-nlX"/>
+                            <constraint firstItem="NSB-Hz-WfL" firstAttribute="trailing" secondItem="oB7-0y-oqk" secondAttribute="trailing" constant="15" id="UTm-dA-R4U"/>
                             <constraint firstItem="19R-BD-iia" firstAttribute="top" secondItem="YhT-Oa-LaY" secondAttribute="bottom" constant="38" id="Via-hJ-2AU"/>
                             <constraint firstItem="Swr-9I-x3R" firstAttribute="leading" secondItem="YhT-Oa-LaY" secondAttribute="leading" id="Wxo-rA-n1w"/>
                             <constraint firstItem="NSB-Hz-WfL" firstAttribute="trailing" secondItem="akd-v7-o3H" secondAttribute="trailing" constant="31" id="XBl-hs-Js6"/>
@@ -509,15 +510,14 @@
                             <constraint firstItem="W4K-7i-jsw" firstAttribute="leading" secondItem="NSB-Hz-WfL" secondAttribute="leading" constant="40" id="bb5-6H-VUw"/>
                             <constraint firstItem="shn-5V-i52" firstAttribute="leading" secondItem="NSB-Hz-WfL" secondAttribute="leading" constant="41" id="bgh-hb-S5Q"/>
                             <constraint firstItem="NSB-Hz-WfL" firstAttribute="trailing" secondItem="W4K-7i-jsw" secondAttribute="trailing" constant="40" id="bnB-EX-JCo"/>
-                            <constraint firstItem="NSB-Hz-WfL" firstAttribute="trailing" secondItem="19R-BD-iia" secondAttribute="trailing" constant="308" id="czp-cA-Xgi"/>
                             <constraint firstItem="NSB-Hz-WfL" firstAttribute="trailing" secondItem="Swr-9I-x3R" secondAttribute="trailing" constant="41" id="eo9-P7-nIg"/>
+                            <constraint firstItem="NSB-Hz-WfL" firstAttribute="trailing" secondItem="19R-BD-iia" secondAttribute="trailing" constant="15" id="gqW-iK-vP3"/>
                             <constraint firstItem="Swr-9I-x3R" firstAttribute="top" secondItem="shn-5V-i52" secondAttribute="bottom" constant="16" id="iZ9-Wr-xdd"/>
                             <constraint firstItem="akd-v7-o3H" firstAttribute="top" secondItem="19R-BD-iia" secondAttribute="bottom" constant="12" id="kF6-ga-Syr"/>
-                            <constraint firstItem="NSB-Hz-WfL" firstAttribute="trailing" secondItem="shn-5V-i52" secondAttribute="trailing" constant="246" id="nww-Ex-UCd"/>
                             <constraint firstItem="fQW-sm-Kgs" firstAttribute="leading" secondItem="oAf-o8-MaE" secondAttribute="leading" id="qOb-aI-45y"/>
                             <constraint firstItem="Swr-9I-x3R" firstAttribute="leading" secondItem="NSB-Hz-WfL" secondAttribute="leading" constant="39" id="rFt-TM-ptO"/>
-                            <constraint firstItem="NSB-Hz-WfL" firstAttribute="trailing" secondItem="oB7-0y-oqk" secondAttribute="trailing" constant="41" id="ubI-B9-iNA"/>
                             <constraint firstItem="19R-BD-iia" firstAttribute="leading" secondItem="NSB-Hz-WfL" secondAttribute="leading" constant="41" id="vTI-hY-8Og"/>
+                            <constraint firstItem="NSB-Hz-WfL" firstAttribute="trailing" secondItem="shn-5V-i52" secondAttribute="trailing" constant="15" id="vfk-e5-dgb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NSB-Hz-WfL"/>
                     </view>
