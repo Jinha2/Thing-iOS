@@ -157,6 +157,7 @@ extension CategoryViewController: UICollectionViewDataSource, UICollectionViewDe
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        requestRankings(categoryId: categories[indexPath.row].id, filter: filter, page: 0)
+        categoryId = categories[indexPath.row].id
+        requestRankings(categoryId: categoryId, filter: filter, page: 0)
     }
 }
