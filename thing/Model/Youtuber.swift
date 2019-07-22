@@ -13,14 +13,14 @@ struct Youtuber: Decodable {
     let channelId: String
     let description: String
     let id: Int
+    let likeReviewCount: Int?
     let likeReviews: [Review]
     let name: String
+    let noReviewCount: Int?
     let noReviews: [Review]
     let publishedAt: String
     let subscriberCount: Int
     let thumbnail: String?
-    let noReviewCount: Int
-    let likeReviewCount: Int
     let videos: [Video]
     let viewCount: Int
 }

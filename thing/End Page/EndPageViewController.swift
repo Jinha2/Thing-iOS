@@ -162,6 +162,12 @@ extension EndPageViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y < -300 {
+            dismiss(animated: true, completion: nil)
+        }
+    }
 }
 
 //extension EndPageViewController: CommentReportDelegate {
