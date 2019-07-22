@@ -21,7 +21,6 @@ func presentAlert(msg: String) {
 }
 
 func presentErrorAlert(error: Error?) {
-    Log(error?.localizedDescription)
     hideActivityIndicator()
 
     let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)

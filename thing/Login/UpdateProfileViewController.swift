@@ -12,7 +12,13 @@ class UpdateProfileViewController: UIViewController {
     @IBOutlet weak var displayNameTextField: UITextField!
     @IBOutlet weak var ageTextField: UITextField!
 
-    var year = [Int]()
+    let year: [Int] = {
+        var year: [Int] = []
+        for y in 1930...2019 {
+            year.append(y)
+        }
+        return year
+    }()
     var 성별: Int?
     var 현재버튼: UIButton?
     var selectedYear: Int?
@@ -26,18 +32,14 @@ class UpdateProfileViewController: UIViewController {
         ageTextField.delegate = self
         pickerView.delegate = self
         ageTextField.inputView = pickerView
-
-        for y in 1930...2019 {
-            year.append(y)
-        }
     }
-    @IBAction func manButtonAction(_ sender: UIButton) {
+    @IBAction private func manButtonAction(_ sender: UIButton) {
         성별선택(sender: sender, type: 1)
     }
-    @IBAction func womanButtonAction(_ sender: UIButton) {
+    @IBAction private func womanButtonAction(_ sender: UIButton) {
         성별선택(sender: sender, type: 0)
     }
-    @IBAction func noneButtonAction(_ sender: UIButton) {
+    @IBAction private func noneButtonAction(_ sender: UIButton) {
         성별선택(sender: sender, type: 2)
     }
 
@@ -57,8 +59,7 @@ class UpdateProfileViewController: UIViewController {
 
     @IBAction private func completeButtonAction(_ sender: Any) {
         guard let uid = FirebaseLayer.getUid(), let displayName = displayNameTextField.text, checkValidation() else { return }
-        ThingProvider().signUp(uid: uid, nickname: displayName, gender: 성별, birth: selectedYear, completion: { data in
-            Log(data)
+        ThingProvider.signUp(uid: uid, nickname: displayName, gender: 성별, birth: selectedYear, completion: { _ in
             FirebaseLayer.changeUser(displayName: displayName) { [weak self] in
                 hideActivityIndicator()
                 self?.dismiss(animated: true, completion: nil)
@@ -69,20 +70,20 @@ class UpdateProfileViewController: UIViewController {
         showActivityIndicator()
     }
 
-    @IBAction func closeButtonAction(_ sender: Any) {
+    @IBAction private func closeButtonAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
 
 }
 
 extension UpdateProfileViewController {
-    func checkValidation() -> Bool {
-        guard let displayName = displayNameTextField.text, let age = ageTextField.text else { return false }
+    private func checkValidation() -> Bool {
+        guard let displayName = displayNameTextField.text else { return false }
 
         return isValidDisplayName(displayName: displayName)
     }
 
-    func isValidDisplayName(displayName: String) -> Bool {
+    private func isValidDisplayName(displayName: String) -> Bool {
         if !displayName.isEmpty {
             return true
         }
@@ -94,7 +95,7 @@ extension UpdateProfileViewController {
 }
 
 extension UpdateProfileViewController: UITextFieldDelegate {
-    func checkOnlyNumber(string: String) -> Bool {
+    private func checkOnlyNumber(string: String) -> Bool {
         let aSet = NSCharacterSet(charactersIn: "0123456789").inverted
         let compSepByCharInSet = string.components(separatedBy: aSet)
         let numberFiltered = compSepByCharInSet.joined()
@@ -102,7 +103,7 @@ extension UpdateProfileViewController: UITextFieldDelegate {
         return string == numberFiltered
     }
 
-    func checkMaxLength(maxLength: Int, textField: UITextField, range: NSRange, string: String) -> Bool {
+    private func checkMaxLength(maxLength: Int, textField: UITextField, range: NSRange, string: String) -> Bool {
         guard let textFieldText = textField.text,
             let rangeOfTextToReplace = Range(range, in: textFieldText) else {
                 return false
@@ -134,5 +135,4 @@ extension UpdateProfileViewController: UIPickerViewDataSource, UIPickerViewDeleg
         selectedYear = year[year.count - row - 1]
         ageTextField.text = "\(year[year.count - row - 1]), 만 \(currentYear - year[year.count - row - 1])세"
     }
-
 }

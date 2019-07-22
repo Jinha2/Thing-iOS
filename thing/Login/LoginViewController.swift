@@ -27,17 +27,16 @@ class LoginViewController: UIViewController {
         checkLogin()
     }
 
-    @IBAction func googleSignInButtonAction(_ sender: UIButton) {
-        GIDSignIn.sharedInstance()?.signIn()
+    @IBAction private func googleSignInButtonAction(_ sender: UIButton) {
         showActivityIndicator()
+        GIDSignIn.sharedInstance()?.signIn()
     }
 
     @IBAction private func loginButtonAction(_ sender: Any) {
         guard let email = emailTextField.text, let password = passwordTextField.text else { return }
         showActivityIndicator()
 
-        FirebaseLayer.loginUser(email: email, password: password) { [weak self] result in
-            Log(result?.user.displayName)
+        FirebaseLayer.loginUser(email: email, password: password) { [weak self] _ in
             hideActivityIndicator()
             self?.checkLogin()
         }
@@ -47,12 +46,11 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController {
     func checkLogin() {
-        if FirebaseLayer.isUserSignedIn() {
-            if let displayName = FirebaseLayer.getDisplayName(), displayName != "" {
-                dismiss(animated: true, completion: nil)
-            } else {
-                showUpdateProfileViewController()
-            }
+        guard FirebaseLayer.isUserSignedIn() else { return }
+        if let displayName = FirebaseLayer.getDisplayName(), !displayName.isEmpty {
+            dismiss(animated: true, completion: nil)
+        } else {
+            showUpdateProfileViewController()
         }
     }
 
@@ -69,8 +67,7 @@ extension LoginViewController {
 
 extension LoginViewController: GIDSignInDelegate, GIDSignInUIDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
-        FirebaseLayer.sign(signIn, user, error) { [weak self] result in
-            Log(result)
+        FirebaseLayer.sign(signIn, user, error) { [weak self] _ in
             hideActivityIndicator()
             self?.checkLogin()
         }

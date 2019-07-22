@@ -25,12 +25,16 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     }
 
     func contents(_ model: CategoryList) {
-        reset()
-
         titleLabel.text = model.categoryType
     }
 
     func categorySelected() {
         selectedLineView.isHidden = isSelected == true ? false : true
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
+        reset()
     }
 }

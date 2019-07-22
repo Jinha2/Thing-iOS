@@ -8,6 +8,21 @@
 
 import Foundation
 
+class UserInstance {
+    private static let instance = UserInstance()
+    private var user: User?
+
+    class func getUser() -> User? {
+        return UserInstance.instance.user
+    }
+
+    class func setUser(user: User?) {
+        UserInstance.instance.user = user
+    }
+
+    private init() { }
+}
+
 struct User: Decodable {
     let id: Int
     let uid: String
@@ -28,11 +43,4 @@ struct Search: Decodable {
     let createAt: String
     let id: Int
     let text: String
-}
-
-class UserId {
-    static let sharedInstance = UserId()
-    var id: Int?
-
-    private init() {}
 }

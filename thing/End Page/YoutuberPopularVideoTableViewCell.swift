@@ -9,22 +9,18 @@
 import UIKit
 
 class YoutuberPopularVideoTableViewCell: UITableViewCell {
-
     @IBOutlet weak var collectionView: UICollectionView!
 
     private var videos = [Video]()
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
 
         setCollectionView()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 }
 

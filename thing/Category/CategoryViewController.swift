@@ -58,7 +58,7 @@ class CategoryViewController: UIViewController {
 
 extension CategoryViewController {
     func setCategory() {
-        guard let category = Category.sharedInstance.categories else { return }
+        guard let category = UserInstance.getUser()?.categories else { return }
 
         categories = category
         categoryCollectionView.reloadData()
@@ -72,26 +72,17 @@ extension CategoryViewController {
 
         showActivityIndicator()
 
-        ThingProvider().categories(categoryId: categoryId, filter: filter, page: page, completion: { data in
-            defer {
-                hideActivityIndicator()
-                self.rankingTableView.reloadData()
+        ThingProvider.categories(categoryId: categoryId, filter: filter, page: page, completion: { [ weak self] rankings in
+            self?.nextPage = rankings.nextPage
+
+            rankings.rankings.forEach {
+                self?.rankings.append($0)
             }
 
-            guard let data = data else { return }
-
-            do {
-                let decoder = JSONDecoder()
-                let rankings = try decoder.decode(Rankings.self, from: data)
-
-                self.nextPage = rankings.nextPage
-
-                for ranking in rankings.rankings {
-                    self.rankings.append(ranking)
-                }
-            } catch {}
-        }) { _ in
-
+            hideActivityIndicator()
+            self?.rankingTableView.reloadData()
+        }) { error in
+            presentErrorAlert(error: error)
         }
     }
 

@@ -10,7 +10,6 @@ import UIKit
 import Kingfisher
 
 class YoutubeTableViewCell: UITableViewCell {
-
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -26,8 +25,6 @@ class YoutubeTableViewCell: UITableViewCell {
     }
 
     func contents(_ model: RankingList) {
-        reset()
-
         if let thumbnail = model.thumbnail {
             let url = URL(string: thumbnail)
             profileImageView.kf.setImage(with: url, placeholder: UIImage(named: "profileBtn"))
@@ -42,5 +39,11 @@ class YoutubeTableViewCell: UITableViewCell {
         rankLabel.text = "\(model.ranking)"
         titleLabel.text = model.name
         countLabel.text = "구독 \(model.subscriberCount) · 조회수 \(model.viewCount)"
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
+        reset()
     }
 }

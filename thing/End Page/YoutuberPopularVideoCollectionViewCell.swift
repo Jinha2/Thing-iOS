@@ -10,10 +10,8 @@ import UIKit
 import Kingfisher
 
 class YoutuberPopularVideoCollectionViewCell: UICollectionViewCell {
-
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var thumbnailImageView: UIImageView!
-
 }
 
 extension YoutuberPopularVideoCollectionViewCell {

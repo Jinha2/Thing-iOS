@@ -10,20 +10,25 @@ import UIKit
 import Kingfisher
 
 class EndPageViewController: UIViewController {
-
     @IBOutlet weak var bannerImageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
 
     var id: Int?
-    private var youtuber: Youtuber?
+    private var youtuber: Youtuber? {
+        didSet {
+            tableView.reloadData()
+            setBannerImage()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setTableView()
 
-        guard let id = id else { return }
-        requestYoutuber(id: id)
+        if let id = id {
+            requestYoutuber(id: id)
+        }
     }
 
     @IBAction private func dismissTouchUpInsideAction(_ sender: UIButton) {
@@ -46,22 +51,10 @@ extension EndPageViewController {
 
 extension EndPageViewController {
     private func requestYoutuber(id: Int) {
-
-        ThingProvider().youtuber(id: id, completion: { data in
-            print(id)
-            guard let data = data else { return }
-            do {
-                let decoder = JSONDecoder()
-                let youtuber = try decoder.decode(Youtuber.self, from: data)
-
-                self.youtuber = youtuber
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-                self.setBannerImage()
-            } catch { }
-        }) { _ in
-
+        ThingProvider.youtuber(id: id, completion: { [weak self] youtuber in
+            self?.youtuber = youtuber
+        }) { error in
+            presentErrorAlert(error: error)
         }
     }
 
@@ -72,13 +65,13 @@ extension EndPageViewController {
             bannerImageView.kf.setImage(with: url)
         }
     }
-
 }
 
 extension EndPageViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
@@ -155,13 +148,14 @@ extension EndPageViewController {
         return cell
     }
 
+    /*
     func myMainCommentCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MyMainCommentTableViewCell", for: indexPath) as? MyMainCommentTableViewCell else { return UITableViewCell() }
         cell.indexPath = indexPath
         cell.delegate = self
         return cell
     }
-
+     */
 }
 
 extension EndPageViewController: UITableViewDelegate {
@@ -170,14 +164,14 @@ extension EndPageViewController: UITableViewDelegate {
     }
 }
 
-extension EndPageViewController: CommentReportDelegate {
-    func moreButtonTouchAction(_ indexPath: IndexPath?) {
-        guard let indexPath = indexPath else { return }
-
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "신고", style: .destructive, handler: { _ in }))
-        alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: { _ in }))
-
-        present(alert, animated: true)
-    }
-}
+//extension EndPageViewController: CommentReportDelegate {
+//    func moreButtonTouchAction(_ indexPath: IndexPath?) {
+//        guard indexPath != nil else { return }
+//
+//        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+//        alert.addAction(UIAlertAction(title: "신고", style: .destructive, handler: { _ in }))
+//        alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: { _ in }))
+//
+//        present(alert, animated: true)
+//    }
+//}

@@ -17,36 +17,34 @@ class RegisterAccountViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         clickLink()
         hideKeyboardWhenTappedAround()
-
     }
 
     @IBAction private func nextButtonAction(_ sender: Any) {
         guard let email = emailTextField.text, let password = passwordTextField.text, checkValidation(), checkButtonAction.isSelected else { return }
 
         showActivityIndicator()
-
-        FirebaseLayer.createUser(email: email, password: password, completion: { [weak self] result in
+        FirebaseLayer.createUser(email: email, password: password, completion: { [weak self] _ in
             hideActivityIndicator()
             guard let updateProfileViewController = self?.storyboard?.instantiateViewController(withIdentifier: "UpdateProfileViewController") else { return }
             self?.navigationController?.pushViewController(updateProfileViewController, animated: true)
-            Log(result)
         })
     }
 
-    @IBAction func closeButtonAction(_ sender: Any) {
+    @IBAction private func closeButtonAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
 
-    @IBAction func checkButtonAction(_ sender: Any) {
+    @IBAction private func checkButtonAction(_ sender: Any) {
         checkButtonAction.isSelected = checkButtonAction.isSelected ? false : true
 
     }
 }
 
 extension RegisterAccountViewController {
-    func checkValidation() -> Bool {
+    private func checkValidation() -> Bool {
         if checkButtonAction.isSelected == false {
             let alert = UIAlertController(title: "ERROR", message: "개인정보 보호 정책에 동의해주셔야 가입이 가능합니다.", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default) { _ in
@@ -60,7 +58,7 @@ extension RegisterAccountViewController {
         return isValidEmail(enteredEmail: email) && isValidPassword(password: password) && isEqaul(password: password, confirm: confirm)
     }
 
-    func isValidPassword(password: String) -> Bool {
+    private func isValidPassword(password: String) -> Bool {
         if password.count >= 6 {
             return true
         }
@@ -68,7 +66,7 @@ extension RegisterAccountViewController {
         return false
     }
 
-    func isValidEmail(enteredEmail: String) -> Bool {
+    private func isValidEmail(enteredEmail: String) -> Bool {
         let emailFormat = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailFormat)
 
@@ -80,7 +78,7 @@ extension RegisterAccountViewController {
         return false
     }
 
-    func isEqaul(password: String, confirm: String) -> Bool {
+    private func isEqaul(password: String, confirm: String) -> Bool {
         if password == confirm {
             return true
         }
@@ -88,23 +86,22 @@ extension RegisterAccountViewController {
         return false
     }
 
-    func clickLink() {
+    private func clickLink() {
         let attributedString = NSMutableAttributedString(string: "회원가입에 따른 개인정보 보호 정책에 동의(필수)")
-        let url = URL(string: "https://github.com/JeaSungLEE/Privacy-Policy/blob/master/U2U2.md")!
+        guard let url = URL(string: "https://github.com/JeaSungLEE/Privacy-Policy/blob/master/U2U2.md"), let color = UIColor(named: "brownGreyThree") else { return }
 
-        attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(named: "brownGreyThree")!, range: NSRange(location: 0, length: attributedString.length))
+        attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: color, range: NSRange(location: 0, length: attributedString.length))
         attributedString.addAttribute(kCTFontAttributeName as NSAttributedString.Key, value: UIFont.boldSystemFont(ofSize: 13), range: NSRange(location: 9, length: 10))
 
         attributedString.setAttributes([.link: url], range: NSRange(location: 9, length: 10))
 
-        self.agreeLinkTextView.attributedText = attributedString
-        self.agreeLinkTextView.isUserInteractionEnabled = true
-        self.agreeLinkTextView.isEditable = false
+        agreeLinkTextView.attributedText = attributedString
+        agreeLinkTextView.isUserInteractionEnabled = true
+        agreeLinkTextView.isEditable = false
 
-        self.agreeLinkTextView.linkTextAttributes = [
-            .foregroundColor: UIColor(named: "brownGreyThree")!,
+        agreeLinkTextView.linkTextAttributes = [
+            .foregroundColor: color,
             .underlineStyle: NSUnderlineStyle.single.rawValue
         ]
-
     }
 }

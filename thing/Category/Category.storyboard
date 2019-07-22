@@ -58,7 +58,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="62" height="40"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZqD-LN-AP1">
+                                                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZqD-LN-AP1">
                                                             <rect key="frame" x="0.0" y="35" width="62" height="5"/>
                                                             <color key="backgroundColor" name="MainRed"/>
                                                             <constraints>

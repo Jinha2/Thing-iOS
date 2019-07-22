@@ -12,43 +12,40 @@ import Moya
 enum ThingService {
     case signIn
     case signUp(uid: String, nickname: String, gender: Int?, birth: Int?)
-    case rankings(filter: String, page: Int)
     case categories(categoryId: Int, filter: String, page: Int)
     case youtuber(id: Int)
 }
 
 extension ThingService: TargetType {
-	var baseURL: URL { return URL(string: "http://13.124.57.224")! }
+    var baseURL: URL { return URL(string: "http://13.124.57.224")! }
 
-	var path: String {
+    var path: String {
         switch self {
         case .signIn:
             return "/v1/sign-in"
         case .signUp:
             return "/v1/users"
-        case .rankings:
-            return "/v1/rankings"
         case .categories(let categoryId, _, _):
             return "/v1/categories/\(categoryId)/rankings"
         case .youtuber(let id):
             return "/v1/endpages/\(id)"
-		}
-	}
+        }
+    }
 
-	var method: Moya.Method {
-		switch self {
+    var method: Moya.Method {
+        switch self {
         case .signUp:
-            return .post
-        case .signIn, .rankings, .categories, .youtuber:
-            return .get
-		}
-	}
+        return .post
+        case .signIn, .categories, .youtuber:
+        return .get
+        }
+    }
 
-	var sampleData: Data {
-		return Data()
-	}
+    var sampleData: Data {
+        return Data()
+    }
 
-	var task: Task {
+    var task: Task {
         switch self {
         case .signIn:
             return .requestParameters(parameters: [:], encoding: URLEncoding.default)
@@ -64,18 +61,16 @@ extension ThingService: TargetType {
             }
 
             return .requestParameters(parameters: params, encoding: JSONEncoding.default)
-        case .rankings(let filter, let page):
-            return .requestParameters(parameters: ["filter": filter, "page": page], encoding: URLEncoding.default)
         case .categories(let categoryId, let filter, let page):
             return .requestParameters(parameters: ["categoryId": categoryId, "filter": filter, "page": page], encoding: URLEncoding.default)
         case .youtuber:
-            return .requestParameters(parameters: ["userId": UserId.sharedInstance.id ?? 0], encoding: URLEncoding.default)
-		}
-	}
+            return .requestParameters(parameters: ["userId": UserInstance.getUser()?.id ?? 0], encoding: URLEncoding.default)
+        }
+    }
 
-	var headers: [String: String]? {
+    var headers: [String: String]? {
         guard let uid = FirebaseLayer.getUid() else { return ["Content-type": "application/json"] }
 
         return ["Content-type": "application/json", "uid": uid]
-	}
+    }
 }
