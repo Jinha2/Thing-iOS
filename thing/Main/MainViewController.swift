@@ -40,7 +40,7 @@ extension MainViewController {
         }) { [weak self] error in
             hideActivityIndicator()
             if (error as NSError).code == 4002 {
-                self?.showLoginView()
+                self?.showUpdateProfileViewController()
             } else {
                 presentErrorAlert(error: error)
             }
@@ -51,6 +51,12 @@ extension MainViewController {
         let storyboard = UIStoryboard(name: "Login", bundle: nil)
         let loginViewContoller = storyboard.instantiateViewController(withIdentifier: "HiddenNavigationViewController")
         present(loginViewContoller, animated: true, completion: nil)
+    }
+
+    private func showUpdateProfileViewController() {
+        let storyboard = UIStoryboard(name: "Login", bundle: nil)
+        let updateProfileViewController = storyboard.instantiateViewController(withIdentifier: "UpdateProfileViewController")
+        present(updateProfileViewController, animated: true, completion: nil)
     }
 }
 
