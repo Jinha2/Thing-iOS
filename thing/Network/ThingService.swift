@@ -31,7 +31,7 @@ extension ThingService: TargetType {
         case .categories(let categoryId, _, _):
             return "/v1/categories/\(categoryId)/rankings"
         case .youtuber(let id):
-            return "/v1/youtubers/\(id)"
+            return "/v1/endpages/\(id)"
 		}
 	}
 
@@ -69,13 +69,13 @@ extension ThingService: TargetType {
         case .categories(let categoryId, let filter, let page):
             return .requestParameters(parameters: ["categoryId": categoryId, "filter": filter, "page": page], encoding: URLEncoding.default)
         case .youtuber:
-            return .requestPlain
+            return .requestParameters(parameters: ["userId": UserId.sharedInstance.id ?? 0], encoding: URLEncoding.default)
 		}
 	}
 
 	var headers: [String: String]? {
         guard let uid = FirebaseLayer.getUid() else { return ["Content-type": "application/json"] }
 
-        return ["Content-type": "application/json", "uid": "test"]
+        return ["Content-type": "application/json", "uid": uid]
 	}
 }

@@ -52,6 +52,7 @@ extension MainViewController {
                 let decoder = JSONDecoder()
                 let user = try decoder.decode(User.self, from: data)
 
+                UserId.sharedInstance.id = user.id
                 Category.sharedInstance.categories = user.categories
             } catch {}
         }) { _ in

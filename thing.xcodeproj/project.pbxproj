@@ -240,6 +240,7 @@
 		E9304E4222C788C60093929A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				EF7CA2FD22B572B80063FC6C /* FirebaseLayer.swift */,
 				E9304E4322C7898E0093929A /* UnderLineTextField.swift */,
 				E99F906C22D8D3B100650711 /* Category.swift */,
 			);
@@ -313,7 +314,6 @@
 				EFEF0DFC22B2C736001B28AC /* LoginViewController.swift */,
 				EFEF0E1422B2D26F001B28AC /* RegisterAccountViewController.swift */,
 				EF7CA2FB22B569A00063FC6C /* UpdateProfileViewController.swift */,
-				EF7CA2FD22B572B80063FC6C /* FirebaseLayer.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";

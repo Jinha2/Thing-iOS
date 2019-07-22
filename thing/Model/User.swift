@@ -29,3 +29,10 @@ struct Search: Decodable {
     let id: Int
     let text: String
 }
+
+class UserId {
+    static let sharedInstance = UserId()
+    var id: Int?
+
+    private init() {}
+}
