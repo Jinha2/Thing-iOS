@@ -71,6 +71,6 @@ extension ThingService: TargetType {
     var headers: [String: String]? {
         guard let uid = FirebaseLayer.getUid() else { return ["Content-type": "application/json"] }
 
-        return ["Content-type": "application/json", "uid": "test"]
+        return ["Content-type": "application/json", "uid": uid]
     }
 }

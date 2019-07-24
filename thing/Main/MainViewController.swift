@@ -22,6 +22,7 @@ class MainViewController: UIViewController {
 
         if !FirebaseLayer.isUserSignedIn() {
             showLoginView()
+            isFirstView = true
         } else {
             if isFirstView {
                 requestLogin()
