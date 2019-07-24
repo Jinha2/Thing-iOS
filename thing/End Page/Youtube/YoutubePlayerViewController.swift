@@ -33,14 +33,12 @@ class YoutubePlayerViewController: UIViewController {
         setLayout()
         button.addTarget(self, action: #selector(dismissVC), for: .touchUpInside)
     }
-
-    @objc func dismissVC() {
-        dismiss(animated: true, completion: nil)
-    }
 }
 
 extension YoutubePlayerViewController {
-
+    @objc func dismissVC() {
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 extension YoutubePlayerViewController {
