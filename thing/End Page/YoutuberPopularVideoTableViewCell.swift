@@ -8,10 +8,15 @@
 
 import UIKit
 
+protocol YoutuberPopularVideoTableViewCellDelegate: class {
+    func goToPlayer(_ id: String)
+}
+
 class YoutuberPopularVideoTableViewCell: UITableViewCell {
     @IBOutlet weak var collectionView: UICollectionView!
 
     private var videos = [Video]()
+    weak var delegate: YoutuberPopularVideoTableViewCellDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -63,7 +68,8 @@ extension YoutuberPopularVideoTableViewCell {
 
 extension YoutuberPopularVideoTableViewCell: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        playInYoutube(youtubeId: videos[indexPath.row].youtubeVideoId)
+//        playInYoutube(youtubeId: videos[indexPath.row].youtubeVideoId)
+        delegate?.goToPlayer(videos[indexPath.row].youtubeVideoId)
     }
 }
 

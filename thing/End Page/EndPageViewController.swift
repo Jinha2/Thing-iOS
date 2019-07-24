@@ -131,6 +131,7 @@ extension EndPageViewController {
     func youtuberPopularVideoCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "YoutuberPopularVideoTableViewCell", for: indexPath) as? YoutuberPopularVideoTableViewCell else { return .init() }
         cell.configure(youtuber?.videos ?? [])
+        cell.delegate = self
         return cell
     }
 
@@ -181,3 +182,10 @@ extension EndPageViewController: UITableViewDelegate {
 //        present(alert, animated: true)
 //    }
 //}
+
+extension EndPageViewController: YoutuberPopularVideoTableViewCellDelegate {
+    func goToPlayer(_ id: String) {
+        let vc = YoutubePlayerViewController.newViewController(id: id)
+        present(vc, animated: true, completion: nil)
+    }
+}
