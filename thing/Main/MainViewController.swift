@@ -39,7 +39,7 @@ extension MainViewController {
             UserInstance.setUser(user: user)
         }) { [weak self] error in
             hideActivityIndicator()
-            if (error as NSError).code == 4002 {
+            if (error as NSError).code == 4301 {
                 self?.showUpdateProfileViewController()
             } else {
                 presentErrorAlert(error: error)

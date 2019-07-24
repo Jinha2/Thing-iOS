@@ -49,7 +49,7 @@ class YoutubePlayerView: UIView {
     }
 
     weak var delegate: YoutubePlayerViewDelegate?
-    
+
     //일단 급한대로 코드로 init 만 설정..... 추후 player 설정할때 id 가 제대로 들어가면 인터페이스빌더도 적용 예정
     convenience init(id: String) {
         self.init(frame: .zero)
