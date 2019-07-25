@@ -30,7 +30,7 @@ struct User: Decodable {
     let dateBirth: Int?
     let gender: String?
     let profileUrl: String?
-    let searches: [Search]
+//    let searches: [Search]
     let categories: [CategoryList]
 }
 
