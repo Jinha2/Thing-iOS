@@ -42,3 +42,16 @@ struct Video: Decodable {
     let title: String
     let youtubeVideoId: String
 }
+
+struct Home: Decodable {
+    let recommendedYouTuber, soaringYouTuber: [Recommend]
+}
+
+struct Recommend: Decodable {
+    let id: Int
+    let name: String
+    let soaring: Int?
+    let tag: [String]
+    let thumbnail: String
+    let videos: [Video]?
+}

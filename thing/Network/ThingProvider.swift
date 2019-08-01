@@ -36,6 +36,12 @@ class ThingProvider {
             self.resultTask(result, completion: completion, failure: failure)
         }
     }
+
+    class func home(completion: @escaping ((Home) -> Void), failure: @escaping ((Error) -> Void)) {
+        provider.request(.home) { result in
+            self.resultTask(result, completion: completion, failure: failure)
+        }
+    }
 }
 
 extension ThingProvider {

@@ -14,6 +14,7 @@ enum ThingService {
     case signUp(uid: String, nickname: String, gender: Int?, birth: Int?)
     case categories(categoryId: Int, filter: String, page: Int)
     case youtuber(id: Int)
+    case home
 }
 
 extension ThingService: TargetType {
@@ -29,6 +30,8 @@ extension ThingService: TargetType {
             return "/v1/categories/\(categoryId)/rankings"
         case .youtuber(let id):
             return "/v1/youtubers/\(id)"
+        case .home:
+            return "/v1/youtubers/recommendations/home"
         }
     }
 
@@ -36,7 +39,7 @@ extension ThingService: TargetType {
         switch self {
         case .signUp:
         return .post
-        case .signIn, .categories, .youtuber:
+        case .signIn, .categories, .youtuber, .home:
         return .get
         }
     }
@@ -65,6 +68,8 @@ extension ThingService: TargetType {
             return .requestParameters(parameters: ["categoryId": categoryId, "filter": filter, "page": page], encoding: URLEncoding.default)
         case .youtuber:
             return .requestParameters(parameters: ["userId": UserInstance.getUser()?.id ?? 0], encoding: URLEncoding.default)
+        case .home:
+            return .requestPlain
         }
     }
 
