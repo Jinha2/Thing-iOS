@@ -50,12 +50,11 @@ extension ThingProvider {
         case .success(let response):
             Log(try? response.mapJSON())
             let data = response.data
-            let statusCode = response.statusCode
 
-            if let body = try? JSONDecoder().decode(T.self, from: data), statusCode < 300 {
+            if let body = try? response.map(T.self) {
                 completion(body)
             } else {
-                if let error = try? JSONDecoder().decode(U2UError.self, from: data) {
+                if let error = try? response.map(U2UError.self) {
                     let nsError: NSError = NSError(domain: error.error.massage, code: error.error.code, userInfo: nil)
                     failure(nsError)
                 } else if let data = data as? T {
