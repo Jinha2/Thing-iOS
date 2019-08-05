@@ -10,11 +10,21 @@ import UIKit
 
 class MainViewController: UIViewController {
     private var isFirstView: Bool = true
+    private var recommend: [Recommend]?
+
+    @IBOutlet weak var recommendTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationController?.navigationBar.isHidden = true
+        recommendTableView.register(UINib(nibName: "EmptyTagsTableViewCell", bundle: .main), forCellReuseIdentifier: "EmptyTagsTableViewCell")
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        recommendTableView.reloadData()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -48,6 +58,14 @@ extension MainViewController {
         }
     }
 
+    private func requestHome() {
+        ThingProvider.home(completion: { recommend in
+            print(recommend)
+        }) { error in
+            print(error)
+        }
+    }
+
     private func showLoginView() {
         let storyboard = UIStoryboard(name: "Login", bundle: nil)
         let loginViewContoller = storyboard.instantiateViewController(withIdentifier: "HiddenNavigationViewController")
@@ -63,10 +81,35 @@ extension MainViewController {
 
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        guard let recommend = recommend else { return 1 }
+
+        return recommend.count
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        guard recommend != nil else { return tableView.bounds.height }
+
+        return 202
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        if recommend == nil {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "EmptyTagsTableViewCell", for: indexPath) as! EmptyTagsTableViewCell
+
+            cell.delegate = self
+
+            return cell
+        } else {
+            let cell = UITableViewCell()
+            return cell
+        }
+    }
+}
+
+extension MainViewController: EmptyTagsTableViewCellDelegate {
+    func addTagButtonAction() {
+        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddTagViewController")
+
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }

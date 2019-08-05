@@ -31,9 +31,9 @@ struct User: Decodable {
     let gender: String?
     let profileUrl: String?
 //    let searches: [Search]
-    let categories: [CategoryList]?
+    let categories: [CategoryList]
     let categoryTag: [String]?
-    let commonTag: [String]
+    let commonTag: [String]?
 }
 
 struct CategoryList: Decodable {
