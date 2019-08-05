@@ -44,13 +44,13 @@ struct Video: Decodable {
 }
 
 struct Home: Decodable {
-    let recommendedYouTuber, soaringYouTuber: [Recommend]
+    let recommendedYouTuber, soaringYouTuber: [Recommend]?
 }
 
 struct Recommend: Decodable {
     let id: Int
     let name: String
-    let soaring: Int?
+    let soaring: Double?
     let tag: [String]
     let thumbnail: String
     let videos: [Video]?
