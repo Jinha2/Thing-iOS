@@ -17,10 +17,10 @@ class EmptyTagsTableViewCell: UITableViewCell {
 
     func reloadCell() {
         guard let nickname = UserInstance.getUser()?.nickName else { return }
-        
+
         descriptionLabel.text = "\(nickname)의 취향에 적합한 유튜버를 추천해드립니다."
     }
-    
+
     @IBAction private func addTagButtonAction(_ sender: Any) {
         delegate?.addTagButtonAction()
     }
