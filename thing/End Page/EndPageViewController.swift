@@ -10,6 +10,7 @@ import UIKit
 import Kingfisher
 
 class EndPageViewController: UIViewController {
+    @IBOutlet weak var bannerImageRatio: NSLayoutConstraint!
     @IBOutlet weak var bannerImageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
 
@@ -31,6 +32,11 @@ class EndPageViewController: UIViewController {
         }
     }
 
+    override func viewWillLayoutSubviews() {
+        let topInset = UIScreen.main.bounds.width * 0.3
+        tableView.contentInset = .init(top: topInset, left: 0, bottom: 0, right: 0)
+    }
+
     @IBAction private func dismissTouchUpInsideAction(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
@@ -43,9 +49,6 @@ extension EndPageViewController {
         tableView.dataSource = self
         tableView.estimatedRowHeight = 160
         tableView.rowHeight = UITableView.automaticDimension
-
-        let topInset = UIScreen.main.bounds.width * 0.3
-        tableView.contentInset = .init(top: topInset, left: 0, bottom: 0, right: 0)
     }
 }
 
@@ -165,7 +168,17 @@ extension EndPageViewController: UITableViewDelegate {
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView.contentOffset.y < -300 {
+        let minY = UIScreen.main.bounds.width * 0.3
+        if scrollView.contentOffset.y < -minY {
+            let y = scrollView.contentOffset.y + minY
+            bannerImageRatio.constant = y * 3.3
+        }
+    }
+
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let minY = UIScreen.main.bounds.width * 0.3
+        let scrollLimit = (-minY - (UIScreen.main.bounds.height / 6))
+        if scrollView.contentOffset.y < scrollLimit {
             dismiss(animated: true, completion: nil)
         }
     }

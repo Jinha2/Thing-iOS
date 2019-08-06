@@ -390,6 +390,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="uxK-WI-kii"/>
                     <connections>
+                        <outlet property="bannerImageRatio" destination="EgW-u0-0jS" id="gEY-oT-sMo"/>
                         <outlet property="bannerImageView" destination="H4A-vL-Kch" id="vzP-nL-AR1"/>
                         <outlet property="tableView" destination="usr-Uf-KeF" id="4Bn-FH-Mix"/>
                     </connections>
