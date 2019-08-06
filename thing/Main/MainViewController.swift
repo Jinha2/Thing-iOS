@@ -23,8 +23,6 @@ class MainViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
-        recommendTableView.reloadData()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -45,9 +43,10 @@ class MainViewController: UIViewController {
 extension MainViewController {
     private func requestLogin() {
         showActivityIndicator()
-        ThingProvider.signIn(completion: { user in
+        ThingProvider.signIn(completion: { [weak self] user in
             hideActivityIndicator()
             UserInstance.setUser(user: user)
+            self?.recommendTableView.reloadData()
         }) { [weak self] error in
             hideActivityIndicator()
             if (error as NSError).code == 4301 {
@@ -94,10 +93,9 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if recommend == nil {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "EmptyTagsTableViewCell", for: indexPath) as! EmptyTagsTableViewCell
-
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "EmptyTagsTableViewCell", for: indexPath) as? EmptyTagsTableViewCell else { return .init() }
             cell.delegate = self
-
+            cell.reloadCell()
             return cell
         } else {
             let cell = UITableViewCell()
