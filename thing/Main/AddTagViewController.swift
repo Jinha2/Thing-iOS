@@ -13,5 +13,19 @@ final class AddTagViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        requestTags()
+    }
+    @IBAction func completeButtonAction(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+}
+
+extension AddTagViewController {
+    private func requestTags() {
+        ThingProvider.tags(completion: { tags in
+            Log(tags)
+        }) { error in
+            Log(error)
+        }
     }
 }

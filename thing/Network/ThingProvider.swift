@@ -42,6 +42,18 @@ class ThingProvider {
             self.resultTask(result, completion: completion, failure: failure)
         }
     }
+
+    class func tags(completion: @escaping ((Tags) -> Void), failure: @escaping ((Error) -> Void)) {
+        provider.request(.tags) { result in
+            self.resultTask(result, completion: completion, failure: failure)
+        }
+    }
+
+    class func addTag(category: [String], common: [String], completion: @escaping ((Home) -> Void), failure: @escaping ((Error) -> Void)) {
+        provider.request(.addTag(category: category, common: common)) { result in
+            self.resultTask(result, completion: completion, failure: failure)
+        }
+    }
 }
 
 extension ThingProvider {

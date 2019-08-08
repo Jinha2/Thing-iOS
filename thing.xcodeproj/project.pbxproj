@@ -34,6 +34,7 @@
 		E95DD29522F87EBD00753C1A /* EmptyTagsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95DD29322F87EBC00753C1A /* EmptyTagsTableViewCell.swift */; };
 		E95DD29622F87EBD00753C1A /* EmptyTagsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E95DD29422F87EBD00753C1A /* EmptyTagsTableViewCell.xib */; };
 		E95DD29A22F88CD500753C1A /* AddTagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95DD29922F88CD500753C1A /* AddTagViewController.swift */; };
+		E95DD29C22FC5B2F00753C1A /* Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95DD29B22FC5B2F00753C1A /* Tags.swift */; };
 		E9E4D1DB22D758030094F681 /* OneLineReviewTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E4D1D322D758030094F681 /* OneLineReviewTitleTableViewCell.swift */; };
 		E9E4D1DC22D758030094F681 /* EndPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9E4D1D422D758030094F681 /* EndPage.storyboard */; };
 		E9E4D1DD22D758030094F681 /* LikeNumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E4D1D522D758030094F681 /* LikeNumTableViewCell.swift */; };
@@ -102,6 +103,7 @@
 		E95DD29322F87EBC00753C1A /* EmptyTagsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTagsTableViewCell.swift; sourceTree = "<group>"; };
 		E95DD29422F87EBD00753C1A /* EmptyTagsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyTagsTableViewCell.xib; sourceTree = "<group>"; };
 		E95DD29922F88CD500753C1A /* AddTagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTagViewController.swift; sourceTree = "<group>"; };
+		E95DD29B22FC5B2F00753C1A /* Tags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tags.swift; sourceTree = "<group>"; };
 		E9E4D1D322D758030094F681 /* OneLineReviewTitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneLineReviewTitleTableViewCell.swift; sourceTree = "<group>"; };
 		E9E4D1D422D758030094F681 /* EndPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EndPage.storyboard; sourceTree = "<group>"; };
 		E9E4D1D522D758030094F681 /* LikeNumTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeNumTableViewCell.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 				E93D81E022D7544D0017D023 /* Rankings.swift */,
 				30B8A54122D85A9A007F43D2 /* Youtuber.swift */,
 				4DD4B17422E599EA0004C138 /* U2UError.swift */,
+				E95DD29B22FC5B2F00753C1A /* Tags.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -632,6 +635,7 @@
 				E9E4D1E222D758030094F681 /* YoutuberDescriptionTableViewCell.swift in Sources */,
 				300AE78322E8B15D00EC5C6A /* YoutubePlayerViewDelegate.swift in Sources */,
 				EF7CA2FE22B572B80063FC6C /* FirebaseLayer.swift in Sources */,
+				E95DD29C22FC5B2F00753C1A /* Tags.swift in Sources */,
 				EF7CA2FC22B569A00063FC6C /* UpdateProfileViewController.swift in Sources */,
 				E909BC9D22C7F1640033D810 /* CategoryViewController.swift in Sources */,
 				303D038F22AE829800ABCE0F /* AppDelegate.swift in Sources */,
