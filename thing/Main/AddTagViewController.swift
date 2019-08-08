@@ -15,7 +15,8 @@ final class AddTagViewController: UIViewController {
 
         requestTags()
     }
-    @IBAction func completeButtonAction(_ sender: Any) {
+
+    @IBAction private func completeButtonAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
 }
