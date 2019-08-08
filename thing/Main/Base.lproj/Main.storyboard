@@ -94,7 +94,23 @@
                     <view key="view" contentMode="scaleToFill" id="xka-X2-22y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="opP-6r-8Ad">
+                                <rect key="frame" x="369" y="55" width="30" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="완료">
+                                    <color key="titleColor" name="MainRed"/>
+                                </state>
+                                <connections>
+                                    <action selector="completeButtonAction:" destination="zB7-dF-Ti7" eventType="touchUpInside" id="1qy-hq-bqI"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="opP-6r-8Ad" firstAttribute="top" secondItem="ndW-nO-JMH" secondAttribute="top" constant="11" id="fvu-XA-fiQ"/>
+                            <constraint firstItem="ndW-nO-JMH" firstAttribute="trailing" secondItem="opP-6r-8Ad" secondAttribute="trailing" constant="15" id="fzr-q8-QWv"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ndW-nO-JMH"/>
                     </view>
                 </viewController>
