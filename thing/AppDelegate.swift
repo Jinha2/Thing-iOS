@@ -16,7 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
+        setTabbarCustom()
+        
         //GA를 위해서 사용
         FirebaseApp.configure()
         //Firebase Push
@@ -84,10 +85,7 @@ extension AppDelegate {
     }
 
     func setTabbarCustom() {
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15, weight: .semibold),
-                                                          NSAttributedString.Key.foregroundColor: UIColor.gray], for: .normal)
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15, weight: .semibold),
-                                                          NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
+        UITabBar.appearance().backgroundColor = UIColor.white
     }
 }
 
