@@ -12,6 +12,8 @@ target 'thing' do
   # View
   pod 'NVActivityIndicatorView'
   pod 'SegementSlide', :git => 'https://github.com/JeaSungLEE/SegementSlide.git', :tag => '2.2.6'
+  pod 'Tags'
+
   
   # GA
   pod 'Firebase/Analytics'
