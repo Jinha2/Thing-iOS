@@ -19,7 +19,7 @@ class SoaringYouTuberTableViewCell: UITableViewCell {
                 youtuberImage.kf.setImage(with: url)
             }
             youtuberName.text = model?.name
-            youtuberCategory.text = "카테고리"
+            youtuberCategory.text = model?.category
             if let soaring = model?.soaring {
                 youtuberSoaring.text = "\(soaring)"
             }

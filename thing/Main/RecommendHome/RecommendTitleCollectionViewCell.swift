@@ -18,7 +18,7 @@ class RecommendTitleCollectionViewCell: UICollectionViewCell {
                 imageView.kf.setImage(with: url)
             }
             youtuberName.text = model?.name
-            youtuberCategory.text = model?.thumbnail
+            youtuberCategory.text = model?.category
         }
     }
 
