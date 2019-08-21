@@ -32,11 +32,6 @@ class EndPageViewController: UIViewController {
         }
     }
 
-    override func viewWillLayoutSubviews() {
-        let topInset = UIScreen.main.bounds.width * 0.3
-        tableView.contentInset = .init(top: topInset, left: 0, bottom: 0, right: 0)
-    }
-
     @IBAction private func dismissTouchUpInsideAction(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
@@ -47,8 +42,10 @@ extension EndPageViewController {
     private func setTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.estimatedRowHeight = 160
+        tableView.estimatedRowHeight = 300
         tableView.rowHeight = UITableView.automaticDimension
+        let topInset = UIScreen.main.bounds.width * 0.3
+        tableView.contentInset = .init(top: topInset, left: 0, bottom: 0, right: 0) // viewWillLayoutSubviews 로 가면 계산이 느려져서 스크롤이 뜨게됨 
     }
 }
 
@@ -94,10 +91,10 @@ extension EndPageViewController: UITableViewDataSource {
             if indexPath.row == 0 {
                 return youtuberInfoCell(tableView, cellForRowAt: indexPath)
             } else {
-                return youtuberDescriptionCell(tableView, cellForRowAt: indexPath)
+                return youtuberPopularVideoCell(tableView, cellForRowAt: indexPath)
             }
         case 1:
-            return youtuberPopularVideoCell(tableView, cellForRowAt: indexPath)
+            return youtuberDescriptionCell(tableView, cellForRowAt: indexPath)
         case 2:
             return oneLineReviewTitleCell(tableView, cellForRowAt: indexPath)
         case 3: // 좋아요
@@ -120,7 +117,7 @@ extension EndPageViewController: UITableViewDataSource {
 extension EndPageViewController {
     func youtuberInfoCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "YoutuberInfoTableViewCell", for: indexPath) as? YoutuberInfoTableViewCell else { return .init() }
-             cell.configure(youtuber)
+             cell.configure(youtuber, category: ["남자패션", "남자패션", "남자패션"])
 
         return cell
     }
