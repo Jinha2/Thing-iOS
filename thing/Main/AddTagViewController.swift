@@ -7,70 +7,46 @@
 //
 
 import UIKit
-import Tags
 
 final class AddTagViewController: UIViewController {
-    @IBOutlet weak var commontagsView: TagsView!
-    @IBOutlet weak var categoryTagsView: TagsView!
 
-    private let tags = [Tags]()
+    @IBOutlet weak var tagTableView: UITableView!
+
+    private var tags = [TagCell]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        commontagsView.delegate = self
-        categoryTagsView.delegate = self
-
+        navigationController?.navigationBar.isHidden = true
         requestTags()
     }
 
-    @IBAction private func completeButtonAction(_ sender: Any) {
+    @IBAction private func backButtonAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+
+    @IBAction private func nextButtonAction(_ sender: Any) {
+        guard let addTagDetailViewController: AddTagDetailViewController = storyboard?.instantiateViewController(withIdentifier: "AddTagDetailViewController") as? AddTagDetailViewController else { return }
+
+        addTagDetailViewController.categoryTags = tags
+        navigationController?.pushViewController(addTagDetailViewController, animated: true)
     }
 }
 
 extension AddTagViewController {
     private func requestTags() {
         ThingProvider.tags(completion: { tags in
-            defer {
-                self.commontagsView.redraw()
-                self.categoryTagsView.redraw()
-            }
-
-            let normalOptions = ButtonOptions(
-                layerRadius: 20,
-                layerWidth: 0,
-                tagTitleColor: UIColor(named: "background")!,
-                tagFont: UIFont.systemFont(ofSize: 16, weight: .medium),
-                tagBackgroundColor: UIColor(named: "boxBackground")!
-            )
-
-            let selectedOptions = ButtonOptions(
-                layerColor: UIColor(named: "MainRed")!,
-                layerRadius: 20,
-                layerWidth: 1.5,
-                tagTitleColor: UIColor(named: "MainRed")!,
-                tagFont: UIFont.systemFont(ofSize: 16, weight: .medium)
-            )
-
             for tag in tags.tags {
-
                 if tag.category == "공통" {
-                    for title in tag.list {
-                        let tagButton = TagButton()
 
-                        tagButton.setTitle(title, for: .normal)
-                        tagButton.setEntity(selectedOptions)
-
-                        self.commontagsView.append(tagButton)
-                    }
                 } else {
-                    let tagButton = TagButton()
+                    var tagList = [TagList]()
 
-                    tagButton.setTitle(tag.category, for: .normal)
-                    tagButton.setEntity(normalOptions)
+                    for list in tag.list {
+                        tagList.append(TagList(title: list, isSelected: false))
+                    }
 
-                    self.categoryTagsView.append(tagButton)
+                    self.tags.append(TagCell(category: tag.category, list: tagList))
                 }
             }
         }) { error in
@@ -79,8 +55,25 @@ extension AddTagViewController {
     }
 }
 
-extension AddTagViewController: TagsDelegate {
-    func tagsTouchAction(_ tagsView: TagsView, tagButton: TagButton) {
-        print(tagButton)
+extension AddTagViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TagTableViewCell") as? TagTableViewCell else { return UITableViewCell() }
+
+        cell.delegate = self
+//        cell.contents(tag: categoryTags[indexPath.row])
+
+        return cell
+    }
+}
+
+extension AddTagViewController: TagTableViewCellDelegate {
+    func didSelectTag(_ cell: TagTableViewCell, tagIndex: Int) {
+        guard let indexPath = tagTableView.indexPath(for: cell) else { return }
+
+//        categoryTags[indexPath.row].list[tagIndex].didSelect()
     }
 }

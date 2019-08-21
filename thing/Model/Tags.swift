@@ -16,3 +16,17 @@ struct Tag: Decodable {
     let category: String
     let list: [String]
 }
+
+struct TagCell {
+    let category: String
+    var list: [TagList]
+}
+
+struct TagList {
+    let title: String
+    var isSelected: Bool
+
+    mutating func didSelect() {
+        isSelected = !isSelected
+    }
+}

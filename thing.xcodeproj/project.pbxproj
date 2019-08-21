@@ -25,6 +25,8 @@
 		7FCF33813C297A9F9AAE7EC3 /* Pods_thingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B523A42BEEF8A1FC6C7CC116 /* Pods_thingTests.framework */; };
 		E909BC9B22C7EA800033D810 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E909BC9A22C7EA800033D810 /* MainViewController.swift */; };
 		E909BC9D22C7F1640033D810 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E909BC9C22C7F1630033D810 /* CategoryViewController.swift */; };
+		E92E50F6230847EA006C92A8 /* AddTagDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92E50F5230847EA006C92A8 /* AddTagDetailViewController.swift */; };
+		E92E50F82308484C006C92A8 /* TagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92E50F72308484C006C92A8 /* TagTableViewCell.swift */; };
 		E9304E3E22C7501F0093929A /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9304E3D22C7501F0093929A /* Category.storyboard */; };
 		E9304E4122C75F1D0093929A /* My.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9304E4022C75F1D0093929A /* My.storyboard */; };
 		E9304E4422C7898E0093929A /* UnderLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9304E4322C7898E0093929A /* UnderLineTextField.swift */; };
@@ -96,6 +98,8 @@
 		E0426C9AA21F845960A8D3CE /* Pods-thing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-thing.release.xcconfig"; path = "Target Support Files/Pods-thing/Pods-thing.release.xcconfig"; sourceTree = "<group>"; };
 		E909BC9A22C7EA800033D810 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E909BC9C22C7F1630033D810 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		E92E50F5230847EA006C92A8 /* AddTagDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTagDetailViewController.swift; sourceTree = "<group>"; };
+		E92E50F72308484C006C92A8 /* TagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagTableViewCell.swift; sourceTree = "<group>"; };
 		E9304E3D22C7501F0093929A /* Category.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Category.storyboard; sourceTree = "<group>"; };
 		E9304E4022C75F1D0093929A /* My.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = My.storyboard; sourceTree = "<group>"; };
 		E9304E4322C7898E0093929A /* UnderLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineTextField.swift; sourceTree = "<group>"; };
@@ -335,6 +339,8 @@
 				E95DD29422F87EBD00753C1A /* EmptyTagsTableViewCell.xib */,
 				E95DD29322F87EBC00753C1A /* EmptyTagsTableViewCell.swift */,
 				E95DD29922F88CD500753C1A /* AddTagViewController.swift */,
+				E92E50F5230847EA006C92A8 /* AddTagDetailViewController.swift */,
+				E92E50F72308484C006C92A8 /* TagTableViewCell.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -633,7 +639,9 @@
 				300AE78522E8B15F00EC5C6A /* YoutubePlayerViewEnum.swift in Sources */,
 				E909BC9B22C7EA800033D810 /* MainViewController.swift in Sources */,
 				E934DEA122B7D15500ED270E /* ThingService.swift in Sources */,
+				E92E50F82308484C006C92A8 /* TagTableViewCell.swift in Sources */,
 				4DD4B17522E599EA0004C138 /* U2UError.swift in Sources */,
+				E92E50F6230847EA006C92A8 /* AddTagDetailViewController.swift in Sources */,
 				E9304E4A22C7D0B50093929A /* YoutubeTableViewCell.swift in Sources */,
 				E9E4D1DF22D758030094F681 /* EndPageViewController.swift in Sources */,
 				EFEF0E0022B2CD17001B28AC /* Common.swift in Sources */,

@@ -107,7 +107,8 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
 extension MainViewController: EmptyTagsTableViewCellDelegate {
     func addTagButtonAction() {
         let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddTagViewController")
+        let navigationController = UINavigationController(rootViewController: viewController)
 
-        navigationController?.present(viewController, animated: true, completion: nil)
+        present(navigationController, animated: true, completion: nil)
     }
 }
