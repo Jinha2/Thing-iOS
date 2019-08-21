@@ -19,7 +19,7 @@ class RecommendTitleTableViewCell: UITableViewCell {
 
     private var model: [Recommend]? {
         didSet {
-            
+
             if let nickname = UserInstance.getUser()?.nickName {
                 titleLabel.text = """
                 \(nickname)님,
