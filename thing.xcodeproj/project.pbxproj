@@ -45,11 +45,17 @@
 		E9E4D1E022D758030094F681 /* YoutuberPopularVideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E4D1D822D758030094F681 /* YoutuberPopularVideoCollectionViewCell.swift */; };
 		E9E4D1E122D758030094F681 /* YoutuberPopularVideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E4D1D922D758030094F681 /* YoutuberPopularVideoTableViewCell.swift */; };
 		E9E4D1E222D758030094F681 /* YoutuberDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E4D1DA22D758030094F681 /* YoutuberDescriptionTableViewCell.swift */; };
+		EF32D26B230D1CC6007683D9 /* RecommendYoutuberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF32D26A230D1CC6007683D9 /* RecommendYoutuberTableViewCell.swift */; };
 		EF7CA2FA22B54AF10063FC6C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF7CA2F922B54AF10063FC6C /* GoogleService-Info.plist */; };
 		EF7CA2FC22B569A00063FC6C /* UpdateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7CA2FB22B569A00063FC6C /* UpdateProfileViewController.swift */; };
 		EF7CA2FE22B572B80063FC6C /* FirebaseLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7CA2FD22B572B80063FC6C /* FirebaseLayer.swift */; };
 		EF99199C22C7DA8300380878 /* MySettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF99199B22C7DA8300380878 /* MySettingViewController.swift */; };
 		EF99199E22C7E32400380878 /* HiddenNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF99199D22C7E32400380878 /* HiddenNavigationViewController.swift */; };
+		EFDB0CEB230D06C0000741A1 /* RecommendTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDB0CEA230D06C0000741A1 /* RecommendTitleTableViewCell.swift */; };
+		EFDB0CED230D0D74000741A1 /* RecommendTitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDB0CEC230D0D74000741A1 /* RecommendTitleCollectionViewCell.swift */; };
+		EFDB0CEF230D1286000741A1 /* SoaringYouTuberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDB0CEE230D1286000741A1 /* SoaringYouTuberTableViewCell.swift */; };
+		EFDB0CF1230D17D2000741A1 /* SoaringYoutuberHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDB0CF0230D17D2000741A1 /* SoaringYoutuberHeaderTableViewCell.swift */; };
+		EFDB0CF3230D187B000741A1 /* RecommendFooterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDB0CF2230D187B000741A1 /* RecommendFooterTableViewCell.swift */; };
 		EFEF0DFB22B2C5D5001B28AC /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFEF0DFA22B2C5D5001B28AC /* Login.storyboard */; };
 		EFEF0DFD22B2C736001B28AC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEF0DFC22B2C736001B28AC /* LoginViewController.swift */; };
 		EFEF0E0022B2CD17001B28AC /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEF0DFF22B2CD17001B28AC /* Common.swift */; };
@@ -116,11 +122,17 @@
 		E9E4D1D822D758030094F681 /* YoutuberPopularVideoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutuberPopularVideoCollectionViewCell.swift; sourceTree = "<group>"; };
 		E9E4D1D922D758030094F681 /* YoutuberPopularVideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutuberPopularVideoTableViewCell.swift; sourceTree = "<group>"; };
 		E9E4D1DA22D758030094F681 /* YoutuberDescriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutuberDescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		EF32D26A230D1CC6007683D9 /* RecommendYoutuberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecommendYoutuberTableViewCell.swift; path = "../../../../../../../System/Volumes/Data/Users/ijaeseong/codes/Thing-iOS/thing/Main/RecommendHome/RecommendYoutuberTableViewCell.swift"; sourceTree = "<group>"; };
 		EF7CA2F922B54AF10063FC6C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EF7CA2FB22B569A00063FC6C /* UpdateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileViewController.swift; sourceTree = "<group>"; };
 		EF7CA2FD22B572B80063FC6C /* FirebaseLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLayer.swift; sourceTree = "<group>"; };
 		EF99199B22C7DA8300380878 /* MySettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySettingViewController.swift; sourceTree = "<group>"; };
 		EF99199D22C7E32400380878 /* HiddenNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenNavigationViewController.swift; sourceTree = "<group>"; };
+		EFDB0CEA230D06C0000741A1 /* RecommendTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecommendTitleTableViewCell.swift; path = "../../../../../../../System/Volumes/Data/Users/ijaeseong/codes/Thing-iOS/thing/Main/RecommendHome/RecommendTitleTableViewCell.swift"; sourceTree = "<group>"; };
+		EFDB0CEC230D0D74000741A1 /* RecommendTitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendTitleCollectionViewCell.swift; sourceTree = "<group>"; };
+		EFDB0CEE230D1286000741A1 /* SoaringYouTuberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SoaringYouTuberTableViewCell.swift; path = "../../../../../../../System/Volumes/Data/Users/ijaeseong/codes/Thing-iOS/thing/Main/RecommendHome/SoaringYouTuberTableViewCell.swift"; sourceTree = "<group>"; };
+		EFDB0CF0230D17D2000741A1 /* SoaringYoutuberHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoaringYoutuberHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		EFDB0CF2230D187B000741A1 /* RecommendFooterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecommendFooterTableViewCell.swift; path = "../../../../../../../System/Volumes/Data/Users/ijaeseong/codes/Thing-iOS/thing/Main/RecommendHome/RecommendFooterTableViewCell.swift"; sourceTree = "<group>"; };
 		EFEF0DFA22B2C5D5001B28AC /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		EFEF0DFC22B2C736001B28AC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EFEF0DFF22B2CD17001B28AC /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
@@ -302,6 +314,19 @@
 			path = MySetting;
 			sourceTree = "<group>";
 		};
+		EFDB0CE9230D06AC000741A1 /* RecommendHome */ = {
+			isa = PBXGroup;
+			children = (
+				EFDB0CEA230D06C0000741A1 /* RecommendTitleTableViewCell.swift */,
+				EFDB0CEC230D0D74000741A1 /* RecommendTitleCollectionViewCell.swift */,
+				EFDB0CEE230D1286000741A1 /* SoaringYouTuberTableViewCell.swift */,
+				EFDB0CF0230D17D2000741A1 /* SoaringYoutuberHeaderTableViewCell.swift */,
+				EFDB0CF2230D187B000741A1 /* RecommendFooterTableViewCell.swift */,
+				EF32D26A230D1CC6007683D9 /* RecommendYoutuberTableViewCell.swift */,
+			);
+			path = RecommendHome;
+			sourceTree = "<group>";
+		};
 		EFEF0DF622B2C594001B28AC /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -330,6 +355,7 @@
 		EFEF0DF922B2C5C7001B28AC /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				EFDB0CE9230D06AC000741A1 /* RecommendHome */,
 				303D039222AE829800ABCE0F /* Main.storyboard */,
 				E909BC9A22C7EA800033D810 /* MainViewController.swift */,
 				E95DD29422F87EBD00753C1A /* EmptyTagsTableViewCell.xib */,
@@ -621,6 +647,7 @@
 			files = (
 				300AE78122E8B13000EC5C6A /* YoutubePlayerViewController.swift in Sources */,
 				4DD85F8922FD39A800C7C99A /* CategoryHeaderView.swift in Sources */,
+				EFDB0CED230D0D74000741A1 /* RecommendTitleCollectionViewCell.swift in Sources */,
 				30B8A54222D85A9A007F43D2 /* Youtuber.swift in Sources */,
 				E9E4D1DD22D758030094F681 /* LikeNumTableViewCell.swift in Sources */,
 				EFF60BD322B62A2D009288AF /* UIViewController+Extension.swift in Sources */,
@@ -629,19 +656,23 @@
 				E93D81E122D7544D0017D023 /* Rankings.swift in Sources */,
 				EFEF0DFD22B2C736001B28AC /* LoginViewController.swift in Sources */,
 				E9E4D1E122D758030094F681 /* YoutuberPopularVideoTableViewCell.swift in Sources */,
+				EFDB0CF3230D187B000741A1 /* RecommendFooterTableViewCell.swift in Sources */,
 				E9304E4422C7898E0093929A /* UnderLineTextField.swift in Sources */,
 				300AE78522E8B15F00EC5C6A /* YoutubePlayerViewEnum.swift in Sources */,
 				E909BC9B22C7EA800033D810 /* MainViewController.swift in Sources */,
 				E934DEA122B7D15500ED270E /* ThingService.swift in Sources */,
 				4DD4B17522E599EA0004C138 /* U2UError.swift in Sources */,
 				E9304E4A22C7D0B50093929A /* YoutubeTableViewCell.swift in Sources */,
+				EFDB0CF1230D17D2000741A1 /* SoaringYoutuberHeaderTableViewCell.swift in Sources */,
 				E9E4D1DF22D758030094F681 /* EndPageViewController.swift in Sources */,
 				EFEF0E0022B2CD17001B28AC /* Common.swift in Sources */,
 				EFEF0E0222B2CEC5001B28AC /* UIView+Extension.swift in Sources */,
 				E953A2A822B93947006B4F9C /* ThingProvider.swift in Sources */,
+				EF32D26B230D1CC6007683D9 /* RecommendYoutuberTableViewCell.swift in Sources */,
 				E9E4D1E222D758030094F681 /* YoutuberDescriptionTableViewCell.swift in Sources */,
 				300AE78322E8B15D00EC5C6A /* YoutubePlayerViewDelegate.swift in Sources */,
 				4DD85F8522FD303C00C7C99A /* CategoryContentViewController.swift in Sources */,
+				EFDB0CEB230D06C0000741A1 /* RecommendTitleTableViewCell.swift in Sources */,
 				EF7CA2FE22B572B80063FC6C /* FirebaseLayer.swift in Sources */,
 				E95DD29C22FC5B2F00753C1A /* Tags.swift in Sources */,
 				EF7CA2FC22B569A00063FC6C /* UpdateProfileViewController.swift in Sources */,
@@ -651,6 +682,7 @@
 				E9E4D1E022D758030094F681 /* YoutuberPopularVideoCollectionViewCell.swift in Sources */,
 				300AE77D22E8B12C00EC5C6A /* YoutubePlayerView.swift in Sources */,
 				E95DD29A22F88CD500753C1A /* AddTagViewController.swift in Sources */,
+				EFDB0CEF230D1286000741A1 /* SoaringYouTuberTableViewCell.swift in Sources */,
 				E934DEA422B7D25200ED270E /* User.swift in Sources */,
 				EFEF0E1522B2D26F001B28AC /* RegisterAccountViewController.swift in Sources */,
 				E9E4D1DB22D758030094F681 /* OneLineReviewTitleTableViewCell.swift in Sources */,
