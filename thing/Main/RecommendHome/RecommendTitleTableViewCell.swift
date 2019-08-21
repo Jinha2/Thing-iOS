@@ -9,6 +9,7 @@
 import UIKit
 
 class RecommendTitleTableViewCell: UITableViewCell {
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             collectionView.delegate = self
@@ -18,6 +19,13 @@ class RecommendTitleTableViewCell: UITableViewCell {
 
     private var model: [Recommend]? {
         didSet {
+            
+            if let nickname = UserInstance.getUser()?.nickName {
+                titleLabel.text = """
+                \(nickname)님,
+                이런 유튜버 찾아다니셨죠?
+                """
+            }
             collectionView.reloadData()
         }
     }
