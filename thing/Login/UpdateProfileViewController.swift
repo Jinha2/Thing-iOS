@@ -57,6 +57,10 @@ class UpdateProfileViewController: UIViewController {
         }
     }
 
+    @IBAction func backButtonAction(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+
     @IBAction private func completeButtonAction(_ sender: Any) {
         guard let uid = FirebaseLayer.getUid(), let displayName = displayNameTextField.text, checkValidation() else { return }
         ThingProvider.signUp(uid: uid, nickname: displayName, gender: 성별, birth: selectedYear, completion: { _ in

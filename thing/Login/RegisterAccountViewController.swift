@@ -22,6 +22,10 @@ class RegisterAccountViewController: UIViewController {
         hideKeyboardWhenTappedAround()
     }
 
+    @IBAction func backButtonAction(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+
     @IBAction private func nextButtonAction(_ sender: Any) {
         guard let email = emailTextField.text, let password = passwordTextField.text, checkValidation(), checkButtonAction.isSelected else { return }
 

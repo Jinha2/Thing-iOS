@@ -37,7 +37,7 @@ struct Review: Decodable {
 
 struct Video: Decodable {
     let id: Int
-    let publishedAt: String
+    let publishedAt: String?
     let thumbnail: String
     let title: String
     let youtubeVideoId: String
@@ -54,4 +54,5 @@ struct Recommend: Decodable {
     let tag: [String]
     let thumbnail: String
     let videos: [Video]?
+    let category: String?
 }
