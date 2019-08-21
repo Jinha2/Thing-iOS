@@ -86,12 +86,14 @@ extension MainViewController {
 
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
-        guard home != nil else { return 1 }
+        guard home != nil else { return 0 }
+        guard home?.recommendedYouTuber?.count != 0 else { return 1 }
         return 6
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard home != nil else { return 1 }
+        guard home != nil else { return 0 }
+        guard home?.recommendedYouTuber?.count != 0 else { return 1 }
         if section == 0 {
             return 1
         } else if section == 1 {
@@ -107,13 +109,15 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        guard home != nil else { return tableView.bounds.height }
+        guard home != nil else { return 0 }
+        guard home?.recommendedYouTuber?.count != 0 else { return tableView.bounds.height }
 
         return UITableView.automaticDimension
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if home == nil {
+        guard home != nil else { return .init() }
+        if home?.recommendedYouTuber?.count == 0 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "EmptyTagsTableViewCell", for: indexPath) as? EmptyTagsTableViewCell else { return .init() }
             cell.delegate = self
             cell.reloadCell()
