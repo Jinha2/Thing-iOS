@@ -85,6 +85,18 @@ extension MainViewController {
 }
 
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 3 {
+            guard let vc = UIStoryboard(name: "EndPage", bundle: nil).instantiateViewController(withIdentifier: "EndPageViewController") as? EndPageViewController else { return }
+            vc.id = home?.soaringYouTuber?[indexPath.row].id
+            present(vc, animated: true, completion: nil)
+        } else if indexPath.section == 5 {
+            guard let vc = UIStoryboard(name: "EndPage", bundle: nil).instantiateViewController(withIdentifier: "EndPageViewController") as? EndPageViewController else { return }
+            vc.id = home?.recommendedYouTuber?[indexPath.row].id
+            present(vc, animated: true, completion: nil)
+        }
+    }
+
     func numberOfSections(in tableView: UITableView) -> Int {
         guard home != nil else { return 0 }
         guard home?.recommendedYouTuber?.count != 0 else { return 1 }
@@ -126,6 +138,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
             if indexPath.section == 0 {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: "RecommendTitleTableViewCell", for: indexPath) as? RecommendTitleTableViewCell else { return .init() }
                 cell.setModel(model: home?.recommendedYouTuber)
+                cell.delegate = self
                 return cell
             } else if indexPath.section == 1 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "RecommendFooterTableViewCell", for: indexPath)
@@ -143,6 +156,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
             } else if indexPath.section == 5 {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: "RecommendYoutuberTableViewCell", for: indexPath) as? RecommendYoutuberTableViewCell else { return .init() }
                 cell.setModel(model: home?.recommendedYouTuber?[indexPath.row])
+                cell.delegate = self
                 return cell
             }
 
@@ -156,5 +170,20 @@ extension MainViewController: EmptyTagsTableViewCellDelegate {
         let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddTagViewController")
 
         present(viewController, animated: true, completion: nil)
+    }
+}
+
+extension MainViewController: YoutuberPopularVideoTableViewCellDelegate {
+    func goToPlayer(_ id: String) {
+        let vc = YoutubePlayerViewController.newViewController(id: id)
+        present(vc, animated: true, completion: nil)
+    }
+}
+
+extension MainViewController: RecommendTitleCollectionViewCellSelectDelegate {
+    func openYoutuber(_ id: Int) {
+        guard let vc = UIStoryboard(name: "EndPage", bundle: nil).instantiateViewController(withIdentifier: "EndPageViewController") as? EndPageViewController else { return }
+        vc.id = id
+        present(vc, animated: true, completion: nil)
     }
 }

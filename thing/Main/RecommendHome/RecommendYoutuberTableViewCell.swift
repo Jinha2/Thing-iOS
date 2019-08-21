@@ -14,6 +14,7 @@ class RecommendYoutuberTableViewCell: UITableViewCell {
     @IBOutlet weak var youtuberCategory: UILabel!
     @IBOutlet weak var youtuberTag: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    weak var delegate: YoutuberPopularVideoTableViewCellDelegate?
     private var model: Recommend? {
         didSet {
             collectionView.delegate = self
@@ -46,5 +47,10 @@ extension RecommendYoutuberTableViewCell: UICollectionViewDataSource, UICollecti
         guard let video = model?.videos?[indexPath.row], let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "YoutuberPopularVideoCollectionViewCell", for: indexPath) as? YoutuberPopularVideoCollectionViewCell else { return .init() }
         cell.configure(video)
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let id = model?.videos?[indexPath.row].youtubeVideoId else { return }
+        delegate?.goToPlayer(id)
     }
 }

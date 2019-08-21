@@ -188,7 +188,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="140" id="GZU-N3-Gc5"/>
                                                     </constraints>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="1" minimumInteritemSpacing="1" id="q1q-53-QP2">
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="8" minimumInteritemSpacing="8" id="q1q-53-QP2">
                                                         <size key="itemSize" width="109" height="140"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>

@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol RecommendTitleCollectionViewCellSelectDelegate: class {
+    func openYoutuber(_ id: Int)
+}
+
 class RecommendTitleTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView! {
@@ -16,6 +20,7 @@ class RecommendTitleTableViewCell: UITableViewCell {
             collectionView.dataSource = self
         }
     }
+    weak var delegate: RecommendTitleCollectionViewCellSelectDelegate?
 
     private var model: [Recommend]? {
         didSet {
@@ -36,6 +41,11 @@ class RecommendTitleTableViewCell: UITableViewCell {
 }
 
 extension RecommendTitleTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let id = model?[indexPath.row].id else { return }
+        delegate?.openYoutuber(id)
+    }
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return model?.count ?? 0
     }
