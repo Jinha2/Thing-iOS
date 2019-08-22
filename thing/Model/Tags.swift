@@ -18,7 +18,7 @@ struct Tag: Decodable {
 }
 
 struct TagCell {
-    let category: String
+    let category: String?
     var list: [TagList]
 }
 

@@ -13,6 +13,7 @@ final class AddTagDetailViewController: UIViewController {
     @IBOutlet weak var tagTableView: UITableView!
 
     var tags: [Tag]?
+    var commonTags: TagCell?
     var categoryTags = [TagCell]()
 
     override func viewDidLoad() {
@@ -20,7 +21,7 @@ final class AddTagDetailViewController: UIViewController {
 
         navigationController?.navigationBar.isHidden = true
 
-        tagCellModel()
+//        tagCellModel()
     }
 
     @IBAction private func backButtonAction(_ sender: Any) {
@@ -33,24 +34,38 @@ final class AddTagDetailViewController: UIViewController {
 }
 
 extension AddTagDetailViewController {
-    private func tagCellModel() {
-        guard let tags = tags else { return }
-
-        for tag in tags {
-            var tagList = [TagList]()
-
-            for list in tag.list {
-                tagList.append(TagList(title: list, isSelected: false))
-            }
-
-            categoryTags.append(TagCell(category: tag.category, list: tagList))
-        }
-
-        tagTableView.reloadData()
-    }
+//    private func tagCellModel() {
+//        guard let tags = tags else { return }
+//
+//        for tag in tags {
+//            var tagList = [TagList]()
+//
+//            for list in tag.list {
+//                tagList.append(TagList(title: list, isSelected: false))
+//            }
+//
+//            categoryTags.append(TagCell(category: tag.category, list: tagList))
+//        }
+    //
+    //        tagTableView.reloadData()
+    //    }
+    //
 
     private func requestAddTag() {
+        guard let commonTags = commonTags else { return }
+        showActivityIndicator()
 
+        let commonTitles = commonTags.list.filter { $0.isSelected }.map { $0.title }
+        let categoryTitles = categoryTags.flatMap { $0.list.filter { $0.isSelected }.map { $0.title } }
+
+        ThingProvider.addTag(category: categoryTitles, common: commonTitles, completion: { [weak self] home in
+            hideActivityIndicator()
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "homeRequest"), object: home)
+            self?.dismiss(animated: true, completion: nil)
+        }) { error in
+            hideActivityIndicator()
+            presentErrorAlert(error: error)
+        }
     }
 }
 

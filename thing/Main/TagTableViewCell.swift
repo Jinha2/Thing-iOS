@@ -17,7 +17,6 @@ final class TagTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tagsView: TagsView!
-
     weak var delegate: TagTableViewCellDelegate?
 
     let normalOptions = ButtonOptions(
@@ -42,7 +41,8 @@ final class TagTableViewCell: UITableViewCell {
         tagsView.removeAll()
     }
 
-    func contents(tag: TagCell) {
+    func contents(tag: TagCell?) {
+        guard let tag = tag else { return }
         reset()
 
         if titleLabel != nil {

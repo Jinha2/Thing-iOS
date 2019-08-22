@@ -19,6 +19,8 @@ class MainViewController: UIViewController {
 
         navigationController?.navigationBar.isHidden = true
         recommendTableView.register(UINib(nibName: "EmptyTagsTableViewCell", bundle: .main), forCellReuseIdentifier: "EmptyTagsTableViewCell")
+
+        NotificationCenter.default.addObserver(self, selector: #selector(selectedTag), name: NSNotification.Name(rawValue: "homeRequest"), object: nil)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -37,6 +39,10 @@ class MainViewController: UIViewController {
                 isFirstView = false
             }
         }
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 }
 
@@ -61,6 +67,12 @@ extension MainViewController {
                 presentErrorAlert(error: error)
             }
         }
+    }
+
+    @objc private func selectedTag(_ notification: Notification) {
+        guard let home = notification.object as? Home else { return }
+        self.home = home
+        recommendTableView.reloadData()
     }
 
     private func requestHome() {
@@ -99,14 +111,12 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        guard home != nil else { return 0 }
-        guard home?.recommendedYouTuber?.count != 0 else { return 1 }
+        guard home != nil, home?.recommendedYouTuber?.count != 0 else { return 1 }
         return 6
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard home != nil else { return 0 }
-        guard home?.recommendedYouTuber?.count != 0 else { return 1 }
+        guard home != nil, home?.recommendedYouTuber?.count != 0 else { return 1 }
         if section == 0 {
             return 1
         } else if section == 1 {
@@ -122,15 +132,13 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        guard home != nil else { return 0 }
-        guard home?.recommendedYouTuber?.count != 0 else { return tableView.bounds.height }
+        guard home != nil, home?.recommendedYouTuber?.count != 0 else { return tableView.bounds.height }
 
         return UITableView.automaticDimension
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard home != nil else { return .init() }
-        if home?.recommendedYouTuber?.count == 0 {
+        if home == nil || home?.recommendedYouTuber?.count == 0 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "EmptyTagsTableViewCell", for: indexPath) as? EmptyTagsTableViewCell else { return .init() }
             cell.delegate = self
             cell.reloadCell()

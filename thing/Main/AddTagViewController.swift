@@ -12,7 +12,9 @@ final class AddTagViewController: UIViewController {
 
     @IBOutlet weak var tagTableView: UITableView!
 
-    private var tags = [TagCell]()
+    private var allTags: Tags?
+    private var subTags: TagCell?
+    private var commonCategoryList: TagCell?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,27 +30,43 @@ final class AddTagViewController: UIViewController {
     @IBAction private func nextButtonAction(_ sender: Any) {
         guard let addTagDetailViewController: AddTagDetailViewController = storyboard?.instantiateViewController(withIdentifier: "AddTagDetailViewController") as? AddTagDetailViewController else { return }
 
-        addTagDetailViewController.categoryTags = tags
+        let titles = subTags?.list.filter { $0.isSelected }.map { $0.title }
+        var selectedTags: [TagCell] = []
+        allTags?.tags.forEach {
+            if titles?.contains($0.category) ?? false {
+                var tagList: [TagList] = []
+                $0.list.forEach { list in
+                    tagList.append(TagList(title: list, isSelected: false))
+                }
+                selectedTags.append(TagCell(category: $0.category, list: tagList))
+            }
+        }
+
+        addTagDetailViewController.categoryTags = selectedTags
+        addTagDetailViewController.commonTags = commonCategoryList
         navigationController?.pushViewController(addTagDetailViewController, animated: true)
     }
 }
 
 extension AddTagViewController {
     private func requestTags() {
-        ThingProvider.tags(completion: { tags in
+        ThingProvider.tags(completion: { [weak self] tags in
+            self?.allTags = tags
+            var categoryList = [TagList]()
             for tag in tags.tags {
                 if tag.category == "공통" {
-
-                } else {
                     var tagList = [TagList]()
 
                     for list in tag.list {
                         tagList.append(TagList(title: list, isSelected: false))
                     }
-
-                    self.tags.append(TagCell(category: tag.category, list: tagList))
+                    self?.commonCategoryList = TagCell(category: nil, list: tagList)
+                } else {
+                    categoryList.append(TagList(title: tag.category, isSelected: false))
                 }
             }
+            self?.subTags = TagCell(category: "관심 카테고리", list: categoryList)
+            self?.tagTableView.reloadData()
         }) { error in
             Log(error)
         }
@@ -62,9 +80,12 @@ extension AddTagViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TagTableViewCell") as? TagTableViewCell else { return UITableViewCell() }
-
         cell.delegate = self
-//        cell.contents(tag: categoryTags[indexPath.row])
+        if indexPath.row == 0 {
+            cell.contents(tag: commonCategoryList)
+        } else if indexPath.row == 1 {
+            cell.contents(tag: subTags)
+        }
 
         return cell
     }
@@ -74,6 +95,10 @@ extension AddTagViewController: TagTableViewCellDelegate {
     func didSelectTag(_ cell: TagTableViewCell, tagIndex: Int) {
         guard let indexPath = tagTableView.indexPath(for: cell) else { return }
 
-//        categoryTags[indexPath.row].list[tagIndex].didSelect()
+        if indexPath.row == 0 {
+            commonCategoryList?.list[tagIndex].didSelect()
+        } else {
+            subTags?.list[tagIndex].didSelect()
+        }
     }
 }
