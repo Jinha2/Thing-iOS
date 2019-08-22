@@ -160,18 +160,21 @@
                                                             </constraints>
                                                         </view>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="GZO-00-OsW">
-                                                            <rect key="frame" x="75" y="165" width="240" height="44"/>
+                                                            <rect key="frame" x="177" y="165" width="36" height="44"/>
                                                             <subviews>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PER-AB-ibf" customClass="CustomCategoryView" customModule="thing" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="20"/>
-                                                                </view>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mZC-EH-uLJ" customClass="CustomCategoryView" customModule="thing" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="24" width="240" height="20"/>
-                                                                </view>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Se-Uq-dcb">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="36" height="20"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                                    <color key="textColor" name="MainRed"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4f-8D-uT9">
+                                                                    <rect key="frame" x="0.0" y="24" width="36" height="20"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
                                                             </subviews>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="44" id="1OA-Cs-wOO"/>
-                                                            </constraints>
                                                         </stackView>
                                                     </subviews>
                                                 </stackView>
@@ -191,9 +194,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="lowerCategoryView" destination="mZC-EH-uLJ" id="RcD-Qe-bLR"/>
+                                            <outlet property="categoryLabel" destination="rZT-kh-7Vj" id="OHs-qS-NX4"/>
+                                            <outlet property="categoryTagLabel" destination="6Se-Uq-dcb" id="PFJ-Zu-Ozd"/>
+                                            <outlet property="commonTagLabel" destination="d4f-8D-uT9" id="Rlq-o9-hL3"/>
                                             <outlet property="subscribeNumLabel" destination="hNm-hn-d5U" id="OBO-5x-HxW"/>
-                                            <outlet property="upperCategoryView" destination="PER-AB-ibf" id="ZJq-RJ-ocN"/>
                                             <outlet property="youtuberImageView" destination="HgZ-vu-6nF" id="GDB-kC-4ZA"/>
                                             <outlet property="youtuberNameLabel" destination="5Wi-4y-766" id="ull-qP-cVe"/>
                                         </connections>

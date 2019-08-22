@@ -23,6 +23,9 @@ struct Youtuber: Decodable {
     let thumbnail: String?
     let videos: [Video]
     let viewCount: Int
+    let category: String
+    let categoryTags: [String]
+    let commonTags: [String]
 }
 
 struct Review: Decodable {
