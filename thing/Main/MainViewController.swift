@@ -70,17 +70,19 @@ extension MainViewController {
     }
 
     @objc private func selectedTag(_ notification: Notification) {
-        guard let home = notification.object as? Home else { return }
-        self.home = home
-        recommendTableView.reloadData()
+        requestHome()
     }
 
     private func requestHome() {
-        ThingProvider.home(completion: { recommend in
-            print(recommend)
-        }) { error in
-            print(error)
-        }
+        showActivityIndicator()
+        ThingProvider.home(completion: { [weak self] home in
+            hideActivityIndicator()
+            self?.home = home
+            self?.recommendTableView.reloadData()
+        }, failure: { error in
+            hideActivityIndicator()
+            presentErrorAlert(error: error)
+        })
     }
 
     private func showLoginView() {

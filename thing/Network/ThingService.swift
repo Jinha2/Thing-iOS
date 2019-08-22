@@ -79,7 +79,9 @@ extension ThingService: TargetType {
         case .tags:
             return .requestPlain
         case .addTag(let category, let common):
-            return .requestParameters(parameters: ["category": category, "common": common], encoding: URLEncoding.default)
+            let categoryString = category.reduce("") { $0.isEmpty ? $1 : $0 + "," + $1 }
+            let commonString = common.reduce("") { $0.isEmpty ? $1 : $0 + "," + $1 }
+            return .requestParameters(parameters: ["category": categoryString, "common": commonString], encoding: URLEncoding.default)
         }
     }
 
