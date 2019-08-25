@@ -468,7 +468,7 @@
                                     <constraint firstItem="fES-SR-s6L" firstAttribute="leading" secondItem="Gy3-WA-EKM" secondAttribute="leading" id="y62-Yb-PxQ"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PeY-LI-BLy">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PeY-LI-BLy" customClass="BottomButton" customModule="thing" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="802" width="414" height="94"/>
                                 <color key="backgroundColor" name="MainRed"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -649,7 +649,7 @@
                                     <constraint firstAttribute="height" constant="50" id="uE9-2k-B5s"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAA-5Z-bRI">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAA-5Z-bRI" customClass="BottomButton" customModule="thing" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="802" width="414" height="94"/>
                                 <color key="backgroundColor" name="MainRed"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
