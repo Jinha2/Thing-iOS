@@ -11,7 +11,14 @@ import Firebase
 import GoogleSignIn
 
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    let alertWindow: UIWindow = {
+        let win = UIWindow(frame: UIScreen.main.bounds)
+        win.windowLevel = UIWindow.Level.alert + 1
+        return win
+    }()
+    
     let gcmMessageIDKey = "gcm.message_id"
     var window: UIWindow?
 

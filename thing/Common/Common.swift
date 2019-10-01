@@ -11,26 +11,34 @@ import NVActivityIndicatorView
 
 func presentAlert(msg: String) {
     let alertController = UIAlertController(title: "Error", message: msg, preferredStyle: .alert)
-    alertController.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
-
-    let alertWindow = UIWindow(frame: UIScreen.main.bounds)
-    alertWindow.rootViewController = UIViewController()
-    alertWindow.windowLevel = UIWindow.Level.alert + 1
-    alertWindow.makeKeyAndVisible()
-    alertWindow.rootViewController?.present(alertController, animated: true, completion: nil)
+    alertController.addAction(UIAlertAction(title: "Close", style: .cancel, handler: { _ in
+        (UIApplication.shared.delegate as! AppDelegate).alertWindow.isHidden = true
+    }))
+    alertController.modalPresentationStyle = .fullScreen
+    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let vc = UIViewController()
+    vc.view.backgroundColor = .clear
+    appDelegate.alertWindow.rootViewController = vc
+    appDelegate.alertWindow.makeKeyAndVisible()
+    vc.present(alertController, animated: true, completion: nil)
 }
 
 func presentErrorAlert(error: Error?) {
     hideActivityIndicator()
-
+    
     let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
-    alertController.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
-
-    let alertWindow = UIWindow(frame: UIScreen.main.bounds)
-    alertWindow.rootViewController = UIViewController()
-    alertWindow.windowLevel = UIWindow.Level.alert + 1
-    alertWindow.makeKeyAndVisible()
-    alertWindow.rootViewController?.present(alertController, animated: true, completion: nil)
+    alertController.addAction(UIAlertAction(title: "Close", style: .cancel, handler: { _ in
+        (UIApplication.shared.delegate as! AppDelegate).alertWindow.isHidden = true
+    }))
+    alertController.modalPresentationStyle = .fullScreen
+    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let vc = UIViewController()
+    vc.view.backgroundColor = .clear
+    appDelegate.alertWindow.rootViewController = vc
+    appDelegate.alertWindow.makeKeyAndVisible()
+    vc.present(alertController, animated: true, completion: nil)
 }
 
 func Log<T>(_ object: @autoclosure () -> T, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {
@@ -38,7 +46,7 @@ func Log<T>(_ object: @autoclosure () -> T, _ file: String = #file, _ function: 
     let value = object()
     let fileURL = NSURL(string: file)?.lastPathComponent ?? "Unknown file"
     let queue = Thread.isMainThread ? "UI" : "BG"
-
+    
     print("❤️ <\(queue)> \(fileURL) \(function)[\(line)]: " + String(reflecting: value))
     #endif
 }
@@ -59,7 +67,7 @@ extension UIViewController {
         activityIndicatorView.alpha = 0.8
         activityIndicatorView.cornerRadius = 5
         view.addSubview(activityIndicatorView)
-
+        
         activityIndicatorView.startAnimating()
     }
 }
