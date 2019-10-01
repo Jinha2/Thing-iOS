@@ -21,7 +21,7 @@ class SoaringYouTuberTableViewCell: UITableViewCell {
             youtuberName.text = model?.name
             youtuberCategory.text = model?.category
             if let soaring = model?.soaring {
-                youtuberSoaring.text = "\(soaring)"
+                youtuberSoaring.text = "\(floor(soaring * 100) / 100)"
             }
         }
     }

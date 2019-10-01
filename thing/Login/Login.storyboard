@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="I7X-Io-pWa">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="I7X-Io-pWa">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,7 +12,7 @@
         <!--Login View Controller-->
         <scene sceneID="zid-4U-6Oq">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="QTY-B2-JLg" customClass="LoginViewController" customModule="thing" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" modalPresentationStyle="fullScreen" id="QTY-B2-JLg" customClass="LoginViewController" customModule="thing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wYr-FS-fe6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,7 +28,6 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="34" id="n9X-mD-CVD"/>
                                                 </constraints>
-                                                <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -87,7 +85,6 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="34" id="nJK-vW-CmS"/>
                                                 </constraints>
-                                                <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
@@ -95,28 +92,7 @@
                                                 <rect key="frame" x="145.5" y="244" width="123" height="27.5"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle">
-                                                        <fragment content="비밀번호를">
-                                                            <attributes>
-                                                                <color key="NSColor" name="brownGrey"/>
-                                                                <font key="NSFont" size="13" name=".AppleSDGothicNeoI-Regular"/>
-                                                                <integer key="NSUnderline" value="1"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                        <fragment content=" ">
-                                                            <attributes>
-                                                                <color key="NSColor" name="brownGrey"/>
-                                                                <font key="NSFont" metaFont="system"/>
-                                                                <integer key="NSUnderline" value="1"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                        <fragment content="잊으셨나요">
-                                                            <attributes>
-                                                                <color key="NSColor" name="brownGrey"/>
-                                                                <font key="NSFont" size="13" name=".AppleSDGothicNeoI-Regular"/>
-                                                                <integer key="NSUnderline" value="1"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                        <fragment content="?">
+                                                        <fragment content="비밀번호를 잊으셨나요?">
                                                             <attributes>
                                                                 <color key="NSColor" name="brownGrey"/>
                                                                 <font key="NSFont" metaFont="system"/>
@@ -211,7 +187,7 @@
         <!--Register Account View Controller-->
         <scene sceneID="4sK-aP-WMV">
             <objects>
-                <viewController storyboardIdentifier="RegisterAccountViewController" id="5RI-gy-uXj" customClass="RegisterAccountViewController" customModule="thing" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterAccountViewController" modalPresentationStyle="fullScreen" id="5RI-gy-uXj" customClass="RegisterAccountViewController" customModule="thing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cZW-Cp-tYD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -221,7 +197,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="hWJ-n3-ZdL"/>
                                 </constraints>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -230,7 +205,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="mne-YO-HN6"/>
                                 </constraints>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
@@ -239,7 +213,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="JhE-dG-baV"/>
                                 </constraints>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
@@ -290,7 +263,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nWK-vw-apx">
-                                <rect key="frame" x="20" y="64" width="44" height="44"/>
+                                <rect key="frame" x="20" y="64" width="88" height="88"/>
                                 <state key="normal" image="back"/>
                                 <connections>
                                     <action selector="backButtonAction:" destination="5RI-gy-uXj" eventType="touchUpInside" id="86A-OL-1cZ"/>
@@ -346,7 +319,7 @@
         <!--Update Profile View Controller-->
         <scene sceneID="Jct-Qp-vYo">
             <objects>
-                <viewController storyboardIdentifier="UpdateProfileViewController" id="3Tc-8b-7y9" customClass="UpdateProfileViewController" customModule="thing" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UpdateProfileViewController" modalPresentationStyle="fullScreen" id="3Tc-8b-7y9" customClass="UpdateProfileViewController" customModule="thing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LFs-CJ-Bw6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -356,7 +329,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="svC-hL-AkZ"/>
                                 </constraints>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <userDefinedRuntimeAttributes>
@@ -402,8 +374,8 @@
                                 <color key="textColor" name="brownGrey"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="성별" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19R-BD-iia">
-                                <rect key="frame" x="41" y="342" width="26" height="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="성별 (선택)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19R-BD-iia">
+                                <rect key="frame" x="41" y="342" width="67" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="Ozp-EG-PcT"/>
                                 </constraints>
@@ -411,8 +383,8 @@
                                 <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나이 (출생년도)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shn-5V-i52">
-                                <rect key="frame" x="41" y="454" width="93" height="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나이 (선택)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shn-5V-i52">
+                                <rect key="frame" x="41" y="454" width="67" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="wM2-gB-f7U"/>
                                 </constraints>
@@ -420,8 +392,8 @@
                                 <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQW-sm-Kgs">
-                                <rect key="frame" x="40" y="240" width="39" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임 (필수)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQW-sm-Kgs">
+                                <rect key="frame" x="40" y="240" width="80" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -431,7 +403,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="QzS-1X-wTO"/>
                                 </constraints>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -553,7 +524,7 @@
         <!--Hidden Navigation View Controller-->
         <scene sceneID="S1j-ff-iqK">
             <objects>
-                <navigationController storyboardIdentifier="HiddenNavigationViewController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="I7X-Io-pWa" customClass="HiddenNavigationViewController" customModule="thing" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="HiddenNavigationViewController" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" navigationBarHidden="YES" id="I7X-Io-pWa" customClass="HiddenNavigationViewController" customModule="thing" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="WTu-Aa-1bo">
                         <autoresizingMask key="autoresizingMask"/>

@@ -42,6 +42,10 @@ final class AddTagViewController: UIViewController {
             }
         }
 
+        if selectedTags.count == 0 {
+            presentAlert(msg: "관심카테고리를 최소 1개이상 선택해주세요.")
+            return
+        }
         addTagDetailViewController.categoryTags = selectedTags
         addTagDetailViewController.commonTags = commonCategoryList
         navigationController?.pushViewController(addTagDetailViewController, animated: true)
